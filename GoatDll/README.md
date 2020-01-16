@@ -27,7 +27,7 @@
 # 控件 目录
 
     - chapter8-2-1   ListBox
-    - chapter8-2-2  
+    - chapter8-2-2   选择文件/文件夹 控件
     - chapter8-2-3  CheckListBox
 
 #  添加 log4net.dll
