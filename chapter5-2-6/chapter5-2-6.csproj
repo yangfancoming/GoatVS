@@ -81,7 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
-    <Content Include="myAccess.mdb" />
+    <Content Include="db\shit.accdb" />
+    <Content Include="db\myAccess.mdb" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
