@@ -1,8 +1,6 @@
 
-#   
+#   目录
     - Dll           log4net| util
-    123
-    
     - chapter1-0-2  函数
     - chapter1-1-1  委托
     - chapter1-2-1  事件
@@ -19,8 +17,6 @@
 
     - chapter2-1-1  设计模式
     - chapter2-5-1  office
-    - 
-
 
     - chapter3-4-1  定时任务---Quartz.Net
     - chapter3-5-5  FileSystemWatcher 用法
@@ -28,7 +24,11 @@
     - chapter3-6-4  xml 与 json互转 
 
     - chapter5-2-6  连接 access     
+# 控件 目录
 
+    - chapter8-2-1  
+    - chapter8-2-2  
+    - chapter8-2-3  CheckListBox
 
 #  添加 log4net.dll
 
