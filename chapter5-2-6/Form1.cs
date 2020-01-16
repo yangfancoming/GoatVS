@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Windows.Forms;
 
 namespace chapter5_2_6 {
@@ -30,6 +31,20 @@ namespace chapter5_2_6 {
             var dt = new DataTable(); //新建表对象
             dbDataAdapter.Fill(dt); //用适配对象填充表对象
 
+        }
+
+        // doit 未成功
+        private readonly SQLiteConnection oleDb3 = new SQLiteConnection("data source="+@"E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-6\db\sqlite.db;");
+        private void button2_Click(object sender, EventArgs e) {
+            oleDb3.Open();
+            SQLiteCommand dbCommand = oleDb3.CreateCommand();
+            dbCommand.CommandText = "select * from person";
+//            SQLiteParameter[] parameter = { new SQLiteParameter("@product", product), new SQLiteParameter("@productNum", productNum) };
+//            SQLiteDataReader dataReader = dbCommand.ExecuteReader();
+//            dbCommand.Parameters.AddRange(parameter);
+            SQLiteDataAdapter sda = new SQLiteDataAdapter(dbCommand);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
         }
     }
 }

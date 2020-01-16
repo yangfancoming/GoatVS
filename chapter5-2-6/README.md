@@ -12,3 +12,7 @@
     
 # The 'Microsoft.Jet.OLEDB.4.0' provider is not registered on the local machine
     不要使用 .net core  使用 framework 就好了
+    
+# sqlite 报错：
+    System.DllNotFoundException:“无法加载 DLL“SQLite.Interop.dll”: 
+    System.DllNotFoundException:    at 在 System.Data.SQLite.UnsafeNativeMethods.sqlite3_config_none(SQLiteConfigOpsEnum op)
