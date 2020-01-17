@@ -24,9 +24,11 @@
     - chapter3-6-4  xml 与 json互转 
     
     - chapter4-2-4  spring.net
+    - chapter4-2-8  spring.net + DB
 
     - chapter5-2-6  连接 access   （mdb|accdb）
     - chapter5-2-7  连接 sqlite  
+    - chapter5-2-8  连接 sqlserver  本地 MDF文件
     - chapter6-2-3  IBatis   
 # 控件 目录
 
