@@ -33,7 +33,7 @@
     - chapter5-3-0  连接 mysql
     
     
-    - chapter6-2-3  IBatis   
+    - chapter6-2-3  IBatis    
 # 控件 目录
 
     - chapter8-2-1   ListBox
