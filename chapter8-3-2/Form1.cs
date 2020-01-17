@@ -13,12 +13,16 @@ namespace chapter8_3_2 {
             dataGridView1.AutoGenerateColumns = false; //设置不自动生成列，此属性在属性面板中没有
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 只能选中行
             dataGridView1.MultiSelect = false; // 是否可以选中多行
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AllowUserToAddRows = false;// 设置用户不能手动给 DataGridView1 添加新行
+            dataGridView1.AllowUserToResizeColumns = false ;// 禁止用户改变DataGridView1的所有列的列宽
+            dataGridView1.AllowUserToResizeRows = false ;// 禁止用户改变DataGridView1的所有行的行高
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;  // 设定包括Header和所有单元格的列宽自动调整
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // 设定包括Header和所有单元格的行高自动调整
             foreach (DataGridViewColumn item in dataGridView1.Columns) {
                 item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
-
-            dataGridView2.AllowUserToAddRows = false;// 设置用户不能手动给 DataGridView1 添加新行
+            dataGridView2.AllowUserToAddRows = false;
             dataGridView2.AllowUserToDeleteRows = false; // 禁止DataGridView1的行删除操作。
 
         }
@@ -67,22 +71,26 @@ namespace chapter8_3_2 {
         }
         // 删除选中行
         private void button5_Click(object sender, EventArgs e) {
-
+            foreach (DataGridViewRow r in dataGridView1.SelectedRows) {
+                if (!r.IsNewRow) {
+                    dataGridView1.Rows.Remove(r);
+                }
+            }
         }
 
         // 删除行
-        private void button6_Click(object sender, EventArgs e) {
-            dataGridView2.Rows.RemoveAt(1);// 删除第二行
-        }
+            private void button6_Click(object sender, EventArgs e) {
+                dataGridView2.Rows.RemoveAt(1);// 删除第二行
+            }
 
-        // 删除列
-        private void button7_Click(object sender, EventArgs e) {
-            dataGridView2.Columns.RemoveAt(1);// 删除第二列
-        }
+            // 删除列
+            private void button7_Click(object sender, EventArgs e) {
+                dataGridView2.Columns.RemoveAt(1);// 删除第二列
+            }
 
-        // 删除列  按指定列名删除（不区分大小写）
-        private void button8_Click(object sender, EventArgs e) {
-            dataGridView2.Columns.Remove("name");
-        }
+            // 删除列  按指定列名删除（不区分大小写）
+            private void button8_Click(object sender, EventArgs e) {
+                dataGridView2.Columns.Remove("name");
+            }
     }
 }
