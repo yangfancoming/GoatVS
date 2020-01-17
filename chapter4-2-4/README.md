@@ -23,7 +23,12 @@
                 </objects>
         
             </spring>
+            
+     3.  spring.xml 或叫  Objects.xml 指定嵌入的资源和始终复制  
 
 #   目录
     item01 控制反转
+    item02 基础环境搭建
+    item05 容器中对象的作用域
+    
    

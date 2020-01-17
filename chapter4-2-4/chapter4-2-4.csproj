@@ -62,12 +62,18 @@
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
         <Compile Include="item01\DataAccess.cs" />
+        <Compile Include="item01\Item01Demo01.cs" />
         <Compile Include="item01\IPerson.cs" />
         <Compile Include="item01\Person.cs" />
+        <Compile Include="item02\App.cs" />
+        <Compile Include="item05\App.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Objects.xml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +103,12 @@
       <Content Include="lib\Spring.Core.dll" />
       <Content Include="lib\Spring.Data.dll" />
       <Content Include="README.md" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\DataBase\DataBase.csproj">
+        <Project>{9319e42e-ac87-44c9-b9c9-991ee9d8b085}</Project>
+        <Name>DataBase</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

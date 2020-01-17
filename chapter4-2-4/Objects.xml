@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects>
+	<!--单例模式-->
+	<object id="personDao" type="DataBase.model.personDao, DataBase" />
+
+	<!--非单例模式-->
+	<object id="person" type="DataBase.model.Person, DataBase" singleton="false" />
+
+
+	<!--调用时加载-->
+	<object id="personServer" type="DataBase.model.PersonServer, DataBase" lazy-init="true" />
+<!--	lazy-init属性是指：当Spring.NET容器初始化的时候标注该属性的对象将被实例化，反之则是调用GetObject方法的时候才被实例化。-->
+<!--	PersonDao类未设置lazy-init属性，则当Spring.NET初始化时被实例；PersonServer类设置lazy-init="true"，则当调用GetObject方法时才被实例。-->
+</objects>
