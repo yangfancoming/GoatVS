@@ -41,6 +41,7 @@
         <Compile Include="BaseData.cs" />
         <Compile Include="Class1.cs" />
         <Compile Include="model\Customer.cs" />
+        <Compile Include="model\EquitmentInfo.cs" />
         <Compile Include="model\Person.cs" />
         <Compile Include="model\PersonDao.cs" />
         <Compile Include="model\PersonServer.cs" />
