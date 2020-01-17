@@ -102,6 +102,7 @@
     <EmbeddedResource Include="IBatis\SqlMap.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="db\myAccess.mdb" />
     <Content Include="lib\IBatisNet.Common.dll" />
     <Content Include="lib\IBatisNet.DataMapper.dll" />
     <Content Include="log4Net.config" />

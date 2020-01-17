@@ -61,8 +61,10 @@ namespace chapter6_2_3 {
             DomSqlMapBuilder builder = new DomSqlMapBuilder();
             ISqlMapper Map = builder.Configure("IBatis/SqlMap.config");
             SysUser temp = new SysUser();
-            temp.account = "1";
-            Map.Insert("Student.create", temp);
+            temp.account = "123";
+//            Map.Insert("Student.create", temp);
+
+            SysUser user = Map.QueryForObject("sys_user.selectOne", temp) as SysUser;
         }
     }
 }
