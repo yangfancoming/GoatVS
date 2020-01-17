@@ -23,7 +23,8 @@
     - chapter3-6-1  解析xml 
     - chapter3-6-4  xml 与 json互转 
 
-    - chapter5-2-6  连接 access     
+    - chapter5-2-6  连接 access   （mdb|accdb）
+    - chapter5-2-7  连接 sqlite  
     - chapter6-2-3  IBatis   
 # 控件 目录
 
