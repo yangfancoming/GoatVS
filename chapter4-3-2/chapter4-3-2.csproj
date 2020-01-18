@@ -101,7 +101,8 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include=".gitignore" />
-      <Content Include="AppContext.xml" />
+      <EmbeddedResource Include="AppContext.xml" />
+      <EmbeddedResource Include="AppContextContribution.xml" />
       <Content Include="lib\Common.Logging.Core.dll" />
       <Content Include="lib\Common.Logging.dll" />
       <Content Include="lib\Common.Logging.Log4Net1215.dll" />
