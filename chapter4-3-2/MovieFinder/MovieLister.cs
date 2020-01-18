@@ -21,7 +21,7 @@ namespace chapter4_3_2.MovieFinder {
         /// <summary>
         /// Property MovieFinder (IMovieFinder).
         /// </summary>
-//        [Required]
+        [Required]
         public IMovieFinder MovieFinder {
             get => _movieFinder;
             set => _movieFinder = value;
