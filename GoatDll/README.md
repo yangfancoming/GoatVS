@@ -42,7 +42,7 @@
     - chapter8-3-2  DataGridView
     
  # 综合类
-    - chapter9-2-2  DataGridView + crud + ibatis
+    - chapter9-2-2  DataGridView + crud + ibatis + sqlite + spring.net
 
 #  添加 log4net.dll
 
