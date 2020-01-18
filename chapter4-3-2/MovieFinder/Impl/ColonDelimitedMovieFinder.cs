@@ -1,57 +1,37 @@
 
-#region Imports
 
-using System.IO;
 using System.Collections;
+using System.Diagnostics;
+using System.IO;
 using chapter4_3_2.Model;
-using chapter4_3_2.MovieFinder;
 
-#endregion
+namespace chapter4_3_2.MovieFinder.Impl {
 
-namespace chapter4_3_2.MovieFinder.Impl
-{
-	/// <summary>
-    /// An <see cref="IMovieFinder"/> implementation
-	/// that uses a colon delimited text file as it's backing data store.
-    /// </summary>
-    public class ColonDelimitedMovieFinder : IMovieFinder
-    {
+
+
+    // 文件存储 实现类
+    public class ColonDelimitedMovieFinder : IMovieFinder{
+
         private static readonly char [] Delimeter = {':'};
-
         private FileInfo _movieFile;
         private IList _movies;
 
-        /// <summary>
-        /// Creates a new instance of the
-        /// <see cref="Spring.IocQuickStart.MovieFinder.ColonDelimitedMovieFinder"/> class.
-        /// </summary>
-        /// <param name="file">
-        /// The file containing colon delimited movies.
-        /// </param>
-        public ColonDelimitedMovieFinder (FileInfo file)
-        {
+
+        // 构造函数
+        public ColonDelimitedMovieFinder (FileInfo file) {
+            Debug.Print("ColonDelimitedMovieFinder 实例化！");
             MovieFile = file;
         }
 
-        /// <summary>
-        /// The file containing colon delimited movies.
-        /// </summary>
-        /// <value>
-        /// A <see cref="System.IO.FileInfo"/> pointing to the file containing
-        /// colon delimited movies.
-        /// </value>
-        public FileInfo MovieFile 
-        {
-            get 
-            {
-                return _movieFile;
-            }
-            set 
-            {
+        // 分号 分隔符的文件
+        public FileInfo MovieFile  {
+            get => _movieFile;
+            set {
                 _movieFile = value;
-                if (_movieFile != null && _movieFile.Exists) 
-                {
+                if (_movieFile != null && _movieFile.Exists) {
                     InitList ();
+                } else {
+                    Debug.Print($"文件没找到 = '{value}'");
                 }
             }
         }
@@ -64,25 +44,21 @@ namespace chapter4_3_2.MovieFinder.Impl
         /// All of the movies stored in this
         /// <see cref="IMovieFinder"/> implementation.
         /// </returns>
-        public IList FindAll ()
-        {
+        public IList FindAll () {
             return _movies;
         }
 
         /// <summary>
         /// Loads all of the movies in the file referred to by <c>MovieFile</c>.
         /// </summary>
-        private void InitList ()
-        {
+        private void InitList () {
             _movies = new ArrayList ();
-            using (StreamReader reader = MovieFile.OpenText ()) 
-            {
-                string line = null;
-                while ((line = reader.ReadLine ()) != null) 
-                {
+            using (StreamReader reader = MovieFile.OpenText ()) {
+                string line;
+                while ((line = reader.ReadLine ()) != null) {
                     string [] tuple = line.Split (Delimeter);
                     Movie movie = new Movie (tuple [0], tuple [1]);
-                    _movies.Add (movie);
+                    _movies.Add(movie);
                 }
             }
         }

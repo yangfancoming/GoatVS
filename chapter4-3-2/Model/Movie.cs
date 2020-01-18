@@ -1,34 +1,24 @@
 
-namespace chapter4_3_2.Model
-{
-	/// <summary>
-	/// An object that describes a movie.
-	/// </summary>
-	public class Movie
-	{
-        private string _title;
-        private string _director;
+namespace chapter4_3_2.Model {
+
+	public class Movie{
+
+        // 电影名称
+        public string Title { get; }
+
+        // 电影导演
+        public string Director { get; }
+        // 导演
 
         /// <summary>
-        /// Creates a new instance of the
-        /// <see cref="Spring.IocQuickStart.MovieFinder.Movie"/> class.
+        /// 构造函数
         /// </summary>
-        /// <param name="title">The title of the movie.</param>
-        /// <param name="director">The director of the movie.</param>
-		public Movie (string title, string director)
-		{
-            _title = title;
-            _director = director;
+        /// <param name="title">电影名称</param>
+        /// <param name="director">电影导演</param>
+		public Movie (string title, string director) {
+            Title = title;
+            Director = director;
 		}
 
-        /// <summary>
-        /// Property Title (string).
-        /// </summary>
-        public string Title => _title;
-
-        /// <summary>
-        /// Property Director (string).
-        /// </summary>
-        public string Director => _director;
     }
 }

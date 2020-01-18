@@ -101,11 +101,15 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include=".gitignore" />
+      <Content Include="AppContext.xml" />
       <Content Include="lib\Common.Logging.Core.dll" />
       <Content Include="lib\Common.Logging.dll" />
       <Content Include="lib\Common.Logging.Log4Net1215.dll" />
       <Content Include="lib\log4net.dll" />
       <Content Include="lib\Spring.Core.dll" />
+      <Content Include="movies.txt">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
       <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
