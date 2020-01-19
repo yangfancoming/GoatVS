@@ -24,8 +24,10 @@
     - chapter3-6-4  xml 与 json互转 
     
     - chapter4-2-4  spring.net
-    - chapter4-3-2  spring.net-master
     - chapter4-2-8  spring.net + DB
+
+    - chapter4-3-2  spring.net-master
+    - chapter4-3-5  spring.net-quartz ？？？ 失败
 
     - chapter5-2-6  连接 access   （mdb|accdb）
     - chapter5-2-7  连接 sqlite  
@@ -34,7 +36,7 @@
     - chapter5-3-0  连接 mysql
     
     
-    - chapter6-2-3  IBatis    
+    - chapter6-2-3  IBatis +  mdb 
 # 控件 目录
 
     - chapter8-2-1   ListBox
@@ -43,7 +45,7 @@
     - chapter8-3-2  DataGridView
     
  # 综合类
-    - chapter9-2-2  DataGridView + crud + ibatis + sqlite + spring.net
+    - chapter9-2-2  DataGridView + crud + ibatis + sqlite
 
 #  添加 log4net.dll
 
