@@ -9,5 +9,6 @@ namespace chapter1_6_1 {
                 action(item);
             }
         }
+
     }
 }

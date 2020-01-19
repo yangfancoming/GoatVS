@@ -9,7 +9,8 @@
   <statements>
 
     <select id="selectList" resultClass="sys_fileJob">
-      select   *   from   sys_fileJob
+<!--      select   jobName, jobCycle, jobType,   fileMatched, fileSuffix, fileDirectory, createTime from   sys_fileJob-->
+      select  *  from   sys_fileJob
     </select>
 
 <!--      jobName string,-->
@@ -27,6 +28,10 @@
           (#jobName#,#jobCycle#,#jobType#,#createTime#,#fileDirectory#,#fileMatched#,#fileSuffix#)
       </insert>
 
+
+      <delete id="deleteById" parameterclass="int">
+          DELETE FROM sys_fileJob  WHERE id = #value#
+      </delete>
   </statements>
 
 </sqlMap>

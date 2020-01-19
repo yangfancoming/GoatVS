@@ -27,13 +27,6 @@ namespace chapter9_2_2 {
         /// </summary>
         private void InitializeComponent() {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.jobName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobCycle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileSuffix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileMatched = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileDirectory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -43,7 +36,6 @@ namespace chapter9_2_2 {
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.jobName, this.jobType, this.jobCycle, this.createTime, this.fileSuffix, this.fileMatched, this.fileDirectory});
             this.dataGridView1.Location = new System.Drawing.Point(12, 89);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -51,27 +43,6 @@ namespace chapter9_2_2 {
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(961, 273);
             this.dataGridView1.TabIndex = 0;
-            this.jobName.HeaderText = "任务名称";
-            this.jobName.Name = "jobName";
-            this.jobName.ReadOnly = true;
-            this.jobType.HeaderText = "任务类型";
-            this.jobType.Name = "jobType";
-            this.jobType.ReadOnly = true;
-            this.jobCycle.HeaderText = "任务周期";
-            this.jobCycle.Name = "jobCycle";
-            this.jobCycle.ReadOnly = true;
-            this.createTime.HeaderText = "创建时间";
-            this.createTime.Name = "createTime";
-            this.createTime.ReadOnly = true;
-            this.fileSuffix.HeaderText = "文件后缀";
-            this.fileSuffix.Name = "fileSuffix";
-            this.fileSuffix.ReadOnly = true;
-            this.fileMatched.HeaderText = "匹配条件";
-            this.fileMatched.Name = "fileMatched";
-            this.fileMatched.ReadOnly = true;
-            this.fileDirectory.HeaderText = "所在目录";
-            this.fileDirectory.Name = "fileDirectory";
-            this.fileDirectory.ReadOnly = true;
             this.button1.Location = new System.Drawing.Point(52, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
@@ -95,6 +66,7 @@ namespace chapter9_2_2 {
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             this.button4.Location = new System.Drawing.Point(349, 30);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button4.Name = "button4";
@@ -112,6 +84,7 @@ namespace chapter9_2_2 {
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
@@ -123,13 +96,6 @@ namespace chapter9_2_2 {
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jobCycle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileSuffix;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileMatched;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileDirectory;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;
     }

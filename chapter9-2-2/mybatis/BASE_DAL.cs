@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using IBatisNet.DataMapper;
 using IBatisNet.DataMapper.Configuration;
 
@@ -27,8 +27,8 @@ namespace chapter9_2_2.mybatis {
             return sqlMapper;
         }
 
-        public static IList selectList(String MapperStr, object o){
-            return sqlMapper.QueryForList(MapperStr, o);
+        public static IList<T> selectList<T>(String MapperStr, object o = null){
+            return sqlMapper.QueryForList<T>(MapperStr, o);
         }
 
         public static Object selectOne(String MapperStr, object o){
@@ -53,7 +53,7 @@ namespace chapter9_2_2.mybatis {
             return sqlMapper.Delete(MapperStr, ids);
         }
 
-        public static int delete(String MapperStr, Object o){
+        public static int deleteById(String MapperStr, Object o){
             return sqlMapper.Delete(MapperStr, o);
         }
 

@@ -143,5 +143,15 @@
     <Content Include="log4Net.config" />
     <Content Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\chapter1-6-1\chapter1-6-1.csproj">
+      <Project>{fb71493e-b680-41f3-8b9e-f11dcf2a7433}</Project>
+      <Name>chapter1-6-1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\chapter8-2-4\chapter8-2-4.csproj">
+      <Project>{bf0ed2a2-c68a-44a3-879d-5d2922109d11}</Project>
+      <Name>chapter8-2-4</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
