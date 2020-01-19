@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows.Forms;
+using chapter9_2_2.forms;
 using chapter9_2_2.model;
-using IBatisNet.DataMapper;
-using IBatisNet.DataMapper.Configuration;
 
 namespace chapter9_2_2 {
     public partial class MainForm : Form {
@@ -34,12 +31,12 @@ namespace chapter9_2_2 {
         // 测试按钮
         private void button1_Click(object sender, EventArgs e) {
 
-            var FileJob1 = new FileJob {任务名称 = "1号任务",任务类型 = "文件采集",任务周期 = "3",创建时间 = "2020年1月19日15:54:54",文件类型 = "txt",所在目录 = "txt",匹配条件 = "txt",};
-            var FileJob2 = new FileJob {任务名称 = "2号任务",任务类型 = "串口采集",任务周期 = "4",创建时间 = "2020年1月19日15:54:57",文件类型 = "txt",所在目录 = "txt",匹配条件 = "txt",};
-            var FileJob3 = new FileJob {任务名称 = "3号任务",任务类型 = "数据库采集",任务周期 = "5",创建时间 = "2020年1月19日15:54:59",文件类型 = "txt",所在目录 = "txt",匹配条件 = "txt",};
-            fileJobs.Add(FileJob1);
-            fileJobs.Add(FileJob2);
-            fileJobs.Add(FileJob3);
+//            var FileJob1 = new FileJob {任务名称 = "1号任务",任务类型 = "文件采集",任务周期 = "3",创建时间 = "2020年1月19日15:54:54",文件类型 = "txt",所在目录 = "txt",匹配条件 = "txt",};
+//            var FileJob2 = new FileJob {任务名称 = "2号任务",任务类型 = "串口采集",任务周期 = "4",创建时间 = "2020年1月19日15:54:57",文件类型 = "txt",所在目录 = "txt",匹配条件 = "txt",};
+//            var FileJob3 = new FileJob {任务名称 = "3号任务",任务类型 = "数据库采集",任务周期 = "5",创建时间 = "2020年1月19日15:54:59",文件类型 = "txt",所在目录 = "txt",匹配条件 = "txt",};
+//            fileJobs.Add(FileJob1);
+//            fileJobs.Add(FileJob2);
+//            fileJobs.Add(FileJob3);
 
             // 传统访问数据库方式
 //            using (IDbConnection cnn = new SQLiteConnection(@"Data Source=.\db\sqlite.db;Version=3;")){
@@ -69,7 +66,8 @@ namespace chapter9_2_2 {
 
 
         private void btnAdd_Click(object sender, EventArgs e) {
-
+            AddFileCollect addFileCollect = new AddFileCollect {ShowInTaskbar = false};
+            addFileCollect.ShowDialog();
         }
     }
 }

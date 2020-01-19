@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="sys_fileJob" xmlns="http://ibatis.apache.org/mapping">
+
+  <alias>
+    <typeAlias alias="sys_fileJob" type="chapter9_2_2.model.FileJob,chapter9_2_2" />
+  </alias>
+
+  <statements>
+
+    <select id="selectList" resultClass="sys_fileJob">
+      select   *   from   sys_fileJob
+    </select>
+
+<!--      jobName string,-->
+<!--      jobCycle string,-->
+<!--      jobType string,-->
+<!--      createTime string,-->
+<!--      fileDirectory string,-->
+<!--      fileMatched string,-->
+<!--      fileSuffix string-->
+
+      <insert id="insert" parameterClass="sys_fileJob" >
+          INSERT INTO sys_fileJob
+          (jobName,jobCycle,jobType,createTime,fileDirectory,fileMatched,fileSuffix)
+          VALUES
+          (#jobName#,#jobCycle#,#jobType#,#createTime#,#fileDirectory#,#fileMatched#,#fileSuffix#)
+      </insert>
+
+  </statements>
+
+</sqlMap>

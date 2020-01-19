@@ -82,6 +82,7 @@
     <Compile Include="model\JobInfo.cs" />
     <Compile Include="model\SysPerson.cs" />
     <Compile Include="model\SysUser.cs" />
+    <Compile Include="mybatis\BASE_DAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\AddFileCollect.resx">
@@ -94,6 +95,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="mybatis\SqlMap.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mybatis\sqlMaps\sys_fileJob.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="mybatis\sqlMaps\sys_person.xml">
@@ -129,6 +133,7 @@
     <Content Include="db\sqlite.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="db\db.sql" />
     <Content Include="lib\mybatis\IBatisNet.Common.dll" />
     <Content Include="lib\mybatis\IBatisNet.DataMapper.dll" />
     <Content Include="lib\sqlite\Dapper.dll" />

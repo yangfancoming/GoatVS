@@ -40,9 +40,6 @@ namespace chapter9_2_2 {
             this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            //
-            // dataGridView1
-            //
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -54,51 +51,27 @@ namespace chapter9_2_2 {
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(961, 273);
             this.dataGridView1.TabIndex = 0;
-            //
-            // jobName
-            //
             this.jobName.HeaderText = "任务名称";
             this.jobName.Name = "jobName";
             this.jobName.ReadOnly = true;
-            //
-            // jobType
-            //
             this.jobType.HeaderText = "任务类型";
             this.jobType.Name = "jobType";
             this.jobType.ReadOnly = true;
-            //
-            // jobCycle
-            //
             this.jobCycle.HeaderText = "任务周期";
             this.jobCycle.Name = "jobCycle";
             this.jobCycle.ReadOnly = true;
-            //
-            // createTime
-            //
             this.createTime.HeaderText = "创建时间";
             this.createTime.Name = "createTime";
             this.createTime.ReadOnly = true;
-            //
-            // fileSuffix
-            //
             this.fileSuffix.HeaderText = "文件后缀";
             this.fileSuffix.Name = "fileSuffix";
             this.fileSuffix.ReadOnly = true;
-            //
-            // fileMatched
-            //
             this.fileMatched.HeaderText = "匹配条件";
             this.fileMatched.Name = "fileMatched";
             this.fileMatched.ReadOnly = true;
-            //
-            // fileDirectory
-            //
             this.fileDirectory.HeaderText = "所在目录";
             this.fileDirectory.Name = "fileDirectory";
             this.fileDirectory.ReadOnly = true;
-            //
-            // button1
-            //
             this.button1.Location = new System.Drawing.Point(52, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
@@ -107,9 +80,6 @@ namespace chapter9_2_2 {
             this.button1.Text = "测试";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
-            // btnAdd
-            //
             this.btnAdd.Location = new System.Drawing.Point(150, 30);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
@@ -118,9 +88,6 @@ namespace chapter9_2_2 {
             this.btnAdd.Text = "新增";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            //
-            // btnDel
-            //
             this.btnDel.Location = new System.Drawing.Point(252, 30);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDel.Name = "btnDel";
@@ -128,9 +95,6 @@ namespace chapter9_2_2 {
             this.btnDel.TabIndex = 3;
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
-            //
-            // button4
-            //
             this.button4.Location = new System.Drawing.Point(349, 30);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button4.Name = "button4";
@@ -138,9 +102,6 @@ namespace chapter9_2_2 {
             this.button4.TabIndex = 4;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
-            //
-            // MainForm
-            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 374);
