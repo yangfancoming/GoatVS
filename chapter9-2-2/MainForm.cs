@@ -107,5 +107,9 @@ namespace chapter9_2_2 {
             var addSerialCollect = new AddDbCollect{ShowInTaskbar = false};;
             addSerialCollect.ShowDialog();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e) {
+
+        }
     }
 }

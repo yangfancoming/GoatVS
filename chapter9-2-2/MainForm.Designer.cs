@@ -30,7 +30,7 @@ namespace chapter9_2_2 {
             this.button1 = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.btnAddSerial = new System.Windows.Forms.Button();
             this.btnAddDb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
@@ -82,15 +82,16 @@ namespace chapter9_2_2 {
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // button4
+            // btnSettings
             // 
-            this.button4.Location = new System.Drawing.Point(584, 30);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 35);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnSettings.Location = new System.Drawing.Point(584, 30);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(80, 35);
+            this.btnSettings.TabIndex = 4;
+            this.btnSettings.Text = "系统设置";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnAddSerial
             // 
@@ -121,7 +122,7 @@ namespace chapter9_2_2 {
             this.ClientSize = new System.Drawing.Size(1009, 374);
             this.Controls.Add(this.btnAddDb);
             this.Controls.Add(this.btnAddSerial);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.button1);
@@ -129,7 +130,7 @@ namespace chapter9_2_2 {
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "数据采集工具";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -138,11 +139,11 @@ namespace chapter9_2_2 {
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAddSerial;
         private System.Windows.Forms.Button btnAddDb;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
