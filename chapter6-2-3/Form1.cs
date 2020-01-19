@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
-using System.IO;
 using System.Windows.Forms;
 using chapter6_2_3.Domain;
-//using DAL;
 using IBatisNet.DataMapper;
 using IBatisNet.DataMapper.Configuration;
-using log4net.Config;
-//using Model;
 
 namespace chapter6_2_3 {
     public partial class Form1 : Form {
