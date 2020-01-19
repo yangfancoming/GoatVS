@@ -78,32 +78,34 @@ namespace chapter9_2_2 {
 //                throw;
 //            }
 //            Debug.Print(list.Count.ToString());
-
-
         }
 
 
         // 新增文件采集按钮
         private void btnAdd_Click(object sender, EventArgs e) {
-            AddFileCollect addFileCollect = new AddFileCollect {ShowInTaskbar = false};
+            var addFileCollect = new AddFileCollect {ShowInTaskbar = false};
             addFileCollect.ShowDialog();
         }
 
-
         // 删除选中行按钮
         private void btnDel_Click(object sender, EventArgs e) {
-//            foreach (DataGridViewRow r in dataGridView1.SelectedRows) {
-//                if (!r.IsNewRow) {
-//                    dataGridView1.Rows.Remove(r);
-//                }
-//            }
-
-            if(dataGridView1.SelectedRows.Count <= 0) return;
+            if (dataGridView1.SelectedRows.Count <= 0) {
+                MessageBox.Show("请选择要删除记录！");
+                return;
+            }
             // 拿到当前选中行的主键id
             Debug.Print(dataGridView1.SelectedRows[0].Cells["编码"].Value.ToString());
-            int num = BASE_DAL.deleteById("sys_fileJob.deleteById", Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["编码"].Value));
-//            int num = BASE_DAL.deleteList("sys_fileJob.deleteList",new[]{ Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["编码"].Value)});
-            Debug.Print(num.ToString());
+            BASE_DAL.deleteById("sys_fileJob.deleteById", Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["编码"].Value));
+        }
+
+        private void btnAddSerial_Click(object sender, EventArgs e) {
+            var addSerialCollect = new AddSerialCollect{ShowInTaskbar = false};;
+            addSerialCollect.ShowDialog();
+        }
+
+        private void btnAddDb_Click(object sender, EventArgs e) {
+            var addSerialCollect = new AddDbCollect{ShowInTaskbar = false};;
+            addSerialCollect.ShowDialog();
         }
     }
 }

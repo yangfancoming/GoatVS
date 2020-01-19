@@ -66,11 +66,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\AddDbCollect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddDbCollect.Designer.cs">
+      <DependentUpon>AddDbCollect.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\AddFileCollect.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\AddFileCollect.Designer.cs">
       <DependentUpon>AddFileCollect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\AddSerialCollect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddSerialCollect.Designer.cs">
+      <DependentUpon>AddSerialCollect.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -85,8 +97,14 @@
     <Compile Include="mybatis\BASE_DAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\AddDbCollect.resx">
+      <DependentUpon>AddDbCollect.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\AddFileCollect.resx">
       <DependentUpon>AddFileCollect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\AddSerialCollect.resx">
+      <DependentUpon>AddSerialCollect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

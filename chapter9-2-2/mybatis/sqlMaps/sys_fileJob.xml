@@ -13,14 +13,6 @@
       select  *  from   sys_fileJob
     </select>
 
-<!--      jobName string,-->
-<!--      jobCycle string,-->
-<!--      jobType string,-->
-<!--      createTime string,-->
-<!--      fileDirectory string,-->
-<!--      fileMatched string,-->
-<!--      fileSuffix string-->
-
       <insert id="insert" parameterClass="sys_fileJob" >
           INSERT INTO sys_fileJob
           (jobName,jobCycle,jobType,createTime,fileDirectory,fileMatched,fileSuffix)
