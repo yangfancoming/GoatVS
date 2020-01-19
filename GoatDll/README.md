@@ -42,6 +42,7 @@
     - chapter8-2-1   ListBox
     - chapter8-2-2   选择文件/文件夹 控件
     - chapter8-2-3  CheckListBox
+    - chapter8-2-4  combox
     - chapter8-3-2  DataGridView
     
  # 综合类

@@ -36,18 +36,24 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>lib\Dapper.dll</HintPath>
+          <HintPath>lib\sqlite\Dapper.dll</HintPath>
+        </Reference>
+        <Reference Include="IBatisNet.Common, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca">
+          <HintPath>lib\mybatis\IBatisNet.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca">
+          <HintPath>lib\mybatis\IBatisNet.DataMapper.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
-          <HintPath>lib\System.Data.SQLite.dll</HintPath>
+          <HintPath>lib\sqlite\System.Data.SQLite.dll</HintPath>
         </Reference>
         <Reference Include="System.Data.SQLite.EF6, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
-          <HintPath>lib\System.Data.SQLite.EF6.dll</HintPath>
+          <HintPath>lib\sqlite\System.Data.SQLite.EF6.dll</HintPath>
         </Reference>
         <Reference Include="System.Data.SQLite.Linq, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
-          <HintPath>lib\System.Data.SQLite.Linq.dll</HintPath>
+          <HintPath>lib\sqlite\System.Data.SQLite.Linq.dll</HintPath>
         </Reference>
         <Reference Include="System.Xml.Linq" />
         <Reference Include="System.Data.DataSetExtensions" />
@@ -60,17 +66,38 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="forms\AddFileCollect.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="forms\AddFileCollect.Designer.cs">
+          <DependentUpon>AddFileCollect.cs</DependentUpon>
+        </Compile>
         <Compile Include="MainForm.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="MainForm.Designer.cs">
           <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
-        <Compile Include="model\PersonModel.cs" />
+        <Compile Include="model\FileJob.cs" />
+        <Compile Include="model\JobInfo.cs" />
+        <Compile Include="model\SysPerson.cs" />
+        <Compile Include="model\SysUser.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="MainForm.resx">
           <DependentUpon>MainForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="mybatis\providers.config">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="mybatis\SqlMap.config">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="mybatis\sqlMaps\sys_person.xml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="mybatis\sqlMaps\sys_user.xml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -99,10 +126,13 @@
       <Content Include="db\sqlite.db">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-      <Content Include="lib\Dapper.dll" />
-      <Content Include="lib\System.Data.SQLite.dll" />
-      <Content Include="lib\System.Data.SQLite.EF6.dll" />
-      <Content Include="lib\System.Data.SQLite.Linq.dll" />
+      <Content Include="lib\mybatis\IBatisNet.Common.dll" />
+      <Content Include="lib\mybatis\IBatisNet.DataMapper.dll" />
+      <Content Include="lib\sqlite\Dapper.dll" />
+      <Content Include="lib\sqlite\System.Data.SQLite.dll" />
+      <Content Include="lib\sqlite\System.Data.SQLite.EF6.dll" />
+      <Content Include="lib\sqlite\System.Data.SQLite.Linq.dll" />
+      <Content Include="log4Net.config" />
       <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

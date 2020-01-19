@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="sys_person" xmlns="http://ibatis.apache.org/mapping">
+
+  <alias>
+    <typeAlias alias="sys_person" type="chapter9_2_2.model.SysPerson,chapter9_2_2" />
+  </alias>
+
+  <statements>
+
+    <select id="selectList" resultClass="sys_person">
+      select   *   from   PERSON
+    </select>
+
+
+  </statements>
+
+</sqlMap>
