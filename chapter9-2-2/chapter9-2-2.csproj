@@ -44,8 +44,14 @@
     <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca">
       <HintPath>lib\mybatis\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>lib\mysql\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Quartz, Version=3.0.7.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4">
       <HintPath>lib\job\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106">
+      <HintPath>lib\mysql\Renci.SshNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,7 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="constant\Actions.cs" />
+    <Compile Include="constant\DatabaseType.cs" />
     <Compile Include="constant\FileType.cs" />
+    <Compile Include="db\MyDataAdapter.cs" />
+    <Compile Include="db\MySqlImpl.cs" />
+    <Compile Include="db\SQLiteImpl.cs" />
+    <Compile Include="db\UserDBStrategy.cs" />
     <Compile Include="forms\AddDbCollect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,8 +115,6 @@
     </Compile>
     <Compile Include="model\FileJob.cs" />
     <Compile Include="model\JobInfo.cs" />
-    <Compile Include="model\SysPerson.cs" />
-    <Compile Include="model\SysUser.cs" />
     <Compile Include="mybatis\BaseDao.cs" />
     <Compile Include="parse\IParse.cs" />
     <Compile Include="parse\ParseCsv.cs" />
@@ -139,12 +148,6 @@
     <EmbeddedResource Include="mybatis\sqlMaps\sys_fileJob.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="mybatis\sqlMaps\sys_person.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mybatis\sqlMaps\sys_user.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,6 +179,8 @@
     <Content Include="lib\job\Quartz.dll" />
     <Content Include="lib\mybatis\IBatisNet.Common.dll" />
     <Content Include="lib\mybatis\IBatisNet.DataMapper.dll" />
+    <Content Include="lib\mysql\MySql.Data.dll" />
+    <Content Include="lib\mysql\Renci.SshNet.dll" />
     <Content Include="lib\sqlite\Dapper.dll" />
     <Content Include="lib\sqlite\System.Data.SQLite.dll" />
     <Content Include="lib\sqlite\System.Data.SQLite.EF6.dll" />

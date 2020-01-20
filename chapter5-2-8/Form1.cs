@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -9,16 +10,14 @@ namespace chapter5_2_8 {
         }
         // 连接远程库测试
         String strCon = "Data Source=210.45.***.**;Initial Catalog=Energy2;User ID=EnergyUser;Password=*******";
-
+        static string str1 = Environment.CurrentDirectory;
+        String strCon2 =  @"Data Source=(LocalDB)\v11.0;AttachDbFilename=" + @str1 + @"\db\FSU.MDF" + ";Integrated Security=True;Connect Timeout=30";
+        String sql = "select * from HistoryPower";
 
         private void button1_Click(object sender, EventArgs e) {
-            string str1 = Environment.CurrentDirectory;
             // 连接本地 DB文件测试
-            String strCon2 =  @"Data Source=(LocalDB)\v11.0;AttachDbFilename=" + @str1 + @"\db\FSU.MDF" + ";Integrated Security=True;Connect Timeout=30";
             SqlConnection con = new SqlConnection(strCon2);
             con.Open();
-
-            String sql = "select * from HistoryPower";
             //创建命令对象，指定要执行sql语句与连接对象conn
             SqlCommand cmd = new SqlCommand(sql, con);
             //执行查询返回结果集
@@ -31,5 +30,11 @@ namespace chapter5_2_8 {
         }
 
 
+        private void button2_Click(object sender, EventArgs e) {
+//            IDataAdapter
+            IDataAdapter dataAdapter = new SqlDataAdapter(sql,strCon2);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+        }
     }
 }

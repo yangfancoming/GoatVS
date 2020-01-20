@@ -1,8 +1,10 @@
 using System;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using chapter9_2_2.constant;
+using chapter9_2_2.db;
 using chapter9_2_2.forms;
 using chapter9_2_2.job;
 using chapter9_2_2.model;
@@ -51,6 +53,18 @@ namespace chapter9_2_2 {
 
         // 测试按钮
         private void button1_Click(object sender, EventArgs e) {
+            var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), "MySql", true);
+            //var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), "SQLite", true);
+            // 从字典中取出对应的 枚举类实现类
+            var db = UserDBStrategy.mUserDB[o];
+          string connetStr = "Database=test2;Data Source=192.168.211.128;port=3306;uid=root;pwd=12345;charset=utf8;pooling=true";
+            //string connetStr = @"Data Source=E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-7\db\DemoDB.db";
+            IDataAdapter dataAdapter = db.getDataAdapter("select * from book",connetStr);
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+
+//            onnectionString="Data Source=.\db\DemoDB.db;Version=3;"
+
 
             // 传统访问数据库方式
 //            using (IDbConnection cnn = new SQLiteConnection(@"Data Source=.\db\sqlite.db;Version=3;")){

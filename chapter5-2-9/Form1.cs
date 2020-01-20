@@ -13,12 +13,12 @@ namespace chapter5_2_9 {
 
         private void button1_Click(object sender, EventArgs e) {
             string strConn = ConfigurationManager.ConnectionStrings["ORACLE"].ConnectionString;
-            DataTable dt = new DataTable();
+            DataSet dt = new DataSet();
             using (OracleConnection conn = new OracleConnection(strConn)) {
                 try {
                     string str = "select * from emp";
                     OracleCommand cmd = new OracleCommand(str, conn);
-                    OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+                    IDataAdapter adapter = new OracleDataAdapter(cmd);
                     conn.Open();
                     if (conn.State == ConnectionState.Open) Debug.Print("连接成功");
                     adapter.Fill(dt);
