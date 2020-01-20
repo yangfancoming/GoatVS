@@ -17,9 +17,11 @@ namespace chapter9_2_2 {
             InitializeComponent();
         }
 
-        public static DataGridView Pdgv ;
+        public static DataGridView Pdgv1 ;
+        public static DataGridView Pdgv2 ;
 
         private static readonly BindingList<FileJob> fileJobs = new BindingList<FileJob>();//将IList中的值赋给对应的BindingList
+        private static readonly BindingList<DBJob> dbJobs = new BindingList<DBJob>();//将IList中的值赋给对应的BindingList
 
         private void MainForm_Load(object sender, EventArgs e) {
             dataGridView1.DataSource = fileJobs;  //将DataGridView里的数据源绑
@@ -36,7 +38,7 @@ namespace chapter9_2_2 {
                 item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
 
-            Pdgv = dataGridView1;
+            Pdgv1 = dataGridView1;
             dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
 
             // 初始化 列显示顺序
@@ -143,6 +145,52 @@ namespace chapter9_2_2 {
         // 关闭任务
         private void btnStop_Click(object sender, EventArgs e) {
             JobUtil.stop();
+        }
+
+        // TabControl控件中TabPage选项卡切换时触发的事件
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e) {
+            switch (tabControl1.SelectedTab.Text) {
+                //也可以判断tabControl1.SelectedTab.Text的值
+                case "文件采集":
+                    Debug.Print(tabControl1.SelectedTab.Text);
+                    break;
+                case "数据库采集":
+                    dataGridView2.DataSource = dbJobs;  //将DataGridView里的数据源绑
+                    dataGridView2.AutoGenerateColumns = false; //设置不自动生成列，此属性在属性面板中没有
+                    dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 只能选中行
+                    dataGridView2.MultiSelect = false; // 是否可以选中多行
+                    dataGridView2.AllowUserToAddRows = false;// 设置用户不能手动给 dataGridView2 添加新行
+                    dataGridView2.AllowUserToResizeColumns = false ;// 禁止用户改变dataGridView2的所有列的列宽
+                    dataGridView2.AllowUserToResizeRows = false ;// 禁止用户改变dataGridView2的所有行的行高
+
+                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;  // 设定包括Header和所有单元格的列宽自动调整
+                    dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // 设定包括Header和所有单元格的行高自动调整
+                    foreach (DataGridViewColumn item in dataGridView2.Columns) {
+                        item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    }
+
+                    Pdgv2 = dataGridView2;
+                    dataGridView2.DataSource = BaseDao.selectList<DBJob>("sys_dbJob.selectList"); //将DataGridView里的数据源绑
+
+                    // 初始化 列显示顺序
+                    dataGridView2.Columns["编码"].Visible = true;
+                    dataGridView2.Columns["任务名称"].DisplayIndex = 0;
+                    dataGridView2.Columns["任务类型"].DisplayIndex = 1;
+                    dataGridView2.Columns["任务周期"].DisplayIndex = 2;
+                    dataGridView2.Columns["任务状态"].DisplayIndex = 3;
+                    dataGridView2.Columns["数据库类型"].DisplayIndex = 4;
+                    dataGridView2.Columns["连接串"].DisplayIndex = 5;
+                    dataGridView2.Columns["SQL"].DisplayIndex = 6;
+                    dataGridView2.Columns["创建时间"].DisplayIndex = 7;
+                    Debug.Print(tabControl1.SelectedTab.Text);
+                    break;
+                case "串口采集":
+                    Debug.Print(tabControl1.SelectedTab.Text);
+                    break;
+                case "系统设置":
+                    Debug.Print(tabControl1.SelectedTab.Text);
+                    break;
+            }
         }
     }
 }
