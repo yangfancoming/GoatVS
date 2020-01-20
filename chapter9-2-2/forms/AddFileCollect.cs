@@ -22,7 +22,6 @@ namespace chapter9_2_2.forms {
                 jobType = "文件采集", // 任务类型
                 createTime = DateTime.Now.ToString() // 创建时间
             };
-
             BaseDao.insert("sys_fileJob.insert",fileJob);
             MainForm.Pdgv.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList");
             Close();

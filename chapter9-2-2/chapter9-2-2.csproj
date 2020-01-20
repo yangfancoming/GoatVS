@@ -113,6 +113,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\DBJob.cs" />
     <Compile Include="model\FileJob.cs" />
     <Compile Include="model\JobInfo.cs" />
     <Compile Include="mybatis\BaseDao.cs" />
@@ -143,6 +144,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="mybatis\SqlMap.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mybatis\sqlMaps\sys_dbJob.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="mybatis\sqlMaps\sys_fileJob.xml">

@@ -32,8 +32,8 @@ namespace chapter9_2_2.forms {
             this.label4 = new System.Windows.Forms.Label();
             this.btnEsc = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tb_fileDirectory = new System.Windows.Forms.TextBox();
-            this.tb_fileMatched = new System.Windows.Forms.TextBox();
+            this.tb_dbSql = new System.Windows.Forms.TextBox();
+            this.tb_dbConstr = new System.Windows.Forms.TextBox();
             this.cbox_dbType = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -98,22 +98,22 @@ namespace chapter9_2_2.forms {
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // tb_fileDirectory
+            // tb_dbSql
             // 
-            this.tb_fileDirectory.Location = new System.Drawing.Point(128, 222);
-            this.tb_fileDirectory.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tb_fileDirectory.Multiline = true;
-            this.tb_fileDirectory.Name = "tb_fileDirectory";
-            this.tb_fileDirectory.Size = new System.Drawing.Size(140, 64);
-            this.tb_fileDirectory.TabIndex = 17;
+            this.tb_dbSql.Location = new System.Drawing.Point(128, 222);
+            this.tb_dbSql.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tb_dbSql.Multiline = true;
+            this.tb_dbSql.Name = "tb_dbSql";
+            this.tb_dbSql.Size = new System.Drawing.Size(140, 64);
+            this.tb_dbSql.TabIndex = 17;
             // 
-            // tb_fileMatched
+            // tb_dbConstr
             // 
-            this.tb_fileMatched.Location = new System.Drawing.Point(128, 166);
-            this.tb_fileMatched.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tb_fileMatched.Name = "tb_fileMatched";
-            this.tb_fileMatched.Size = new System.Drawing.Size(140, 23);
-            this.tb_fileMatched.TabIndex = 16;
+            this.tb_dbConstr.Location = new System.Drawing.Point(128, 166);
+            this.tb_dbConstr.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tb_dbConstr.Name = "tb_dbConstr";
+            this.tb_dbConstr.Size = new System.Drawing.Size(140, 23);
+            this.tb_dbConstr.TabIndex = 16;
             // 
             // cbox_dbType
             // 
@@ -166,8 +166,8 @@ namespace chapter9_2_2.forms {
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnEsc);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tb_fileDirectory);
-            this.Controls.Add(this.tb_fileMatched);
+            this.Controls.Add(this.tb_dbSql);
+            this.Controls.Add(this.tb_dbConstr);
             this.Controls.Add(this.cbox_dbType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -185,8 +185,6 @@ namespace chapter9_2_2.forms {
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_fileMatched;
-        private System.Windows.Forms.TextBox tb_fileDirectory;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEsc;
         private System.Windows.Forms.Label label4;
@@ -194,5 +192,7 @@ namespace chapter9_2_2.forms {
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox tb_jobCycle;
         private System.Windows.Forms.ComboBox cbox_dbType;
+        private System.Windows.Forms.TextBox tb_dbSql;
+        private System.Windows.Forms.TextBox tb_dbConstr;
     }
 }

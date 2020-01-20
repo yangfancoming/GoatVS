@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="sys_dbJob" xmlns="http://ibatis.apache.org/mapping">
+
+  <alias>
+    <typeAlias alias="sys_dbJob" type="chapter9_2_2.model.DBJob,chapter9_2_2" />
+  </alias>
+
+  <statements>
+
+    <select id="selectList" resultClass="sys_dbJob">
+<!--      select   jobName, jobCycle, jobType,   fileMatched, fileSuffix, fileDirectory, createTime from   sys_dbJob-->
+      select  *  from   sys_dbJob
+    </select>
+
+    <select id="selectById" parameterclass="int" resultClass="sys_dbJob">
+      select  *  from   sys_dbJob  WHERE id = #value#
+    </select>
+
+
+      <insert id="insert" parameterClass="sys_dbJob" >
+          INSERT INTO sys_dbJob
+          (jobName,jobCycle,jobType,createTime,dbType,dbConstr,dbSql)
+          VALUES
+          (#jobName#,#jobCycle#,#jobType#,#createTime#,#dbType#,#dbConstr#,#dbSql#)
+      </insert>
+
+
+      <delete id="deleteById" parameterclass="int">
+          DELETE FROM sys_dbJob  WHERE id = #value#
+      </delete>
+  </statements>
+
+</sqlMap>

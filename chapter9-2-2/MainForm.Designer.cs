@@ -37,16 +37,22 @@ namespace chapter9_2_2 {
             this.btnStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 539);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(961, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(961, 84);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
             this.button1.Location = new System.Drawing.Point(52, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
@@ -55,6 +61,9 @@ namespace chapter9_2_2 {
             this.button1.Text = "测试";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAdd
+            // 
             this.btnAdd.Location = new System.Drawing.Point(140, 30);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
@@ -63,6 +72,9 @@ namespace chapter9_2_2 {
             this.btnAdd.Text = "新增文件采集";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
             this.btnDel.Location = new System.Drawing.Point(488, 30);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDel.Name = "btnDel";
@@ -71,6 +83,9 @@ namespace chapter9_2_2 {
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnSettings
+            // 
             this.btnSettings.Location = new System.Drawing.Point(584, 30);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSettings.Name = "btnSettings";
@@ -79,6 +94,9 @@ namespace chapter9_2_2 {
             this.btnSettings.Text = "系统设置";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnAddSerial
+            // 
             this.btnAddSerial.Location = new System.Drawing.Point(259, 30);
             this.btnAddSerial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddSerial.Name = "btnAddSerial";
@@ -87,6 +105,9 @@ namespace chapter9_2_2 {
             this.btnAddSerial.Text = "新增串口采集";
             this.btnAddSerial.UseVisualStyleBackColor = true;
             this.btnAddSerial.Click += new System.EventHandler(this.btnAddSerial_Click);
+            // 
+            // btnAddDb
+            // 
             this.btnAddDb.Location = new System.Drawing.Point(372, 30);
             this.btnAddDb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddDb.Name = "btnAddDb";
@@ -95,6 +116,9 @@ namespace chapter9_2_2 {
             this.btnAddDb.Text = "新增DB采集";
             this.btnAddDb.UseVisualStyleBackColor = true;
             this.btnAddDb.Click += new System.EventHandler(this.btnAddDb_Click);
+            // 
+            // btnStart
+            // 
             this.btnStart.Location = new System.Drawing.Point(687, 30);
             this.btnStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStart.Name = "btnStart";
@@ -103,6 +127,9 @@ namespace chapter9_2_2 {
             this.btnStart.Text = "开启任务";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // btnStop
+            // 
             this.btnStop.Location = new System.Drawing.Point(784, 30);
             this.btnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnStop.Name = "btnStop";
@@ -111,9 +138,12 @@ namespace chapter9_2_2 {
             this.btnStop.Text = "关闭任务";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // MainForm
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 374);
+            this.ClientSize = new System.Drawing.Size(1009, 635);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnAddDb);
