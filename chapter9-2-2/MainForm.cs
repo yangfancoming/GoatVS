@@ -15,10 +15,13 @@ namespace chapter9_2_2 {
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
+
+            PrtbLog = rtbLog;
         }
 
         public static DataGridView Pdgv1 ;
         public static DataGridView Pdgv2 ;
+        public static RichTextBox PrtbLog ;
 
         private static readonly BindingList<FileJob> fileJobs = new BindingList<FileJob>();//将IList中的值赋给对应的BindingList
         private static readonly BindingList<DBJob> dbJobs = new BindingList<DBJob>();//将IList中的值赋给对应的BindingList
@@ -55,15 +58,7 @@ namespace chapter9_2_2 {
 
         // 测试按钮
         private void button1_Click(object sender, EventArgs e) {
-            var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), "MySql", true);
-            //var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), "SQLite", true);
-            // 从字典中取出对应的 枚举类实现类
-            var db = UserDBStrategy.mUserDB[o];
-          string connetStr = "Database=test2;Data Source=192.168.211.128;port=3306;uid=root;pwd=12345;charset=utf8;pooling=true";
-            //string connetStr = @"Data Source=E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-7\db\DemoDB.db";
-            IDataAdapter dataAdapter = db.getDataAdapter("select * from book",connetStr);
-            DataSet dataSet = new DataSet();
-            dataAdapter.Fill(dataSet);
+
 
 //            onnectionString="Data Source=.\db\DemoDB.db;Version=3;"
 
@@ -191,6 +186,35 @@ namespace chapter9_2_2 {
                     Debug.Print(tabControl1.SelectedTab.Text);
                     break;
             }
+        }
+
+        // 数据库开启任务
+        private void btnDbStart_Click(object sender, EventArgs e) {
+            // 获取当前选中行的主键
+            var id = dataGridView2.SelectedRows[0].Cells["编码"].Value.ToString();
+            // 通过主键id 查询出该条记录
+            DBJob dbJob = (DBJob)"sys_dbJob.selectById".selectById(Convert.ToInt32(id));
+            var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), dbJob.dbType, true);
+            // 从字典中取出对应的 枚举类实现类
+            MyDataAdapter db = UserDBStrategy.mUserDB[o];
+//            db.constr = dbJob.dbConstr;
+//            db.dbSql = dbJob.dbSql;
+
+//            db.constr = "Database=test2;Data Source=192.168.211.128;port=3306;uid=root;pwd=12345;charset=utf8;pooling=true";
+//            db.dbSql = "select * from book";
+//            string connetStr = "Database=test2;Data Source=192.168.211.128;port=3306;uid=root;pwd=12345;charset=utf8;pooling=true";
+            //string connetStr = @"Data Source=E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-7\db\DemoDB.db";
+
+//            var dataAdapter = db.getDataAdapter(dbJob.dbSql, dbJob.dbConstr);
+//            DataSet dataSet = new DataSet();
+//            dataAdapter.Fill(dataSet);
+//            Debug.Print(dataSet.Tables[0].Rows.Count.ToString());
+            JobUtil.config2(db);
+            JobUtil.start();
+        }
+
+        private void btnDBStop_Click(object sender, EventArgs e) {
+            JobUtil.start();
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using chapter9_2_2.db;
 using chapter9_2_2.parse;
 using Quartz;
 using Quartz.Impl;
@@ -30,6 +31,18 @@ namespace chapter9_2_2.job {
             await scheduler.ScheduleJob(job, trigger);
         }
 
+
+        // 通过反射方式 动态创建job
+        public static async Task config2(MyDataAdapter mParse) {
+            scheduler = await factory.GetScheduler();
+            //OfType的方式加载类型
+            IJobDetail job = JobBuilder.Create().OfType(mParse.GetType())
+//                .UsingJobData("constr",constr)
+//                .UsingJobData("sql",sql)
+                .Build();
+            ISimpleTrigger trigger = getTrigger();
+            await scheduler.ScheduleJob(job, trigger);
+        }
 
         public static ISimpleTrigger getTrigger(int repeat = 5) {
             ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create()

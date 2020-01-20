@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using chapter9_2_2.constant;
@@ -23,7 +24,14 @@ namespace chapter9_2_2.parse {
         }
 
         public async Task Execute(IJobExecutionContext context) {
-            Debug.Print( parse("xml 解析" ));
+//            Debug.Print( parse("xml 解析" ));
+            if (MainForm.PrtbLog.InvokeRequired){
+             // 解决线程占用问题
+                MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析\r\n"); }));
+            }
+            else{
+                MainForm.PrtbLog.AppendText("xml 解析 \r\n");
+            }
             await Task.Delay(1);
         }
     }

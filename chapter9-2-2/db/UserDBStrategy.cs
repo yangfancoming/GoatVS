@@ -10,7 +10,6 @@ namespace chapter9_2_2.db {
         public static readonly Dictionary<DatabaseType,MyDataAdapter> mUserDB = new Dictionary<DatabaseType,MyDataAdapter>();
 
         static UserDBStrategy() {
-
             MyDataAdapter mySql = new MySqlImpl();
             MyDataAdapter sqLite = new SQLiteImpl();
             mUserDB.Add(mySql.getDbType(),mySql);
