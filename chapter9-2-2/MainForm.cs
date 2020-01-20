@@ -109,7 +109,7 @@ namespace chapter9_2_2 {
         }
 
         private void btnStart_Click(object sender, EventArgs e) {
-            JobUtil.config();
+            JobUtil.config2();
             JobUtil.start();
         }
 

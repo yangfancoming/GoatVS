@@ -5,7 +5,7 @@ using System.Reflection;
 namespace chapter1_4_8.item01 {
     public class App {
 
-        // 如何获取一个Type类对象 方法一：通过GetType方法
+        // 如何获取一个Type类对象 方法一：通过 GetType 方法
         public static void test() {
             var bc = new BaseClass();
             var dc = new DerivedClass();

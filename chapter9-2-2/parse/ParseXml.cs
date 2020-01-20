@@ -24,7 +24,6 @@ namespace chapter9_2_2.parse {
 
         public async Task Execute(IJobExecutionContext context) {
             Debug.Print( parse("xml 解析" ));
-//            log.Debug( parse("xml 解析" ));
             await Task.Delay(1);
         }
     }
