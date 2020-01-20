@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
-using chapter8_2_4.util;
+using chapter9_2_2.constant;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
 
@@ -11,7 +9,7 @@ namespace chapter9_2_2.forms {
 
         public AddFileCollect() {
             InitializeComponent();
-            cbox_fileType.initComboBox((new[]{"xml","csv","xls"}).ToList());
+            cbox_fileType.DataSource = Enum.GetNames(typeof(FileType));
         }
 
         private void btnSave_Click(object sender, EventArgs e) {

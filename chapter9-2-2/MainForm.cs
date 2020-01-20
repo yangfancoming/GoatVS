@@ -2,10 +2,12 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Forms;
+using chapter9_2_2.constant;
 using chapter9_2_2.forms;
 using chapter9_2_2.job;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
+using chapter9_2_2.parse;
 
 namespace chapter9_2_2 {
     public partial class MainForm : Form {
@@ -36,7 +38,7 @@ namespace chapter9_2_2 {
             dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
 
             // 初始化 列显示顺序
-//            dataGridView1.Columns["编码"].Visible = true;
+            dataGridView1.Columns["编码"].Visible = true;
             dataGridView1.Columns["任务名称"].DisplayIndex = 0;
             dataGridView1.Columns["任务类型"].DisplayIndex = 1;
             dataGridView1.Columns["任务周期"].DisplayIndex = 2;
@@ -108,11 +110,23 @@ namespace chapter9_2_2 {
             settings.ShowDialog();
         }
 
+        // 开启任务
         private void btnStart_Click(object sender, EventArgs e) {
-            JobUtil.config2();
+            // 获取当前选中行的主键
+            var id = dataGridView1.SelectedRows[0].Cells["编码"].Value.ToString();
+            // 通过主键id 查询出该条记录
+            FileJob fileJob = (FileJob)"sys_fileJob.selectById".selectById(Convert.ToInt32(id));
+            // 通过 fileSuffix 字段 获取对应的实现类
+            var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
+            // 从字典中取出对应的 枚举类实现类
+            var mParse = ParseStrategy.mParses[o];
+            // 动态创建job
+            JobUtil.config2(mParse);
             JobUtil.start();
         }
 
+
+        // 关闭任务
         private void btnStop_Click(object sender, EventArgs e) {
             JobUtil.stop();
         }

@@ -1,4 +1,5 @@
 
+using System.Diagnostics;
 using System.Threading.Tasks;
 using chapter9_2_2.constant;
 using Quartz;
@@ -17,11 +18,12 @@ namespace chapter9_2_2.parse {
         /// <param name="filePath">待解析的 json 文件全路径</param>
         /// <param name="R">输出参数  解析结果</param>
         public string parse(string t) {
-            return "json 解析";
+            return t;
         }
 
-        public Task Execute(IJobExecutionContext context) {
-            throw new System.NotImplementedException();
+        public async Task Execute(IJobExecutionContext context) {
+            Debug.Print( parse("json 解析" ));
+            await Task.Delay(1);
         }
     }
 }

@@ -111,6 +111,7 @@
     <Compile Include="parse\ParseCsv.cs" />
     <Compile Include="parse\ParseJson.cs" />
     <Compile Include="parse\ParseStrategy.cs" />
+    <Compile Include="parse\ParseXls.cs" />
     <Compile Include="parse\ParseXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

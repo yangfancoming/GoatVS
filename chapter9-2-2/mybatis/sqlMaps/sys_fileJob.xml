@@ -13,6 +13,11 @@
       select  *  from   sys_fileJob
     </select>
 
+    <select id="selectById" parameterclass="int" resultClass="sys_fileJob">
+      select  *  from   sys_fileJob  WHERE id = #value#
+    </select>
+
+
       <insert id="insert" parameterClass="sys_fileJob" >
           INSERT INTO sys_fileJob
           (jobName,jobCycle,jobType,createTime,fileDirectory,fileMatched,fileSuffix)

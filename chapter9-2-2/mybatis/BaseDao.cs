@@ -17,31 +17,34 @@ namespace chapter9_2_2.mybatis {
         }
 
         public static ISqlMapper GetInstant() {
-            if (sqlMapper == null) {
-                lock (sysncObj) {
-                    if (sqlMapper == null) {
-                        sqlMapper = new DomSqlMapBuilder().Configure("mybatis/SqlMap.config");//  Map.DataSource.ConnectionString = @"Data Source=Data Source=.\db\sqlite.db;Version=3";
-                    }
+            if (sqlMapper != null) return sqlMapper;
+            lock (sysncObj) {
+                if (sqlMapper == null) {
+                    sqlMapper = new DomSqlMapBuilder().Configure("mybatis/SqlMap.config");//  Map.DataSource.ConnectionString = @"Data Source=Data Source=.\db\sqlite.db;Version=3";
                 }
             }
             return sqlMapper;
         }
 
-        public static IList<T> selectList<T>(String MapperStr, object o = null){
+        public static IList<T> selectList<T>(string MapperStr, object o = null){
             return sqlMapper.QueryForList<T>(MapperStr, o);
         }
 
-        public static Object selectOne(String MapperStr, object o){
+        public static object selectById(this string MapperStr, object o){
             return sqlMapper.QueryForObject(MapperStr, o);
         }
 
-        public static object insert(String MapperStr, object o) {
+        public static object selectOne(string MapperStr, object o){
+            return sqlMapper.QueryForObject(MapperStr, o);
+        }
+
+        public static object insert(string MapperStr, object o) {
             sqlMapper.BeginTransaction();
             var insert1 = sqlMapper.Insert(MapperStr, o);
             sqlMapper.CommitTransaction();
             return insert1;
         }
-        public static int update(String MapperStr, object o){
+        public static int update(string MapperStr, object o){
             return sqlMapper.Update(MapperStr, o);
         }
         //public IList<T> List()

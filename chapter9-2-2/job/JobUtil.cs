@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using chapter9_2_2.constant;
 using chapter9_2_2.parse;
 using Quartz;
 using Quartz.Impl;
@@ -22,10 +21,10 @@ namespace chapter9_2_2.job {
             await scheduler.ScheduleJob(job, trigger1);
         }
 
-        public static async Task config2() {
+        // 通过反射方式 动态创建job
+        public static async Task config2(IParse<string,string> mParse) {
             scheduler = await factory.GetScheduler();
             //OfType的方式加载类型
-            IParse<string,string> mParse = ParseStrategy.mParses[FileType.xml];
             IJobDetail job = JobBuilder.Create().OfType(mParse.GetType()).Build();
             ISimpleTrigger trigger = getTrigger();
             await scheduler.ScheduleJob(job, trigger);
