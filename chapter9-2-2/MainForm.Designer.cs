@@ -33,6 +33,8 @@ namespace chapter9_2_2 {
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnAddSerial = new System.Windows.Forms.Button();
             this.btnAddDb = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,11 +117,35 @@ namespace chapter9_2_2 {
             this.btnAddDb.UseVisualStyleBackColor = true;
             this.btnAddDb.Click += new System.EventHandler(this.btnAddDb_Click);
             // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(687, 30);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(80, 35);
+            this.btnStart.TabIndex = 7;
+            this.btnStart.Text = "开启任务";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // btnStop
+            // 
+            this.btnStop.Location = new System.Drawing.Point(784, 30);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(80, 35);
+            this.btnStop.TabIndex = 8;
+            this.btnStop.Text = "关闭任务";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 374);
+            this.Controls.Add(this.btnStop);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnAddDb);
             this.Controls.Add(this.btnAddSerial);
             this.Controls.Add(this.btnSettings);
@@ -145,5 +171,7 @@ namespace chapter9_2_2 {
         private System.Windows.Forms.Button btnAddSerial;
         private System.Windows.Forms.Button btnAddDb;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnStart;
     }
 }

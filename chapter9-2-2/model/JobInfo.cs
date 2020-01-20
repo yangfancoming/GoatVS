@@ -5,12 +5,15 @@ namespace chapter9_2_2.model {
         // 主键id
         public int id;
 
-        //   任务名称 任务类型 任务周期 创建时间
+        //   任务名称 任务类型 任务周期  任务状态 创建时间
         public string jobName;
 
         public string jobType;
 
         public string jobCycle;
+
+        // 0 未执行  1 执行中
+        public string jobStatus = "0";
 
         public string createTime;
 
@@ -32,6 +35,11 @@ namespace chapter9_2_2.model {
         public string 任务周期 {
             get => jobCycle;
             set => jobCycle = value;
+        }
+
+        public string 任务状态 {
+            get => jobStatus;
+            set => jobStatus = value;
         }
 
         public string 创建时间 {

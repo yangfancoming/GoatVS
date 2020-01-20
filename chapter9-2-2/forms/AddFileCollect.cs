@@ -25,8 +25,8 @@ namespace chapter9_2_2.forms {
                 createTime = DateTime.Now.ToString() // 创建时间
             };
 
-            BASE_DAL.insert("sys_fileJob.insert",fileJob);
-            MainForm.Pdgv.DataSource = BASE_DAL.selectList<FileJob>("sys_fileJob.selectList");
+            BaseDao.insert("sys_fileJob.insert",fileJob);
+            MainForm.Pdgv.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList");
             Close();
         }
 

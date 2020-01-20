@@ -44,6 +44,9 @@
     <Reference Include="IBatisNet.DataMapper, Version=1.6.2.0, Culture=neutral, PublicKeyToken=ed781d9fc396c6ca">
       <HintPath>lib\mybatis\IBatisNet.DataMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Quartz, Version=3.0.7.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4">
+      <HintPath>lib\job\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
@@ -66,6 +69,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="constant\Actions.cs" />
+    <Compile Include="constant\FileType.cs" />
     <Compile Include="forms\AddDbCollect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +95,7 @@
     <Compile Include="forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="job\JobUtil.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,7 +106,12 @@
     <Compile Include="model\JobInfo.cs" />
     <Compile Include="model\SysPerson.cs" />
     <Compile Include="model\SysUser.cs" />
-    <Compile Include="mybatis\BASE_DAL.cs" />
+    <Compile Include="mybatis\BaseDao.cs" />
+    <Compile Include="parse\IParse.cs" />
+    <Compile Include="parse\ParseCsv.cs" />
+    <Compile Include="parse\ParseJson.cs" />
+    <Compile Include="parse\ParseStrategy.cs" />
+    <Compile Include="parse\ParseXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\AddDbCollect.resx">
@@ -161,6 +172,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="db\db.sql" />
+    <Content Include="lib\job\Quartz.dll" />
     <Content Include="lib\mybatis\IBatisNet.Common.dll" />
     <Content Include="lib\mybatis\IBatisNet.DataMapper.dll" />
     <Content Include="lib\sqlite\Dapper.dll" />

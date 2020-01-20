@@ -5,14 +5,14 @@ using IBatisNet.DataMapper.Configuration;
 
 namespace chapter9_2_2.mybatis {
 
-    public static class BASE_DAL {
+    public static class BaseDao {
 
         // 单例模式
         private static ISqlMapper sqlMapper;
 
         private static readonly object sysncObj = new object();
 
-        static BASE_DAL() {
+        static BaseDao() {
             sqlMapper = GetInstant();
         }
 
