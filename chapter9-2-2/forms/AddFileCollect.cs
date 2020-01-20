@@ -26,8 +26,7 @@ namespace chapter9_2_2.forms {
             };
 
             BASE_DAL.insert("sys_fileJob.insert",fileJob);
-            IList<FileJob> list = BASE_DAL.selectList<FileJob>("sys_fileJob.selectList");
-            MainForm.Pdgv.DataSource = list;
+            MainForm.Pdgv.DataSource = BASE_DAL.selectList<FileJob>("sys_fileJob.selectList");
             Close();
         }
 

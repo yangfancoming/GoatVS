@@ -43,6 +43,9 @@ namespace chapter9_2_2.forms {
             this.tb_jobName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // cbox5
+            // 
             this.cbox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox5.FormattingEnabled = true;
             this.cbox5.Location = new System.Drawing.Point(127, 288);
@@ -50,6 +53,9 @@ namespace chapter9_2_2.forms {
             this.cbox5.Name = "cbox5";
             this.cbox5.Size = new System.Drawing.Size(114, 25);
             this.cbox5.TabIndex = 47;
+            // 
+            // cbox4
+            // 
             this.cbox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox4.FormattingEnabled = true;
             this.cbox4.Location = new System.Drawing.Point(127, 245);
@@ -57,6 +63,9 @@ namespace chapter9_2_2.forms {
             this.cbox4.Name = "cbox4";
             this.cbox4.Size = new System.Drawing.Size(114, 25);
             this.cbox4.TabIndex = 45;
+            // 
+            // cbox2
+            // 
             this.cbox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox2.FormattingEnabled = true;
             this.cbox2.Location = new System.Drawing.Point(127, 160);
@@ -64,6 +73,9 @@ namespace chapter9_2_2.forms {
             this.cbox2.Name = "cbox2";
             this.cbox2.Size = new System.Drawing.Size(114, 25);
             this.cbox2.TabIndex = 46;
+            // 
+            // cbox3
+            // 
             this.cbox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox3.FormattingEnabled = true;
             this.cbox3.Location = new System.Drawing.Point(127, 203);
@@ -71,6 +83,9 @@ namespace chapter9_2_2.forms {
             this.cbox3.Name = "cbox3";
             this.cbox3.Size = new System.Drawing.Size(114, 25);
             this.cbox3.TabIndex = 43;
+            // 
+            // cbox1
+            // 
             this.cbox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbox1.FormattingEnabled = true;
             this.cbox1.Location = new System.Drawing.Point(127, 116);
@@ -78,6 +93,9 @@ namespace chapter9_2_2.forms {
             this.cbox1.Name = "cbox1";
             this.cbox1.Size = new System.Drawing.Size(114, 25);
             this.cbox1.TabIndex = 44;
+            // 
+            // btnSave
+            // 
             this.btnSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnSave.Location = new System.Drawing.Point(47, 334);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -86,14 +104,20 @@ namespace chapter9_2_2.forms {
             this.btnSave.TabIndex = 41;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnEsc.Enabled = false;
+            // 
+            // btnEsc
+            // 
             this.btnEsc.Location = new System.Drawing.Point(180, 334);
             this.btnEsc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEsc.Name = "btnEsc";
             this.btnEsc.Size = new System.Drawing.Size(79, 33);
             this.btnEsc.TabIndex = 42;
             this.btnEsc.Text = "取消";
-            this.btnEsc.UseVisualStyleBackColor = true;
+            this.btnEsc.UseVisualStyleBackColor = false;
+            this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
+            // 
+            // label7
+            // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(47, 290);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -101,6 +125,9 @@ namespace chapter9_2_2.forms {
             this.label7.Size = new System.Drawing.Size(44, 17);
             this.label7.TabIndex = 40;
             this.label7.Text = "停止位";
+            // 
+            // label6
+            // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(47, 249);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -108,6 +135,9 @@ namespace chapter9_2_2.forms {
             this.label6.Size = new System.Drawing.Size(44, 17);
             this.label6.TabIndex = 39;
             this.label6.Text = "校检位";
+            // 
+            // label2
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(47, 210);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -115,6 +145,9 @@ namespace chapter9_2_2.forms {
             this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 38;
             this.label2.Text = "数据位";
+            // 
+            // label5
+            // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(47, 167);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -122,6 +155,9 @@ namespace chapter9_2_2.forms {
             this.label5.Size = new System.Drawing.Size(44, 17);
             this.label5.TabIndex = 36;
             this.label5.Text = "波特率";
+            // 
+            // label1
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(47, 125);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -129,11 +165,17 @@ namespace chapter9_2_2.forms {
             this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 37;
             this.label1.Text = "串口号";
+            // 
+            // tb_jobCycle
+            // 
             this.tb_jobCycle.Location = new System.Drawing.Point(127, 74);
             this.tb_jobCycle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_jobCycle.Name = "tb_jobCycle";
             this.tb_jobCycle.Size = new System.Drawing.Size(114, 23);
             this.tb_jobCycle.TabIndex = 51;
+            // 
+            // label3
+            // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(38, 79);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -141,11 +183,17 @@ namespace chapter9_2_2.forms {
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 50;
             this.label3.Text = "任务周期：";
+            // 
+            // tb_jobName
+            // 
             this.tb_jobName.Location = new System.Drawing.Point(127, 33);
             this.tb_jobName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_jobName.Name = "tb_jobName";
             this.tb_jobName.Size = new System.Drawing.Size(114, 23);
             this.tb_jobName.TabIndex = 49;
+            // 
+            // label4
+            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(38, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -153,6 +201,9 @@ namespace chapter9_2_2.forms {
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 48;
             this.label4.Text = "任务名称：";
+            // 
+            // AddSerialCollect
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(314, 391);
@@ -175,7 +226,7 @@ namespace chapter9_2_2.forms {
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddSerialCollect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddSerialCollect";
+            this.Text = "串口采集";
             this.ResumeLayout(false);
             this.PerformLayout();
         }

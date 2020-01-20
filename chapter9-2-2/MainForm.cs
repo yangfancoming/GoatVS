@@ -33,7 +33,7 @@ namespace chapter9_2_2 {
             }
 
             Pdgv = dataGridView1;
-            dataGridView1.DataSource = BASE_DAL.selectList<FileJob>("sys_fileJob.selectList");
+            dataGridView1.DataSource = BASE_DAL.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
 
             // 初始化 列显示顺序
 //            dataGridView1.Columns["编码"].Visible = true;
@@ -96,6 +96,7 @@ namespace chapter9_2_2 {
             // 拿到当前选中行的主键id
             Debug.Print(dataGridView1.SelectedRows[0].Cells["编码"].Value.ToString());
             BASE_DAL.deleteById("sys_fileJob.deleteById", Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["编码"].Value));
+            dataGridView1.DataSource = BASE_DAL.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
         }
 
         private void btnAddSerial_Click(object sender, EventArgs e) {
@@ -109,7 +110,8 @@ namespace chapter9_2_2 {
         }
 
         private void btnSettings_Click(object sender, EventArgs e) {
-
+            var settings = new Settings { ShowInTaskbar = false }; ;
+            settings.ShowDialog();
         }
     }
 }

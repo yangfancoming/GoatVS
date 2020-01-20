@@ -10,5 +10,9 @@ namespace chapter9_2_2.forms {
         private void btnSave_Click(object sender, EventArgs e) {
 
         }
+
+        private void btnEsc_Click(object sender, EventArgs e) {
+            Close();
+        }
     }
 }

@@ -39,9 +39,9 @@ namespace chapter9_2_2.forms {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            //
+            // 
             // tb_jobCycle
-            //
+            // 
             this.tb_jobCycle.Location = new System.Drawing.Point(128, 74);
             this.tb_jobCycle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_jobCycle.Name = "tb_jobCycle";
@@ -85,6 +85,7 @@ namespace chapter9_2_2.forms {
             this.btnEsc.TabIndex = 19;
             this.btnEsc.Text = "取消";
             this.btnEsc.UseVisualStyleBackColor = true;
+            this.btnEsc.Click += new System.EventHandler(this.btnEsc_Click);
             //
             // btnSave
             //
@@ -173,7 +174,7 @@ namespace chapter9_2_2.forms {
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddDbCollect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AddDbCollect";
+            this.Text = "数据库采集";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
