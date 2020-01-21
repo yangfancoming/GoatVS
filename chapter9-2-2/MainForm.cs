@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using chapter9_2_2.constant;

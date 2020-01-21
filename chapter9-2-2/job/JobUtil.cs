@@ -12,7 +12,7 @@ namespace chapter9_2_2.job {
         //调度器工厂
         private static readonly StdSchedulerFactory factory = new StdSchedulerFactory();
 
-        private static IScheduler scheduler;
+        private static IScheduler scheduler ;
 
         // 使用 代码配置方式
         public static async Task config() {
