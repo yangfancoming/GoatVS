@@ -100,6 +100,7 @@
     <Compile Include="forms\AddSerialCollect.Designer.cs">
       <DependentUpon>AddSerialCollect.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\DataGridViewUtil.cs" />
     <Compile Include="forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>

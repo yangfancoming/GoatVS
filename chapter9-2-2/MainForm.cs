@@ -12,47 +12,25 @@ using chapter9_2_2.parse;
 
 namespace chapter9_2_2 {
     public partial class MainForm : Form {
-        public MainForm() {
-            InitializeComponent();
-
-            PrtbLog = rtbLog;
-        }
 
         public static DataGridView Pdgv1 ;
         public static DataGridView Pdgv2 ;
         public static RichTextBox PrtbLog ;
 
-        private static readonly BindingList<FileJob> fileJobs = new BindingList<FileJob>();//将IList中的值赋给对应的BindingList
+        public MainForm() {
+            InitializeComponent();
+            PrtbLog = rtbLog;
+            Pdgv1 = dataGridView1;
+        }
+
         private static readonly BindingList<DBJob> dbJobs = new BindingList<DBJob>();//将IList中的值赋给对应的BindingList
 
         private void MainForm_Load(object sender, EventArgs e) {
-            dataGridView1.DataSource = fileJobs;  //将DataGridView里的数据源绑
-            dataGridView1.AutoGenerateColumns = false; //设置不自动生成列，此属性在属性面板中没有
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 只能选中行
-            dataGridView1.MultiSelect = false; // 是否可以选中多行
-            dataGridView1.AllowUserToAddRows = false;// 设置用户不能手动给 DataGridView1 添加新行
-            dataGridView1.AllowUserToResizeColumns = false ;// 禁止用户改变DataGridView1的所有列的列宽
-            dataGridView1.AllowUserToResizeRows = false ;// 禁止用户改变DataGridView1的所有行的行高
-
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;  // 设定包括Header和所有单元格的列宽自动调整
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // 设定包括Header和所有单元格的行高自动调整
-            foreach (DataGridViewColumn item in dataGridView1.Columns) {
-                item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-
-            Pdgv1 = dataGridView1;
-            dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
-
             // 初始化 列显示顺序
-            dataGridView1.Columns["编码"].Visible = true;
-            dataGridView1.Columns["任务名称"].DisplayIndex = 0;
-            dataGridView1.Columns["任务类型"].DisplayIndex = 1;
-            dataGridView1.Columns["任务周期"].DisplayIndex = 2;
-            dataGridView1.Columns["任务状态"].DisplayIndex = 3;
-            dataGridView1.Columns["文件后缀"].DisplayIndex = 4;
-            dataGridView1.Columns["匹配条件"].DisplayIndex = 5;
-            dataGridView1.Columns["所在目录"].DisplayIndex = 6;
-            dataGridView1.Columns["创建时间"].DisplayIndex = 7;
+            DataGridViewUtil.initColumns(dataGridView1);
+            // 初始化表格样式
+            DataGridViewUtil.initStyle(dataGridView1);
+            dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
         }
 
         // 测试按钮
