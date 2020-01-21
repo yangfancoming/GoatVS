@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows.Forms;
 using chapter9_2_2.constant;
@@ -43,23 +42,19 @@ namespace chapter9_2_2 {
 
         // 删除选中行按钮
         private void btnDel_Click(object sender, EventArgs e) {
-            if (dataGridView1.SelectedRows.Count <= 0) {
-                MessageBox.Show("请选择要删除记录！");
-                return;
-            }
-            // 拿到当前选中行的主键id
-            Debug.Print(dataGridView1.SelectedRows[0].Cells["编码"].Value.ToString());
-            BaseDao.deleteById("sys_fileJob.deleteById", Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["编码"].Value));
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            string id = DataGridViewUtil.getCurrentRowFileAsId(dataGridView1);
+            BaseDao.deleteById("sys_fileJob.deleteById", Convert.ToInt32(id));
             dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
         }
 
         private void btnAddSerial_Click(object sender, EventArgs e) {
-            var addSerialCollect = new AddSerialCollect{ShowInTaskbar = false};;
+            var addSerialCollect = new AddSerialCollect{ShowInTaskbar = false};
             addSerialCollect.ShowDialog();
         }
 
         private void btnAddDb_Click(object sender, EventArgs e) {
-            var addSerialCollect = new AddDbCollect{ShowInTaskbar = false};;
+            var addSerialCollect = new AddDbCollect{ShowInTaskbar = false};
             addSerialCollect.ShowDialog();
         }
 
@@ -68,25 +63,22 @@ namespace chapter9_2_2 {
             settings.ShowDialog();
         }
 
-        // 开启任务
+        // 开启任务 文件采集
         private async void btnStart_Click(object sender, EventArgs e) {
-            // 获取当前选中行的主键
-            var id = dataGridView1.SelectedRows[0].Cells["编码"].Value.ToString();
-            // 通过主键id 查询出该条记录
-            FileJob fileJob = (FileJob)"sys_fileJob.selectById".selectById(Convert.ToInt32(id));
+            FileJob fileJob = DataGridViewUtil.getCurrentRowFile(dataGridView1);
             // 通过 fileSuffix 字段 获取对应的实现类
             var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
             // 从字典中取出对应的 枚举类实现类
             var mParse = ParseStrategy.mParses[o];
-            // 动态创建job
-           await JobUtil.config2(mParse);
-           await JobUtil.start();
+            string key = DataGridViewUtil.getKeyByFileJob(fileJob);
+            await JobUtil.configFileAndStart(mParse,key);
         }
 
 
         // 关闭任务
         private async void btnStop_Click(object sender, EventArgs e) {
-            await JobUtil.stop();
+            string key = DataGridViewUtil.getCurrentRowFileAsKey(dataGridView1);
+            await JobUtil.stopFile(key);
         }
 
         // TabControl控件中TabPage选项卡切换时触发的事件
@@ -117,11 +109,16 @@ namespace chapter9_2_2 {
             // 从字典中取出对应的 枚举类实现类
             MyDataAdapter db = UserDBStrategy.mUserDB[o];
             await JobUtil.config2(db);
-            await JobUtil.start();
+//            await JobUtil.startDB();
         }
 
         private async void btnDBStop_Click(object sender, EventArgs e) {
-            await JobUtil.start();
+//            await JobUtil.startDB();
+        }
+
+        private async void btnFileStop_Click(object sender, EventArgs e) {
+            string key = DataGridViewUtil.getCurrentRowFileAsKey(dataGridView1);
+            await JobUtil.startFile(key);
         }
     }
 }

@@ -4,17 +4,15 @@ namespace chapter9_2_2.model {
 
         // 主键id
         public int id;
-
-        //   任务名称 任务类型 任务周期  任务状态 创建时间
+        // 任务名称
         public string jobName;
-
+        // 任务类型
         public string jobType;
-
+        // 任务周期
         public string jobCycle;
-
-        // 0 未执行  1 执行中
+        //任务状态 0 未执行  1 执行中
         public string jobStatus = "0";
-
+        // 创建时间
         public string createTime;
 
         public int 编码 {

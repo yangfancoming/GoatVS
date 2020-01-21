@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel;
 using System.Windows.Forms;
 using chapter9_2_2.model;
@@ -60,6 +61,31 @@ namespace chapter9_2_2.forms {
             initColumnsDB(dgv);
             initStyle(dgv);
             dgv.DataSource = BaseDao.selectList<DBJob>("sys_dbJob.selectList");
+        }
+
+        // 获取表格内选中记录
+        public static FileJob getCurrentRowFile(DataGridView dgv) {
+            string id = getCurrentRowFileAsId(dgv);
+            // 通过主键id 查询出该条记录
+            var fileJob = (FileJob)"sys_fileJob.selectById".selectById(Convert.ToInt32(id));
+            return fileJob;
+        }
+
+        public static string getCurrentRowFileAsId(DataGridView dgv) {
+            // 获取当前选中行的主键
+            var id = dgv.SelectedRows[0].Cells["编码"].Value.ToString();
+            return id;
+        }
+
+        // 获取表格选中记录 生成并返回key
+        public static string getCurrentRowFileAsKey(DataGridView dgv) {
+            var fileJob = getCurrentRowFile(dgv);
+            return getKeyByFileJob(fileJob);
+        }
+
+        // 通过 fileJob 生成key
+        public static string getKeyByFileJob(FileJob fileJob) {
+            return fileJob.fileSuffix + fileJob.fileDirectory;
         }
     }
 }
