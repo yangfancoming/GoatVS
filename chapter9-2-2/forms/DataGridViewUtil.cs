@@ -54,20 +54,20 @@ namespace chapter9_2_2.forms {
         public static void initFilePage(DataGridView dgv) {
             initColumnsFile(dgv);
             initStyle(dgv);
-            dgv.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList");
+            dgv.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
         }
 
         public static void initDBPage(DataGridView dgv) {
             initColumnsDB(dgv);
             initStyle(dgv);
-            dgv.DataSource = BaseDao.selectList<DBJob>("sys_dbJob.selectList");
+            dgv.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
         }
 
         // 获取表格内选中记录
         public static FileJob getCurrentRowFile(DataGridView dgv) {
             string id = getCurrentRowFileAsId(dgv);
             // 通过主键id 查询出该条记录
-            var fileJob = (FileJob)"sys_fileJob.selectById".selectById(Convert.ToInt32(id));
+            var fileJob = "sys_fileJob.selectById".selectById<FileJob>(Convert.ToInt32(id));
             return fileJob;
         }
 

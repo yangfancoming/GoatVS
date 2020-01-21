@@ -31,8 +31,8 @@ namespace chapter9_2_2.mybatis {
             return sqlMapper.QueryForList<T>(MapperStr, o);
         }
 
-        public static object selectById(this string MapperStr, object o){
-            return sqlMapper.QueryForObject(MapperStr, o);
+        public static T selectById<T>(this string MapperStr, object o){
+            return sqlMapper.QueryForObject<T>(MapperStr, o);
         }
 
         public static object selectOne(string MapperStr, object o){
@@ -57,7 +57,7 @@ namespace chapter9_2_2.mybatis {
             return sqlMapper.Delete(MapperStr, ids);
         }
 
-        public static int deleteById(String MapperStr, Object o){
+        public static int deleteById(this String MapperStr, Object o){
             return sqlMapper.Delete(MapperStr, o);
         }
 

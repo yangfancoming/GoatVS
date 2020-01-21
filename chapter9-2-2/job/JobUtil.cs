@@ -26,6 +26,11 @@ namespace chapter9_2_2.job {
 //            await scheduler.ScheduleJob(job, trigger1);
         }
 
+        public static async Task configFileAndStart(IParse<string, string> mParse, string key) {
+            configFile(mParse, key);
+            startFile(key);
+        }
+
         // 通过反射方式 动态创建job
         public static async Task configFile(IParse<string,string> mParse,string key) {
             IScheduler scheduler = await factory.GetScheduler();
@@ -38,10 +43,6 @@ namespace chapter9_2_2.job {
             await scheduler.ScheduleJob(job, trigger);
         }
 
-        public static async Task configFileAndStart(IParse<string, string> mParse, string key) {
-            configFile(mParse, key);
-            startFile(key);
-        }
 
         // 通过反射方式 动态创建job
         public static async Task config2(MyDataAdapter mParse) {

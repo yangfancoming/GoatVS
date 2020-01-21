@@ -32,7 +32,7 @@ namespace chapter9_2_2 {
         private void button1_Click(object sender, EventArgs e) {
 //            var selectList = "sys_fileJob.selectList".selectList<FileJob>();
 //            Debug.Print(selectList.Count.ToString());
-            var selectById = (FileJob)"sys_fileJob.selectById".selectById(2);
+            var selectById = "sys_fileJob.selectById".selectById<FileJob>(2);
             Debug.Print(selectById.fileDirectory);
         }
 
@@ -47,8 +47,8 @@ namespace chapter9_2_2 {
         private void btnDel_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             string id = DataGridViewUtil.getCurrentRowFileAsId(dataGridView1);
-            BaseDao.deleteById("sys_fileJob.deleteById", Convert.ToInt32(id));
-            dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
+            "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
+            dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
         }
 
         private void btnAddSerial_Click(object sender, EventArgs e) {
@@ -104,7 +104,7 @@ namespace chapter9_2_2 {
             // 获取当前选中行的主键
             var id = dataGridView2.SelectedRows[0].Cells["编码"].Value.ToString();
             // 通过主键id 查询出该条记录
-            DBJob dbJob = (DBJob)"sys_dbJob.selectById".selectById(Convert.ToInt32(id));
+            var dbJob = "sys_dbJob.selectById".selectById<DBJob>(Convert.ToInt32(id));
             var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), dbJob.dbType, true);
             // 从字典中取出对应的 枚举类实现类
             MyDataAdapter db = UserDBStrategy.mUserDB[o];
@@ -124,7 +124,7 @@ namespace chapter9_2_2 {
         private void btnFileDel_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             string id = DataGridViewUtil.getCurrentRowFileAsId(dataGridView1);
-            int num  = BaseDao.deleteById("sys_fileJob.deleteById", Convert.ToInt32(id));
+            int num  = "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
             Debug.Print(num.ToString());
             dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
         }
