@@ -15,7 +15,7 @@ namespace chapter9_2_2.db {
             return DatabaseType.MySql;
         }
 
-        public override IDataAdapter getDataAdapter(string sql,string constr) {
+        public override IDataAdapter GetDataAdapter(string sql,string constr) {
             if (DataAdapter != null) return DataAdapter;
             var SQLCon = new MySqlConnection(constr);
             DataAdapter = new MySqlDataAdapter(sql, SQLCon);
@@ -27,7 +27,7 @@ namespace chapter9_2_2.db {
             string dbSql = "select * from book";
             DataSet dataSet = new DataSet();
             try {
-                var dataAdapter = getDataAdapter(dbSql,constr);
+                var dataAdapter = GetDataAdapter(dbSql,constr);
                 dataAdapter.Fill(dataSet);
             } catch (Exception e) {
                 Debug.Print(e.Message);

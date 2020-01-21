@@ -15,7 +15,7 @@ namespace chapter9_2_2.db {
             return DatabaseType.SQLite;
         }
 
-        public override IDataAdapter getDataAdapter(string sql,string constr) {
+        public override IDataAdapter GetDataAdapter(string sql,string constr) {
             SQLiteConnection SQLCon = new SQLiteConnection(constr);
             IDataAdapter adapter = new SQLiteDataAdapter(sql,SQLCon);
             return adapter;
@@ -26,7 +26,7 @@ namespace chapter9_2_2.db {
             string dbSql = "select * from person";
             DataSet dataSet = new DataSet();
             try {
-                var dataAdapter = getDataAdapter(dbSql,connetStr);
+                var dataAdapter = GetDataAdapter(dbSql,connetStr);
                 dataAdapter.Fill(dataSet);
             } catch (Exception e) {
                 Debug.Print(e.Message);

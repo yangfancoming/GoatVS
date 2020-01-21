@@ -21,47 +21,17 @@ namespace chapter9_2_2 {
             InitializeComponent();
             PrtbLog = rtbLog;
             Pdgv1 = dataGridView1;
+            Pdgv2 = dataGridView2;
         }
 
-        private static readonly BindingList<DBJob> dbJobs = new BindingList<DBJob>();//将IList中的值赋给对应的BindingList
 
         private void MainForm_Load(object sender, EventArgs e) {
-            // 初始化 列显示顺序
-            DataGridViewUtil.initColumns(dataGridView1);
-            // 初始化表格样式
-            DataGridViewUtil.initStyle(dataGridView1);
-            dataGridView1.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList"); //将DataGridView里的数据源绑
+            DataGridViewUtil.initFilePage(dataGridView1);
         }
 
         // 测试按钮
         private void button1_Click(object sender, EventArgs e) {
 
-
-//            onnectionString="Data Source=.\db\DemoDB.db;Version=3;"
-
-
-            // 传统访问数据库方式
-//            using (IDbConnection cnn = new SQLiteConnection(@"Data Source=.\db\sqlite.db;Version=3;")){
-//                var output = cnn.Query<SysPerson>("SELECT * FROM PERSON", new DynamicParameters());
-//                List<SysPerson> temp = output.ToList();
-//                Debug.Print(temp.Count.ToString());
-//            }
-
-
-            // Mybatis 访问数据库方式
-//            DomSqlMapBuilder builder = new DomSqlMapBuilder();
-//            ISqlMapper Map = builder.Configure("mybatis/SqlMap.config");
-////            Map.DataSource.ConnectionString = @"Data Source=Data Source=.\db\sqlite.db;Version=3";
-//            SysPerson temp = new SysPerson();
-////            Map.Insert("Student.create", temp);
-//            IList<SysPerson> list;
-//            try {
-//                list = Map.QueryForList<SysPerson>("sys_person.selectList",null);
-//            } catch (Exception exception) {
-//                Console.WriteLine(exception);
-//                throw;
-//            }
-//            Debug.Print(list.Count.ToString());
         }
 
 
@@ -99,7 +69,7 @@ namespace chapter9_2_2 {
         }
 
         // 开启任务
-        private void btnStart_Click(object sender, EventArgs e) {
+        private async void btnStart_Click(object sender, EventArgs e) {
             // 获取当前选中行的主键
             var id = dataGridView1.SelectedRows[0].Cells["编码"].Value.ToString();
             // 通过主键id 查询出该条记录
@@ -109,52 +79,24 @@ namespace chapter9_2_2 {
             // 从字典中取出对应的 枚举类实现类
             var mParse = ParseStrategy.mParses[o];
             // 动态创建job
-            JobUtil.config2(mParse);
-            JobUtil.start();
+           await JobUtil.config2(mParse);
+           await JobUtil.start();
         }
 
 
         // 关闭任务
-        private void btnStop_Click(object sender, EventArgs e) {
-            JobUtil.stop();
+        private async void btnStop_Click(object sender, EventArgs e) {
+            await JobUtil.stop();
         }
 
         // TabControl控件中TabPage选项卡切换时触发的事件
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e) {
             switch (tabControl1.SelectedTab.Text) {
-                //也可以判断tabControl1.SelectedTab.Text的值
                 case "文件采集":
                     Debug.Print(tabControl1.SelectedTab.Text);
                     break;
                 case "数据库采集":
-                    dataGridView2.DataSource = dbJobs;  //将DataGridView里的数据源绑
-                    dataGridView2.AutoGenerateColumns = false; //设置不自动生成列，此属性在属性面板中没有
-                    dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // 只能选中行
-                    dataGridView2.MultiSelect = false; // 是否可以选中多行
-                    dataGridView2.AllowUserToAddRows = false;// 设置用户不能手动给 dataGridView2 添加新行
-                    dataGridView2.AllowUserToResizeColumns = false ;// 禁止用户改变dataGridView2的所有列的列宽
-                    dataGridView2.AllowUserToResizeRows = false ;// 禁止用户改变dataGridView2的所有行的行高
-
-                    dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;  // 设定包括Header和所有单元格的列宽自动调整
-                    dataGridView2.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells; // 设定包括Header和所有单元格的行高自动调整
-                    foreach (DataGridViewColumn item in dataGridView2.Columns) {
-                        item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                    }
-
-                    Pdgv2 = dataGridView2;
-                    dataGridView2.DataSource = BaseDao.selectList<DBJob>("sys_dbJob.selectList"); //将DataGridView里的数据源绑
-
-                    // 初始化 列显示顺序
-                    dataGridView2.Columns["编码"].Visible = true;
-                    dataGridView2.Columns["任务名称"].DisplayIndex = 0;
-                    dataGridView2.Columns["任务类型"].DisplayIndex = 1;
-                    dataGridView2.Columns["任务周期"].DisplayIndex = 2;
-                    dataGridView2.Columns["任务状态"].DisplayIndex = 3;
-                    dataGridView2.Columns["数据库类型"].DisplayIndex = 4;
-                    dataGridView2.Columns["连接串"].DisplayIndex = 5;
-                    dataGridView2.Columns["SQL"].DisplayIndex = 6;
-                    dataGridView2.Columns["创建时间"].DisplayIndex = 7;
-                    Debug.Print(tabControl1.SelectedTab.Text);
+                    DataGridViewUtil.initDBPage(dataGridView2);
                     break;
                 case "串口采集":
                     Debug.Print(tabControl1.SelectedTab.Text);
@@ -166,7 +108,7 @@ namespace chapter9_2_2 {
         }
 
         // 数据库开启任务
-        private void btnDbStart_Click(object sender, EventArgs e) {
+        private async void btnDbStart_Click(object sender, EventArgs e) {
             // 获取当前选中行的主键
             var id = dataGridView2.SelectedRows[0].Cells["编码"].Value.ToString();
             // 通过主键id 查询出该条记录
@@ -174,24 +116,12 @@ namespace chapter9_2_2 {
             var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), dbJob.dbType, true);
             // 从字典中取出对应的 枚举类实现类
             MyDataAdapter db = UserDBStrategy.mUserDB[o];
-//            db.constr = dbJob.dbConstr;
-//            db.dbSql = dbJob.dbSql;
-
-//            db.constr = "Database=test2;Data Source=192.168.211.128;port=3306;uid=root;pwd=12345;charset=utf8;pooling=true";
-//            db.dbSql = "select * from book";
-//            string connetStr = "Database=test2;Data Source=192.168.211.128;port=3306;uid=root;pwd=12345;charset=utf8;pooling=true";
-            //string connetStr = @"Data Source=E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-7\db\DemoDB.db";
-
-//            var dataAdapter = db.getDataAdapter(dbJob.dbSql, dbJob.dbConstr);
-//            DataSet dataSet = new DataSet();
-//            dataAdapter.Fill(dataSet);
-//            Debug.Print(dataSet.Tables[0].Rows.Count.ToString());
-            JobUtil.config2(db);
-            JobUtil.start();
+            await JobUtil.config2(db);
+            await JobUtil.start();
         }
 
-        private void btnDBStop_Click(object sender, EventArgs e) {
-            JobUtil.start();
+        private async void btnDBStop_Click(object sender, EventArgs e) {
+            await JobUtil.start();
         }
     }
 }

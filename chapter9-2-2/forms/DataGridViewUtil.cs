@@ -1,6 +1,7 @@
 using System.ComponentModel;
 using System.Windows.Forms;
 using chapter9_2_2.model;
+using chapter9_2_2.mybatis;
 
 namespace chapter9_2_2.forms {
 
@@ -23,7 +24,7 @@ namespace chapter9_2_2.forms {
         }
 
         // 初始化  设定表格列名及列显示顺序
-        public static void initColumns(DataGridView dgv) {
+        public static void initColumnsFile(DataGridView dgv) {
             dgv.DataSource = new BindingList<FileJob>();
             dgv.Columns["编码"].Visible = false;
             dgv.Columns["任务名称"].DisplayIndex = 0;
@@ -36,6 +37,29 @@ namespace chapter9_2_2.forms {
             dgv.Columns["创建时间"].DisplayIndex = 7;
         }
 
+        public static void initColumnsDB(DataGridView dgv) {
+            dgv.DataSource = new BindingList<DBJob>();
+            dgv.Columns["编码"].Visible = true;
+            dgv.Columns["任务名称"].DisplayIndex = 0;
+            dgv.Columns["任务类型"].DisplayIndex = 1;
+            dgv.Columns["任务周期"].DisplayIndex = 2;
+            dgv.Columns["任务状态"].DisplayIndex = 3;
+            dgv.Columns["数据库类型"].DisplayIndex = 4;
+            dgv.Columns["连接串"].DisplayIndex = 5;
+            dgv.Columns["SQL"].DisplayIndex = 6;
+            dgv.Columns["创建时间"].DisplayIndex = 7;
+        }
 
+        public static void initFilePage(DataGridView dgv) {
+            initColumnsFile(dgv);
+            initStyle(dgv);
+            dgv.DataSource = BaseDao.selectList<FileJob>("sys_fileJob.selectList");
+        }
+
+        public static void initDBPage(DataGridView dgv) {
+            initColumnsDB(dgv);
+            initStyle(dgv);
+            dgv.DataSource = BaseDao.selectList<DBJob>("sys_dbJob.selectList");
+        }
     }
 }

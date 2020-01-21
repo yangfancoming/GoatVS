@@ -7,14 +7,10 @@ namespace chapter9_2_2.db {
 
     public abstract class MyDataAdapter: IJob {
 
-//        public string constr;
-
-//        public string dbSql;
-
-        public IDataAdapter DataAdapter;
+        protected IDataAdapter DataAdapter;
         public abstract DatabaseType getDbType();
 
-        public abstract IDataAdapter getDataAdapter(string sql,string constr);
+        public abstract IDataAdapter GetDataAdapter(string sql,string constr);
 
         public abstract Task Execute(IJobExecutionContext context);
     }
