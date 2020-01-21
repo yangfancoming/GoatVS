@@ -20,13 +20,14 @@ namespace chapter9_2_2.mybatis {
             if (sqlMapper != null) return sqlMapper;
             lock (sysncObj) {
                 if (sqlMapper == null) {
+//                    sqlMapper = Mapper.Instance();
                     sqlMapper = new DomSqlMapBuilder().Configure("mybatis/SqlMap.config");//  Map.DataSource.ConnectionString = @"Data Source=Data Source=.\db\sqlite.db;Version=3";
                 }
             }
             return sqlMapper;
         }
 
-        public static IList<T> selectList<T>(string MapperStr, object o = null){
+        public static IList<T> selectList<T>(this string MapperStr, object o = null){
             return sqlMapper.QueryForList<T>(MapperStr, o);
         }
 

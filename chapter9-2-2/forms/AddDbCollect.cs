@@ -22,7 +22,7 @@ namespace chapter9_2_2.forms {
                 createTime = DateTime.Now.ToString() // 创建时间
             };
             BaseDao.insert("sys_dbJob.insert",dbJob);
-            MainForm.Pdgv2.DataSource = BaseDao.selectList<DBJob>("sys_dbJob.selectList");
+            MainForm.Pdgv2.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
             Close();
         }
 

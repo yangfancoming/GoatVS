@@ -24,16 +24,9 @@ namespace chapter9_2_2.parse {
         }
 
         public async Task Execute(IJobExecutionContext context) {
-            string mark = context.JobDetail.JobDataMap.GetString("mark");
+            string mark = context.JobDetail.JobDataMap.GetString("key");
             Debug.Print(mark);
-            //  获取参数 todo
-            if (MainForm.PrtbLog.InvokeRequired){
-             // 解决线程占用问题
-                MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析 ++++++++++\r\n"); }));
-            }
-            else{
-                MainForm.PrtbLog.AppendText("xml 解析 ----------- \r\n");
-            }
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析 ++++++++++\r\n"); }));
             await Task.Delay(1);
         }
     }

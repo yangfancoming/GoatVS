@@ -121,6 +121,7 @@
     <Compile Include="parse\IParse.cs" />
     <Compile Include="parse\ParseCsv.cs" />
     <Compile Include="parse\ParseJson.cs" />
+    <Compile Include="parse\ParseParam.cs" />
     <Compile Include="parse\ParseStrategy.cs" />
     <Compile Include="parse\ParseXls.cs" />
     <Compile Include="parse\ParseXml.cs" />
@@ -191,6 +192,7 @@
     <Content Include="lib\sqlite\System.Data.SQLite.EF6.dll" />
     <Content Include="lib\sqlite\System.Data.SQLite.Linq.dll" />
     <Content Include="log4Net.config" />
+    <Content Include="mybatis\README.md" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>

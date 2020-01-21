@@ -27,7 +27,7 @@ namespace chapter9_2_2.forms {
         // 初始化  设定表格列名及列显示顺序
         public static void initColumnsFile(DataGridView dgv) {
             dgv.DataSource = new BindingList<FileJob>();
-            dgv.Columns["编码"].Visible = false;
+            dgv.Columns["编码"].Visible = true;
             dgv.Columns["任务名称"].DisplayIndex = 0;
             dgv.Columns["任务类型"].DisplayIndex = 1;
             dgv.Columns["任务周期"].DisplayIndex = 2;

@@ -27,39 +27,23 @@ namespace chapter6_2_3 {
             }
         }
 
-        public static Guid executeFunction()
-        {
+//        public static Guid executeFunction()
+//        {
 
-            ISqlMapper mapper = EntityMapper;
-            Guid str = mapper.QueryForObject<Guid>("FindPageId", "Footer");
-            return str;
+//            ISqlMapper mapper = EntityMapper;
+//            Guid str = mapper.QueryForObject<Guid>("FindPageId", "Footer");
+//            return str;
 
-        }
+//        }
 
 //        public static BASE_DAL baseDal = new BASE_DAL();
         private void button1_Click(object sender, EventArgs e) {
-//            SYS_USER temp = new SYS_USER();
-//            temp.account = "1";
-//            SYS_USER curUser = (SYS_USER)baseDal.selectOne("sys_user.selectOne", temp);
-//            Debug.Print(curUser.account);
-
-
-//            XmlConfigurator.ConfigureAndWatch(new FileInfo(AppDomain.CurrentDomain.SetupInformation.ApplicationBase + "log4net.config"));
-//            Console.Write(executeFunction());
-//            Console.Read();
-
-            doCreate();
-
-        }
-
-        public void doCreate() {
             DomSqlMapBuilder builder = new DomSqlMapBuilder();
             ISqlMapper Map = builder.Configure("IBatis/SqlMap.config");
             SysUser temp = new SysUser();
             temp.account = "123";
-//            Map.Insert("Student.create", temp);
-
             SysUser user = Map.QueryForObject("sys_user.selectOne", temp) as SysUser;
         }
+
     }
 }

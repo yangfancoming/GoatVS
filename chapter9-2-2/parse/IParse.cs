@@ -16,5 +16,7 @@ namespace chapter9_2_2.parse {
         /// <param name="T">输入参数  文件 xml csv json ...</param>
         /// <param name="R">输出参数  解析结果</param>
         R parse(T t);
+
+
     }
 }

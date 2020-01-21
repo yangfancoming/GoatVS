@@ -44,6 +44,7 @@
     a. 第一种方式
     ISqlMapper _sqlMapper=IBatisNet.DataMapper.Mapper.Instance()
     注:此种方式要求SqlMap.config文件位于应用程序根目录下，且文件名是且仅是”SqlMap.config”。
+        sos Provider.config Person.xml局部配置文件   sqlMap.config 三个文件 必须放在放到debug/bin目录里
     
     b. 第二种方式
     ISqlMapper _sqlMapper=new DomSqlMapBuilder().Configure()

@@ -30,7 +30,10 @@ namespace chapter9_2_2 {
 
         // 测试按钮
         private void button1_Click(object sender, EventArgs e) {
-
+//            var selectList = "sys_fileJob.selectList".selectList<FileJob>();
+//            Debug.Print(selectList.Count.ToString());
+            var selectById = (FileJob)"sys_fileJob.selectById".selectById(2);
+            Debug.Print(selectById.fileDirectory);
         }
 
 
@@ -85,16 +88,13 @@ namespace chapter9_2_2 {
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e) {
             switch (tabControl1.SelectedTab.Text) {
                 case "文件采集":
-                    Debug.Print(tabControl1.SelectedTab.Text);
                     break;
                 case "数据库采集":
                     DataGridViewUtil.initDBPage(dataGridView2);
                     break;
                 case "串口采集":
-                    Debug.Print(tabControl1.SelectedTab.Text);
                     break;
                 case "系统设置":
-                    Debug.Print(tabControl1.SelectedTab.Text);
                     break;
             }
         }
@@ -119,6 +119,14 @@ namespace chapter9_2_2 {
         private async void btnFileStop_Click(object sender, EventArgs e) {
             string key = DataGridViewUtil.getCurrentRowFileAsKey(dataGridView1);
             await JobUtil.startFile(key);
+        }
+
+        private void btnFileDel_Click(object sender, EventArgs e) {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            string id = DataGridViewUtil.getCurrentRowFileAsId(dataGridView1);
+            int num  = BaseDao.deleteById("sys_fileJob.deleteById", Convert.ToInt32(id));
+            Debug.Print(num.ToString());
+            dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
         }
     }
 }

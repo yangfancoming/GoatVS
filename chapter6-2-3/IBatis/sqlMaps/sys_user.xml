@@ -10,29 +10,6 @@
   <statements>
 
 
-<!--    <select id="selectListPage" parameterClass="sys_user" resultClass="sys_user">-->
-<!--      select   *  from   sys_user where 1=1-->
-<!--      <isNotEmpty  prepend="and" property="id">-->
-<!--        id =   #id#-->
-<!--      </isNotEmpty >-->
-<!--      order by id limit #begin#,#showCount#-->
-<!--    </select>-->
-<!--    -->
-
-<!--    <update id="update" parameterClass="sys_user"  >-->
-<!--      UPDATE sys_user-->
-<!--      <dynamic prepend="set">-->
-<!--        <isNotNull prepend="," property="account">account = #account#</isNotNull>-->
-<!--        <isNotNull prepend="," property="password">password = #password#</isNotNull>-->
-<!--        <isNotNull prepend="," property="username">username = #username#</isNotNull>-->
-<!--        <isNotNull prepend="," property="nickname">nickname = #nickname#</isNotNull>-->
-<!--        <isNotNull prepend="," property="isenable">isenable = #isenable#</isNotNull>-->
-<!--        <isNotNull prepend="," property="email">email = #email#</isNotNull>-->
-<!--        <isNotNull prepend="," property="code">code = #code#</isNotNull>-->
-<!--      </dynamic>-->
-<!--      WHERE id = #id#-->
-<!--    </update>-->
-
     
     <insert id="insert" parameterClass="sys_user" >
       INSERT INTO sys_user

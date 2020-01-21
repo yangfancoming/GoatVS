@@ -2,18 +2,30 @@
 
 <sqlMap namespace="sys_fileJob" xmlns="http://ibatis.apache.org/mapping">
 
+    <cacheModels>
+<!--        <cacheModel id="sys_fileJob-cache"  implementation="MEMORY" readOnly="false" serialize="false">-->
+        <cacheModel id="sys_fileJob-cache"  implementation="MEMORY" >
+            <flushInterval hours="24"/>
+<!--            <flushOnExecute  statement="sys_fileJob.selectList"/>-->
+<!--            <flushOnExecute  statement="sys_fileJob.deleteById"/>-->
+            <flushOnExecute  statement="sys_fileJob.selectById"/>
+<!--            <flushOnExecute  statement="sys_fileJob.insert"/>-->
+            <property name="Type" value="Weak"/>
+        </cacheModel>
+    </cacheModels>
+
   <alias>
     <typeAlias alias="sys_fileJob" type="chapter9_2_2.model.FileJob,chapter9_2_2" />
   </alias>
 
   <statements>
 
-    <select id="selectList" resultClass="sys_fileJob">
+    <select id="selectList" resultClass="sys_fileJob" >
 <!--      select   jobName, jobCycle, jobType,   fileMatched, fileSuffix, fileDirectory, createTime from   sys_fileJob-->
       select  *  from   sys_fileJob
     </select>
 
-    <select id="selectById" parameterclass="int" resultClass="sys_fileJob">
+    <select id="selectById" parameterclass="int" resultClass="sys_fileJob" cacheModel="sys_fileJob-cache">
       select  *  from   sys_fileJob  WHERE id = #value#
     </select>
 
