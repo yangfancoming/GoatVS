@@ -16,7 +16,7 @@ namespace chapter9_2_2.mybatis {
             sqlMapper = GetInstant();
         }
 
-        public static ISqlMapper GetInstant() {
+        private static ISqlMapper GetInstant() {
             if (sqlMapper != null) return sqlMapper;
             lock (sysncObj) {
                 if (sqlMapper == null) {

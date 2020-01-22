@@ -14,9 +14,7 @@ namespace chapter9_2_2.job {
         //调度器工厂
         private static readonly StdSchedulerFactory factory = new StdSchedulerFactory();
 
-//        private static IScheduler scheduler ;
-
-        private static Dictionary<string,IScheduler> schedulerDic = new Dictionary<string, IScheduler>();
+        private static readonly Dictionary<string,IScheduler> schedulerDic = new Dictionary<string, IScheduler>();
 
         // 使用 代码配置方式
         public static async Task config() {
@@ -43,8 +41,6 @@ namespace chapter9_2_2.job {
             await scheduler.ScheduleJob(job, trigger);
         }
 
-
-        // 通过反射方式 动态创建job
         public static async Task config2(MyDataAdapter mParse) {
 //            scheduler = await factory.GetScheduler();
             //OfType的方式加载类型
