@@ -9,7 +9,7 @@ namespace chapter3_5_5 {
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            FileSystemWatcher1.initWatcher(@"D:\123");
+            FileSystemWatcher1.initWatcher(@"F:\123");
         }
 
         private void button1_Click(object sender, EventArgs e) {

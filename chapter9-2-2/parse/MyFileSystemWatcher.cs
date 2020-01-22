@@ -5,7 +5,7 @@ using System.Text;
 
 namespace chapter3_5_5 {
 
-    public static class FileSystemWatcher1 {
+    public static class MyFileSystemWatcher {
 
        private static readonly FileSystemWatcher watcher = new FileSystemWatcher();
 

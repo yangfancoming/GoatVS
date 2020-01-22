@@ -118,6 +118,7 @@
     <Compile Include="model\FileJob.cs" />
     <Compile Include="model\JobInfo.cs" />
     <Compile Include="mybatis\BaseDao.cs" />
+    <Compile Include="parse\MyFileSystemWatcher.cs" />
     <Compile Include="parse\IParse.cs" />
     <Compile Include="parse\ParseCsv.cs" />
     <Compile Include="parse\ParseJson.cs" />
