@@ -26,7 +26,6 @@ namespace chapter3_5_5 {
         指定类型文件，格式如:*.txt,*.doc,*.rar
         */
         public static void initWatcher(string path, string filter = "*.*") {
-
             watcher.Path = path; //  监控 指定目录下发生的所有改变。
             watcher.Filter = filter; // 过滤掉某些类型的文件发生的变化。例如，如果我们只希望在TXT文件被修改/新建/删除时提交通知，可以将这个属性设为“*txt”。在处理高流量或大型目录时，使用这个属性非常方便。
             watcher.Changed += OnChanged; // 当被监控的目录中有一个文件被修改时，就提交这个事件。值得注意的是，这个事件可能会被提交多次，即使文件的内容仅仅发生一项改变。这是由于在保存文件时，文件的其它属性也发生了改变。

@@ -12,7 +12,7 @@
     - chapter1-7-1  集合
     - chapter1-9-1  I/O
     - chapter1-9-2  minio
-    - chapter1-9-3  ftp
+    - chapter1-9-3  ftp  使用 FluentFTP 实现
     - chapter1-9-5  WebApiClient 
     - chapter1-9-7  HTTPClient 
 
