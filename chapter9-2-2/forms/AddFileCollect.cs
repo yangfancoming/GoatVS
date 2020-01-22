@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using chapter9_2_2.constant;
 using chapter9_2_2.model;
@@ -15,11 +16,12 @@ namespace chapter9_2_2.forms {
         private void btnSave_Click(object sender, EventArgs e) {
             FileJob fileJob = new FileJob {
                 jobName = tb_jobName.Text,// 任务名称
-                jobCycle = tb_jobCycle.Text,// 任务周期
+                //jobCycle = tb_jobCycle.Text,// 任务周期
                 fileSuffix = cbox_fileType.Text, // 文件类型|后缀
                 fileDirectory = tb_fileDirectory.Text, // 文件目录
                 fileMatched = tb_fileMatched.Text, // 文件名匹配条件
                 jobType = "文件采集", // 任务类型
+                filehandlerOld =cb_handlerOld.Checked.ToString().ToLower(),// 处理已有文件
                 createTime = DateTime.Now.ToString() // 创建时间
             };
             var insert = BaseDao.insert("sys_fileJob.insert",fileJob);
@@ -34,6 +36,14 @@ namespace chapter9_2_2.forms {
 
         private void btnEsc_Click(object sender, EventArgs e) {
             Close();
+        }
+
+        private void btnBrowser_Click(object sender, EventArgs e) {
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "请选择文件路径";
+            if (dialog.ShowDialog() == DialogResult.OK){
+                tb_fileDirectory.Text = dialog.SelectedPath;
+            }
         }
     }
 }

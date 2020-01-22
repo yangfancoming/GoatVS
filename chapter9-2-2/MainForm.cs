@@ -32,8 +32,8 @@ namespace chapter9_2_2 {
         private void button1_Click(object sender, EventArgs e) {
 //            var selectList = "sys_fileJob.selectList".selectList<FileJob>();
 //            Debug.Print(selectList.Count.ToString());
-            var selectById = "sys_fileJob.selectById".selectById<FileJob>(2);
-            Debug.Print(selectById.fileDirectory);
+//            var selectById = "sys_fileJob.selectById".selectById<FileJob>(2);
+//            Debug.Print(selectById.fileDirectory);
         }
 
 
