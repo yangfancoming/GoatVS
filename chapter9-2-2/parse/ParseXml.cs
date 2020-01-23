@@ -24,6 +24,7 @@ namespace chapter9_2_2.parse {
         }
 
         public async Task Execute(IJobExecutionContext context) {
+            // 获取字符串类型参数
             string mark = context.JobDetail.JobDataMap.GetString("key");
             Debug.Print(mark);
             MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析 ++++++++++\r\n"); }));
