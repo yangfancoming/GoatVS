@@ -100,19 +100,19 @@ namespace chapter9_2_2.forms {
             // 
             // tb_dbSql
             // 
-            this.tb_dbSql.Location = new System.Drawing.Point(128, 222);
+            this.tb_dbSql.Location = new System.Drawing.Point(128, 172);
             this.tb_dbSql.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.tb_dbSql.Multiline = true;
             this.tb_dbSql.Name = "tb_dbSql";
-            this.tb_dbSql.Size = new System.Drawing.Size(140, 64);
+            this.tb_dbSql.Size = new System.Drawing.Size(140, 23);
             this.tb_dbSql.TabIndex = 17;
             // 
             // tb_dbConstr
             // 
-            this.tb_dbConstr.Location = new System.Drawing.Point(128, 166);
+            this.tb_dbConstr.Location = new System.Drawing.Point(128, 215);
             this.tb_dbConstr.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tb_dbConstr.Multiline = true;
             this.tb_dbConstr.Name = "tb_dbConstr";
-            this.tb_dbConstr.Size = new System.Drawing.Size(140, 23);
+            this.tb_dbConstr.Size = new System.Drawing.Size(140, 82);
             this.tb_dbConstr.TabIndex = 16;
             // 
             // cbox_dbType
@@ -128,22 +128,22 @@ namespace chapter9_2_2.forms {
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 227);
+            this.label3.Location = new System.Drawing.Point(46, 177);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 17);
+            this.label3.Size = new System.Drawing.Size(67, 17);
             this.label3.TabIndex = 14;
-            this.label3.Text = "SQL";
+            this.label3.Text = "执行SQL：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 176);
+            this.label2.Location = new System.Drawing.Point(46, 225);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 17);
+            this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 13;
-            this.label2.Text = "连接串";
+            this.label2.Text = "连接串：";
             // 
             // label1
             // 
@@ -151,9 +151,9 @@ namespace chapter9_2_2.forms {
             this.label1.Location = new System.Drawing.Point(46, 130);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "数据库类型";
+            this.label1.Text = "数据库类型：";
             // 
             // AddDbCollect
             // 

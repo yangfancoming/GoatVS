@@ -64,10 +64,10 @@ namespace chapter9_2_2.forms {
         }
 
         // 获取表格内选中记录
-        public static FileJob getCurrentRowFile(DataGridView dgv) {
+        public static T getCurrentRowFile<T>(DataGridView dgv,string mapperStr) {
             string id = getCurrentRowFileAsId(dgv);
             // 通过主键id 查询出该条记录
-            var fileJob = "sys_fileJob.selectById".selectById<FileJob>(Convert.ToInt32(id));
+            var fileJob = mapperStr.selectById<T>(Convert.ToInt32(id));
             return fileJob;
         }
 
@@ -78,8 +78,8 @@ namespace chapter9_2_2.forms {
         }
 
         // 获取表格选中记录 生成并返回key
-        public static string getCurrentRowFileAsKey(DataGridView dgv) {
-            var fileJob = getCurrentRowFile(dgv);
+        public static string getCurrentRowFileAsKey<T>(DataGridView dgv,string mapperStr) {
+            var fileJob = getCurrentRowFile<T>(dgv,mapperStr) as FileJob;
             return getKeyByFileJob(fileJob);
         }
 

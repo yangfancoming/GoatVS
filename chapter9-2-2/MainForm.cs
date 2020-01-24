@@ -68,7 +68,7 @@ namespace chapter9_2_2 {
 
         // 开启任务 文件采集
         private async void btnStart_Click(object sender, EventArgs e) {
-            FileJob fileJob = DataGridViewUtil.getCurrentRowFile(dataGridView1);
+            FileJob fileJob = DataGridViewUtil.getCurrentRowFile<FileJob>(dataGridView1,"sys_fileJob.selectById");
             // 通过 fileSuffix 字段 获取对应的实现类
             var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
             // 从字典中取出对应的 枚举类实现类
@@ -80,8 +80,7 @@ namespace chapter9_2_2 {
 
         // 关闭任务
         private async void btnStop_Click(object sender, EventArgs e) {
-            string key = DataGridViewUtil.getCurrentRowFileAsKey(dataGridView1);
-            await JobUtil.stopFile(key);
+
         }
 
         // TabControl控件中TabPage选项卡切换时触发的事件
@@ -117,7 +116,7 @@ namespace chapter9_2_2 {
         }
 
         private async void btnFileStop_Click(object sender, EventArgs e) {
-            string key = DataGridViewUtil.getCurrentRowFileAsKey(dataGridView1);
+            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
             await JobUtil.startFile(key);
         }
 
@@ -127,6 +126,34 @@ namespace chapter9_2_2 {
             int num  = "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
             Debug.Print(num.ToString());
             dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
+        }
+
+        private void btnTestDb_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnFilePause_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnFileResume_Click(object sender, EventArgs e){
+
+        }
+
+        private void btnFileStop_Click_1(object sender, EventArgs e){
+
+        }
+
+        private void btnDbPause_Click(object sender, EventArgs e){
+
+        }
+
+        private void btnDbResume_Click(object sender, EventArgs e){
+
+        }
+
+        private void btnDbStop_Click_1(object sender, EventArgs e){
+
         }
     }
 }

@@ -34,24 +34,25 @@ namespace chapter9_2_2 {
             this.btnAddSerial = new System.Windows.Forms.Button();
             this.btnAddDb = new System.Windows.Forms.Button();
             this.btnFileStart = new System.Windows.Forms.Button();
-            this.btnStop = new System.Windows.Forms.Button();
+            this.btnFileStop = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnFileDel = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.btnFileStop = new System.Windows.Forms.Button();
+            this.btnFileResume = new System.Windows.Forms.Button();
+            this.btnFilePause = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnTestDb = new System.Windows.Forms.Button();
+            this.btnDbResume = new System.Windows.Forms.Button();
+            this.btnDbPause = new System.Windows.Forms.Button();
             this.btnDBDel = new System.Windows.Forms.Button();
             this.btnDbStart = new System.Windows.Forms.Button();
-            this.btnDBStop = new System.Windows.Forms.Button();
+            this.btnDbStop = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
@@ -66,6 +67,9 @@ namespace chapter9_2_2 {
             ((System.ComponentModel.ISupportInitialize) (this.dataGridView2)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dataGridView1
+            // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -77,6 +81,9 @@ namespace chapter9_2_2 {
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(945, 315);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
             this.button1.Location = new System.Drawing.Point(52, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
@@ -85,6 +92,9 @@ namespace chapter9_2_2 {
             this.button1.Text = "测试";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnAdd
+            // 
             this.btnAdd.Location = new System.Drawing.Point(20, 18);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
@@ -93,6 +103,9 @@ namespace chapter9_2_2 {
             this.btnAdd.Text = "新增文件采集";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
             this.btnDel.Location = new System.Drawing.Point(488, 30);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDel.Name = "btnDel";
@@ -101,6 +114,9 @@ namespace chapter9_2_2 {
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnSettings
+            // 
             this.btnSettings.Location = new System.Drawing.Point(584, 30);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSettings.Name = "btnSettings";
@@ -109,6 +125,9 @@ namespace chapter9_2_2 {
             this.btnSettings.Text = "系统设置";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnAddSerial
+            // 
             this.btnAddSerial.Location = new System.Drawing.Point(248, 30);
             this.btnAddSerial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddSerial.Name = "btnAddSerial";
@@ -117,6 +136,9 @@ namespace chapter9_2_2 {
             this.btnAddSerial.Text = "新增串口采集";
             this.btnAddSerial.UseVisualStyleBackColor = true;
             this.btnAddSerial.Click += new System.EventHandler(this.btnAddSerial_Click);
+            // 
+            // btnAddDb
+            // 
             this.btnAddDb.Location = new System.Drawing.Point(49, 21);
             this.btnAddDb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddDb.Name = "btnAddDb";
@@ -125,6 +147,9 @@ namespace chapter9_2_2 {
             this.btnAddDb.Text = "新增DB采集";
             this.btnAddDb.UseVisualStyleBackColor = true;
             this.btnAddDb.Click += new System.EventHandler(this.btnAddDb_Click);
+            // 
+            // btnFileStart
+            // 
             this.btnFileStart.Location = new System.Drawing.Point(396, 18);
             this.btnFileStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFileStart.Name = "btnFileStart";
@@ -133,14 +158,20 @@ namespace chapter9_2_2 {
             this.btnFileStart.Text = "开启任务";
             this.btnFileStart.UseVisualStyleBackColor = true;
             this.btnFileStart.Click += new System.EventHandler(this.btnStart_Click);
-            this.btnStop.Location = new System.Drawing.Point(668, 18);
-            this.btnStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(80, 35);
-            this.btnStop.TabIndex = 8;
-            this.btnStop.Text = "关闭任务";
-            this.btnStop.UseVisualStyleBackColor = true;
-            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
+            // 
+            // btnFileStop
+            // 
+            this.btnFileStop.Location = new System.Drawing.Point(668, 18);
+            this.btnFileStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnFileStop.Name = "btnFileStop";
+            this.btnFileStop.Size = new System.Drawing.Size(80, 35);
+            this.btnFileStop.TabIndex = 8;
+            this.btnFileStop.Text = "关闭任务";
+            this.btnFileStop.UseVisualStyleBackColor = true;
+            this.btnFileStop.Click += new System.EventHandler(this.btnFileStop_Click_1);
+            // 
+            // tabControl1
+            // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -152,6 +183,9 @@ namespace chapter9_2_2 {
             this.tabControl1.Size = new System.Drawing.Size(961, 428);
             this.tabControl1.TabIndex = 9;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -161,6 +195,9 @@ namespace chapter9_2_2 {
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "文件采集";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,6 +206,9 @@ namespace chapter9_2_2 {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(945, 390);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 75);
@@ -176,18 +216,24 @@ namespace chapter9_2_2 {
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(945, 315);
             this.panel3.TabIndex = 1;
+            // 
+            // panel2
+            // 
             this.panel2.Controls.Add(this.btnFileDel);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.btnFileStop);
+            this.panel2.Controls.Add(this.btnFileResume);
+            this.panel2.Controls.Add(this.btnFilePause);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.btnFileStart);
-            this.panel2.Controls.Add(this.btnStop);
+            this.panel2.Controls.Add(this.btnFileStop);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(945, 75);
             this.panel2.TabIndex = 0;
+            // 
+            // btnFileDel
+            // 
             this.btnFileDel.Location = new System.Drawing.Point(160, 18);
             this.btnFileDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFileDel.Name = "btnFileDel";
@@ -196,21 +242,31 @@ namespace chapter9_2_2 {
             this.btnFileDel.Text = "删除";
             this.btnFileDel.UseVisualStyleBackColor = true;
             this.btnFileDel.Click += new System.EventHandler(this.btnFileDel_Click);
-            this.button5.Location = new System.Drawing.Point(584, 18);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 35);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "恢复任务";
-            this.button5.UseVisualStyleBackColor = true;
-            this.btnFileStop.Location = new System.Drawing.Point(496, 18);
-            this.btnFileStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnFileStop.Name = "btnFileStop";
-            this.btnFileStop.Size = new System.Drawing.Size(80, 35);
-            this.btnFileStop.TabIndex = 14;
-            this.btnFileStop.Text = "暂停任务";
-            this.btnFileStop.UseVisualStyleBackColor = true;
-            this.btnFileStop.Click += new System.EventHandler(this.btnFileStop_Click);
+            // 
+            // btnFileResume
+            // 
+            this.btnFileResume.Location = new System.Drawing.Point(584, 18);
+            this.btnFileResume.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnFileResume.Name = "btnFileResume";
+            this.btnFileResume.Size = new System.Drawing.Size(80, 35);
+            this.btnFileResume.TabIndex = 15;
+            this.btnFileResume.Text = "恢复任务";
+            this.btnFileResume.UseVisualStyleBackColor = true;
+            this.btnFileResume.Click += new System.EventHandler(this.btnFileResume_Click);
+            // 
+            // btnFilePause
+            // 
+            this.btnFilePause.Location = new System.Drawing.Point(496, 18);
+            this.btnFilePause.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnFilePause.Name = "btnFilePause";
+            this.btnFilePause.Size = new System.Drawing.Size(80, 35);
+            this.btnFilePause.TabIndex = 14;
+            this.btnFilePause.Text = "暂停任务";
+            this.btnFilePause.UseVisualStyleBackColor = true;
+            this.btnFilePause.Click += new System.EventHandler(this.btnFilePause_Click);
+            // 
+            // tabPage2
+            // 
             this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
@@ -221,6 +277,9 @@ namespace chapter9_2_2 {
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "数据库采集";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
             this.panel5.Controls.Add(this.dataGridView2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(4, 85);
@@ -228,6 +287,9 @@ namespace chapter9_2_2 {
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(945, 309);
             this.panel5.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -239,11 +301,15 @@ namespace chapter9_2_2 {
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(945, 309);
             this.dataGridView2.TabIndex = 1;
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.button3);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnTestDb);
+            this.panel4.Controls.Add(this.btnDbResume);
+            this.panel4.Controls.Add(this.btnDbPause);
             this.panel4.Controls.Add(this.btnDBDel);
             this.panel4.Controls.Add(this.btnDbStart);
-            this.panel4.Controls.Add(this.btnDBStop);
+            this.panel4.Controls.Add(this.btnDbStop);
             this.panel4.Controls.Add(this.btnAddDb);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(4, 4);
@@ -251,28 +317,53 @@ namespace chapter9_2_2 {
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(945, 81);
             this.panel4.TabIndex = 0;
-            this.button4.Location = new System.Drawing.Point(458, 21);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 35);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "恢复任务";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button3.Location = new System.Drawing.Point(371, 21);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 35);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "暂停任务";
-            this.button3.UseVisualStyleBackColor = true;
-            this.btnDBDel.Location = new System.Drawing.Point(149, 21);
+            // 
+            // btnTestDb
+            // 
+            this.btnTestDb.Location = new System.Drawing.Point(164, 21);
+            this.btnTestDb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnTestDb.Name = "btnTestDb";
+            this.btnTestDb.Size = new System.Drawing.Size(80, 35);
+            this.btnTestDb.TabIndex = 14;
+            this.btnTestDb.Text = "测试连接";
+            this.btnTestDb.UseVisualStyleBackColor = true;
+            this.btnTestDb.Click += new System.EventHandler(this.btnTestDb_Click);
+            // 
+            // btnDbResume
+            // 
+            this.btnDbResume.Location = new System.Drawing.Point(562, 21);
+            this.btnDbResume.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDbResume.Name = "btnDbResume";
+            this.btnDbResume.Size = new System.Drawing.Size(80, 35);
+            this.btnDbResume.TabIndex = 13;
+            this.btnDbResume.Text = "恢复任务";
+            this.btnDbResume.UseVisualStyleBackColor = true;
+            this.btnDbResume.Click += new System.EventHandler(this.btnDbResume_Click);
+            // 
+            // btnDbPause
+            // 
+            this.btnDbPause.Location = new System.Drawing.Point(475, 21);
+            this.btnDbPause.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDbPause.Name = "btnDbPause";
+            this.btnDbPause.Size = new System.Drawing.Size(80, 35);
+            this.btnDbPause.TabIndex = 12;
+            this.btnDbPause.Text = "暂停任务";
+            this.btnDbPause.UseVisualStyleBackColor = true;
+            this.btnDbPause.Click += new System.EventHandler(this.btnDbPause_Click);
+            // 
+            // btnDBDel
+            // 
+            this.btnDBDel.Location = new System.Drawing.Point(253, 21);
             this.btnDBDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDBDel.Name = "btnDBDel";
             this.btnDBDel.Size = new System.Drawing.Size(80, 35);
             this.btnDBDel.TabIndex = 11;
             this.btnDBDel.Text = "删除";
             this.btnDBDel.UseVisualStyleBackColor = true;
-            this.btnDbStart.Location = new System.Drawing.Point(284, 21);
+            // 
+            // btnDbStart
+            // 
+            this.btnDbStart.Location = new System.Drawing.Point(388, 21);
             this.btnDbStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDbStart.Name = "btnDbStart";
             this.btnDbStart.Size = new System.Drawing.Size(80, 35);
@@ -280,14 +371,20 @@ namespace chapter9_2_2 {
             this.btnDbStart.Text = "开启任务";
             this.btnDbStart.UseVisualStyleBackColor = true;
             this.btnDbStart.Click += new System.EventHandler(this.btnDbStart_Click);
-            this.btnDBStop.Location = new System.Drawing.Point(552, 21);
-            this.btnDBStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnDBStop.Name = "btnDBStop";
-            this.btnDBStop.Size = new System.Drawing.Size(80, 35);
-            this.btnDBStop.TabIndex = 10;
-            this.btnDBStop.Text = "关闭任务";
-            this.btnDBStop.UseVisualStyleBackColor = true;
-            this.btnDBStop.Click += new System.EventHandler(this.btnDBStop_Click);
+            // 
+            // btnDbStop
+            // 
+            this.btnDbStop.Location = new System.Drawing.Point(650, 21);
+            this.btnDbStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDbStop.Name = "btnDbStop";
+            this.btnDbStop.Size = new System.Drawing.Size(80, 35);
+            this.btnDbStop.TabIndex = 10;
+            this.btnDbStop.Text = "关闭任务";
+            this.btnDbStop.UseVisualStyleBackColor = true;
+            this.btnDbStop.Click += new System.EventHandler(this.btnDbStop_Click_1);
+            // 
+            // tabPage3
+            // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
@@ -295,6 +392,9 @@ namespace chapter9_2_2 {
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "串口采集";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
@@ -302,12 +402,18 @@ namespace chapter9_2_2 {
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "系统设置";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // rtbLog
+            // 
             this.rtbLog.Location = new System.Drawing.Point(29, 540);
             this.rtbLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.Size = new System.Drawing.Size(951, 350);
             this.rtbLog.TabIndex = 10;
             this.rtbLog.Text = "";
+            // 
+            // MainForm
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 908);
@@ -344,7 +450,7 @@ namespace chapter9_2_2 {
         private System.Windows.Forms.Button btnAddSerial;
         private System.Windows.Forms.Button btnAddDb;
         private System.Windows.Forms.Button btnSettings;
-        private System.Windows.Forms.Button btnStop;
+        private System.Windows.Forms.Button btnFileStop;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -357,14 +463,15 @@ namespace chapter9_2_2 {
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.RichTextBox rtbLog;
-        private System.Windows.Forms.Button btnDBStop;
+        private System.Windows.Forms.Button btnDbStop;
         private System.Windows.Forms.Button btnDbStart;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btnFileStop;
+        private System.Windows.Forms.Button btnDbPause;
+        private System.Windows.Forms.Button btnDbResume;
         private System.Windows.Forms.Button btnFileStart;
         private System.Windows.Forms.Button btnFileDel;
         private System.Windows.Forms.Button btnDBDel;
+        private System.Windows.Forms.Button btnTestDb;
+        private System.Windows.Forms.Button btnFilePause;
+        private System.Windows.Forms.Button btnFileResume;
     }
 }
