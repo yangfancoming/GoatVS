@@ -168,7 +168,7 @@ namespace chapter9_2_2 {
             this.btnFileStop.TabIndex = 8;
             this.btnFileStop.Text = "关闭任务";
             this.btnFileStop.UseVisualStyleBackColor = true;
-            this.btnFileStop.Click += new System.EventHandler(this.btnFileStop_Click_1);
+            this.btnFileStop.Click += new System.EventHandler(this.btnFileStop_Click);
             // 
             // tabControl1
             // 
@@ -381,7 +381,7 @@ namespace chapter9_2_2 {
             this.btnDbStop.TabIndex = 10;
             this.btnDbStop.Text = "关闭任务";
             this.btnDbStop.UseVisualStyleBackColor = true;
-            this.btnDbStop.Click += new System.EventHandler(this.btnDbStop_Click_1);
+            this.btnDbStop.Click += new System.EventHandler(this.btnDbStop_Click);
             // 
             // tabPage3
             // 

@@ -46,7 +46,7 @@ namespace chapter9_2_2 {
         // 删除选中行按钮
         private void btnDel_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
-            string id = DataGridViewUtil.getCurrentRowFileAsId(dataGridView1);
+            string id = DataGridViewUtil.getCurrentRowById(dataGridView1);
             "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
             dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
         }
@@ -68,7 +68,7 @@ namespace chapter9_2_2 {
 
         // 开启任务 文件采集
         private async void btnStart_Click(object sender, EventArgs e) {
-            FileJob fileJob = DataGridViewUtil.getCurrentRowFile<FileJob>(dataGridView1,"sys_fileJob.selectById");
+            FileJob fileJob = DataGridViewUtil.getCurrentRow<FileJob>(dataGridView1,"sys_fileJob.selectById");
             // 通过 fileSuffix 字段 获取对应的实现类
             var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
             // 从字典中取出对应的 枚举类实现类
@@ -107,22 +107,13 @@ namespace chapter9_2_2 {
             var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), dbJob.dbType, true);
             // 从字典中取出对应的 枚举类实现类
             MyDataAdapter db = UserDBStrategy.mUserDB[o];
-            await JobUtil.config2(db);
+            await JobUtil.configDbAndStart(db,dbJob.dbConstr);
 //            await JobUtil.startDB();
-        }
-
-        private async void btnDBStop_Click(object sender, EventArgs e) {
-//            await JobUtil.startDB();
-        }
-
-        private async void btnFileStop_Click(object sender, EventArgs e) {
-            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
-            await JobUtil.startFile(key);
         }
 
         private void btnFileDel_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
-            string id = DataGridViewUtil.getCurrentRowFileAsId(dataGridView1);
+            string id = DataGridViewUtil.getCurrentRowById(dataGridView1);
             int num  = "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
             Debug.Print(num.ToString());
             dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
@@ -140,10 +131,6 @@ namespace chapter9_2_2 {
 
         }
 
-        private void btnFileStop_Click_1(object sender, EventArgs e){
-
-        }
-
         private void btnDbPause_Click(object sender, EventArgs e){
 
         }
@@ -152,8 +139,14 @@ namespace chapter9_2_2 {
 
         }
 
-        private void btnDbStop_Click_1(object sender, EventArgs e){
+        private async void btnDbStop_Click(object sender, EventArgs e) {
+            DBJob dbJob = DataGridViewUtil.getCurrentRow<DBJob>(dataGridView2,"sys_dbJob.selectById");
+            await JobUtil.stopJob(dbJob.dbConstr);
+        }
 
+        private async void btnFileStop_Click(object sender, EventArgs e) {
+            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
+            await JobUtil.startJob(key);
         }
     }
 }
