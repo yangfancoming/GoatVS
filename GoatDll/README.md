@@ -27,6 +27,7 @@
     
     - chapter4-2-4  spring.net
     - chapter4-2-8  spring.net + DB
+    - chapter4-3-0  spring.net + AOP
 
     - chapter4-3-2  spring.net-master
     - chapter4-3-5  spring.net-quartz ？？？ 失败
