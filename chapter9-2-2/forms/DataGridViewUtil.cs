@@ -71,8 +71,8 @@ namespace chapter9_2_2.forms {
             return fileJob;
         }
 
+        // 获取当前选中行的主键
         public static string getCurrentRowById(DataGridView dgv) {
-            // 获取当前选中行的主键
             var id = dgv.SelectedRows[0].Cells["编码"].Value.ToString();
             return id;
         }

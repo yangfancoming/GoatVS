@@ -66,22 +66,7 @@ namespace chapter9_2_2 {
             settings.ShowDialog();
         }
 
-        // 开启任务 文件采集
-        private async void btnStart_Click(object sender, EventArgs e) {
-            FileJob fileJob = DataGridViewUtil.getCurrentRow<FileJob>(dataGridView1,"sys_fileJob.selectById");
-            // 通过 fileSuffix 字段 获取对应的实现类
-            var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
-            // 从字典中取出对应的 枚举类实现类
-            var mParse = ParseStrategy.mParses[o];
-            string key = DataGridViewUtil.getKeyByFileJob(fileJob);
-            await JobUtil.configFileAndStart(mParse,key);
-        }
 
-
-
-        private async void btnStop_Click(object sender, EventArgs e) {
-
-        }
 
         // TabControl控件中TabPage选项卡切换时触发的事件
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e) {
@@ -98,17 +83,39 @@ namespace chapter9_2_2 {
             }
         }
 
-        // 数据库开启任务
-        private async void btnDbStart_Click(object sender, EventArgs e) {
-            // 获取当前选中行的主键
-            var id = dataGridView2.SelectedRows[0].Cells["编码"].Value.ToString();
-            // 通过主键id 查询出该条记录
-            var dbJob = "sys_dbJob.selectById".selectById<DBJob>(Convert.ToInt32(id));
+        // 文件采集 开启任务
+        private void btnStart_Click(object sender, EventArgs e) {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            FileJob fileJob = DataGridViewUtil.getCurrentRow<FileJob>(dataGridView1,"sys_fileJob.selectById");
+            // 通过 fileSuffix 字段 获取对应的实现类
+            var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
+            // 从字典中取出对应的 枚举类实现类
+            IParse<string, string> mParse;
+            try {
+                mParse = ParseStrategy.mParses[o];
+            } catch (Exception) {
+                MessageBox.Show("不支持文件类型!");
+                return;
+            }
+            string key = fileJob.getKeyByFileJob();
+            JobUtil.configFileAndStart(mParse,key);
+        }
+
+
+        // 数据库 开启任务
+        private void btnDbStart_Click(object sender, EventArgs e) {
+            if (dataGridView2.SelectedRows.Count <= 0) return;
+            DBJob dbJob = DataGridViewUtil.getCurrentRow<DBJob>(dataGridView2,"sys_dbJob.selectById");
             var o = (DatabaseType)Enum.Parse(typeof(DatabaseType), dbJob.dbType, true);
             // 从字典中取出对应的 枚举类实现类
-            MyDataAdapter db = UserDBStrategy.mUserDB[o];
-            await JobUtil.configDbAndStart(db,dbJob.dbConstr);
-//            await JobUtil.startDB();
+            MyDataAdapter db;
+            try {
+                 db = UserDBStrategy.mUserDB[o];
+            } catch (Exception) {
+                MessageBox.Show("不支持数据库类型!");
+                return;
+            }
+            JobUtil.configDbAndStart(db,dbJob.dbConstr);
         }
 
         private void btnFileDel_Click(object sender, EventArgs e) {

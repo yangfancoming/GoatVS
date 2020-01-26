@@ -18,34 +18,26 @@ namespace chapter9_2_2.job {
         private static readonly Dictionary<string,IScheduler> schedulerDic = new Dictionary<string, IScheduler>();
 
         // 使用 代码配置方式
-        public static async Task config() {
-//            scheduler = await factory.GetScheduler();
-            IJobDetail job = JobBuilder.Create<ParseXml>().WithIdentity("jobName2", "jobGroup2").Build();
-            ISimpleTrigger trigger1 = getTrigger();
-//            await scheduler.ScheduleJob(job, trigger1);
-        }
 
-        public static async Task configFileAndStart(IParse<string, string> mParse, string key) {
-            configFile(mParse, key);
-            startJob(key);
+        public static async void configFileAndStart(IParse<string, string> mParse, string key) {
+            await configFile(mParse, key);
+            await startJob(key);
         }
-        public static async Task configDbAndStart(MyDataAdapter myDataAdapter, string key) {
-            configDb(myDataAdapter, key);
-            startJob(key);
+        public static async void configDbAndStart(MyDataAdapter myDataAdapter, string key) {
+            await configDb(myDataAdapter, key);
+            await startJob(key);
         }
         // 通过反射方式 动态创建job
-        public static async Task configFile(IParse<string,string> mParse,string key) {
+        private static async Task configFile(IParse<string,string> mParse,string key) {
             IScheduler scheduler = await factory.GetScheduler();
             schedulerDic.Add(key,scheduler);
             //OfType的方式加载类型
-            IJobDetail job = JobBuilder.Create().OfType(mParse.GetType())
-                .UsingJobData("key",key)
-                .Build();
+            IJobDetail job = JobBuilder.Create().OfType(mParse.GetType()).UsingJobData("key",key).Build();
             ISimpleTrigger trigger = getTrigger();
             await scheduler.ScheduleJob(job, trigger);
         }
 
-        public static async Task configDb(MyDataAdapter myDataAdapter,string key) {
+        private static async Task configDb(MyDataAdapter myDataAdapter,string key) {
             IScheduler scheduler = await factory.GetScheduler();
             schedulerDic.Add(key,scheduler);
             //OfType的方式加载类型
@@ -67,6 +59,7 @@ namespace chapter9_2_2.job {
         }
         public static async Task startJob(string key) {
             await schedulerDic[key].Start();
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("开启任务： " + key  + " \r\n"); }));
         }
 
         public static async Task stopJob(string key) {
