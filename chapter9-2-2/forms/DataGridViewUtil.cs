@@ -1,8 +1,6 @@
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Windows.Forms;
-using chapter9_2_2.constant;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
 
@@ -25,7 +23,7 @@ namespace chapter9_2_2.forms {
             }
         }
 
-        // 初始化  设定表格列名及列显示顺序
+        //文件  初始化 设定表格列名及列显示顺序
         public static void initColumnsFile(DataGridView dgv) {
             dgv.DataSource = new BindingList<FileJob>();
             dgv.Columns["编码"].Visible = true;
@@ -39,6 +37,7 @@ namespace chapter9_2_2.forms {
             dgv.Columns["创建时间"].DisplayIndex = 7;
         }
 
+        // 数据库  初始化 设定表格列名及列显示顺序
         public static void initColumnsDB(DataGridView dgv) {
             dgv.DataSource = new BindingList<DBJob>();
             dgv.Columns["编码"].Visible = true;
@@ -52,12 +51,14 @@ namespace chapter9_2_2.forms {
             dgv.Columns["创建时间"].DisplayIndex = 7;
         }
 
+        // 初始化 文件采集页面
         public static void initFilePage(DataGridView dgv) {
             initColumnsFile(dgv);
             initStyle(dgv);
             dgv.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
         }
 
+        // 初始化 数据库采集页面
         public static void initDBPage(DataGridView dgv) {
             initColumnsDB(dgv);
             initStyle(dgv);
@@ -87,6 +88,11 @@ namespace chapter9_2_2.forms {
         // 通过 fileJob 生成key
         public static string getKeyByFileJob(this FileJob fileJob) {
             return fileJob.fileSuffix + fileJob.fileDirectory;
+        }
+
+        // 通过 dbJob 生成key
+        public static string getKeyByDbJob(this DBJob dbJob) {
+            return dbJob.dbConstr;
         }
 
         // 通用删除行 功能

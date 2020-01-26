@@ -251,7 +251,8 @@ namespace chapter9_2_2 {
             this.btnFileResume.Size = new System.Drawing.Size(80, 35);
             this.btnFileResume.TabIndex = 15;
             this.btnFileResume.Text = "恢复任务";
-            this.btnFileResume.UseVisualStyleBackColor = true;
+            this.btnFileResume.UseVisualStyleBackColor = false;
+            this.btnFileResume.Visible = false;
             this.btnFileResume.Click += new System.EventHandler(this.btnFileResume_Click);
             // 
             // btnFilePause
@@ -262,7 +263,8 @@ namespace chapter9_2_2 {
             this.btnFilePause.Size = new System.Drawing.Size(80, 35);
             this.btnFilePause.TabIndex = 14;
             this.btnFilePause.Text = "暂停任务";
-            this.btnFilePause.UseVisualStyleBackColor = true;
+            this.btnFilePause.UseVisualStyleBackColor = false;
+            this.btnFilePause.Visible = false;
             this.btnFilePause.Click += new System.EventHandler(this.btnFilePause_Click);
             // 
             // tabPage2
@@ -337,7 +339,8 @@ namespace chapter9_2_2 {
             this.btnDbResume.Size = new System.Drawing.Size(80, 35);
             this.btnDbResume.TabIndex = 13;
             this.btnDbResume.Text = "恢复任务";
-            this.btnDbResume.UseVisualStyleBackColor = true;
+            this.btnDbResume.UseVisualStyleBackColor = false;
+            this.btnDbResume.Visible = false;
             this.btnDbResume.Click += new System.EventHandler(this.btnDbResume_Click);
             // 
             // btnDbPause
@@ -348,7 +351,8 @@ namespace chapter9_2_2 {
             this.btnDbPause.Size = new System.Drawing.Size(80, 35);
             this.btnDbPause.TabIndex = 12;
             this.btnDbPause.Text = "暂停任务";
-            this.btnDbPause.UseVisualStyleBackColor = true;
+            this.btnDbPause.UseVisualStyleBackColor = false;
+            this.btnDbPause.Visible = false;
             this.btnDbPause.Click += new System.EventHandler(this.btnDbPause_Click);
             // 
             // btnDbDel

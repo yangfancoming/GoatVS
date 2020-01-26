@@ -6,7 +6,6 @@ namespace chapter9_2_2.db {
 
     public static class UserDBStrategy {
 
-        //
         public static readonly Dictionary<DatabaseType,MyDataAdapter> mUserDB = new Dictionary<DatabaseType,MyDataAdapter>();
 
         static UserDBStrategy() {
@@ -14,7 +13,6 @@ namespace chapter9_2_2.db {
             MyDataAdapter sqLite = new SQLiteImpl();
             mUserDB.Add(mySql.getDbType(),mySql);
             mUserDB.Add(sqLite.getDbType(),sqLite);
-
         }
 
     }

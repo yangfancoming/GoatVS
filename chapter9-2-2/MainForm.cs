@@ -114,7 +114,7 @@ namespace chapter9_2_2 {
                 MessageBox.Show("不支持数据库类型!");
                 return;
             }
-            JobUtil.configDbAndStart(db,dbJob.dbConstr);
+            JobUtil.configDbAndStart(db,dbJob);
         }
         // 数据库 删除按钮
         private void btnDbDel_Click(object sender, EventArgs e) {

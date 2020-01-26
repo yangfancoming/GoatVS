@@ -32,14 +32,7 @@ namespace chapter9_2_2.db {
                 Debug.Print(e.Message);
                 throw;
             }
-//            Debug.Print(dataSet.Tables[0].Rows.Count.ToString());
-            if (MainForm.PrtbLog.InvokeRequired){
-                // 解决线程占用问题
-                MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("返回记录条数\r\n"  +  dataSet.Tables[0].Rows.Count); }));
-            }
-            else{
-                MainForm.PrtbLog.AppendText("返回记录条数 \r\n" +  dataSet.Tables[0].Rows.Count);
-            }
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("返回记录条数\r\n"  +  dataSet.Tables[0].Rows.Count); }));
             return null;
         }
     }
