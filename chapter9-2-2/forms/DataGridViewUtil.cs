@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows.Forms;
+using chapter9_2_2.constant;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
 
@@ -87,9 +89,17 @@ namespace chapter9_2_2.forms {
             return fileJob.fileSuffix + fileJob.fileDirectory;
         }
 
+        // 通用删除行 功能
         public static void deleteRowById<T>(DataGridView dgv,string namespaces,string deleteById,string selectList) {
             string id = getCurrentRowById(dgv);
             (namespaces + "." + deleteById).deleteById(Convert.ToInt32(id));
+            dgv.DataSource = (namespaces  + "." + selectList).selectList<T>();
+        }
+
+        // 通用更改行 功能
+        public static void updateRowById<T>(DataGridView dgv,string namespaces,string deleteById,string selectList,string jobStatus) {
+            JobInfor job = new JobInfor() {id = Convert.ToInt32(getCurrentRowById(dgv)), jobStatus = jobStatus };
+            (namespaces + "." + deleteById).update(job);
             dgv.DataSource = (namespaces  + "." + selectList).selectList<T>();
         }
     }

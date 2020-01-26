@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 using chapter9_2_2.constant;
 using chapter9_2_2.db;
@@ -132,27 +131,22 @@ namespace chapter9_2_2 {
         private void btnTestDb_Click(object sender, EventArgs e) {
 
         }
+
         // 文件 暂停任务
         private void btnFilePause_Click(object sender, EventArgs e) {
-
+            DataGridViewUtil.updateRowById<FileJob>(dataGridView1,"sys_fileJob","updateById","selectList",JobStatus.暂停.ToString());
         }
         // 文件 恢复任务
         private void btnFileResume_Click(object sender, EventArgs e){
-
+            DataGridViewUtil.updateRowById<FileJob>(dataGridView1,"sys_fileJob","updateById","selectList",JobStatus.执行.ToString());
         }
         // 数据库 暂停任务
         private void btnDbPause_Click(object sender, EventArgs e) {
-//        public string jobStatus = JobStatus.停止.ToString();
-            DBJob dbJob = new DBJob();
-            dbJob.id = Convert.ToInt32(DataGridViewUtil.getCurrentRowById(dataGridView2));
-            dbJob.jobStatus = JobStatus.暂停.ToString();
-            var update = "sys_dbJob.updateById".update(dbJob);
-            Debug.Print(update.ToString());
-            dataGridView2.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
+            DataGridViewUtil.updateRowById<DBJob>(dataGridView2,"sys_dbJob","updateById","selectList",JobStatus.暂停.ToString());
         }
         // 数据库 恢复任务
         private void btnDbResume_Click(object sender, EventArgs e){
-
+            DataGridViewUtil.updateRowById<DBJob>(dataGridView2,"sys_dbJob","updateById","selectList",JobStatus.执行.ToString());
         }
 
         // 数据库 关闭任务

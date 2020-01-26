@@ -29,7 +29,7 @@
       <delete id="deleteById" parameterclass="int">
           DELETE FROM sys_dbJob  WHERE id = #value#
       </delete>
-<!--      public string jobStatus = JobStatus.停止.ToString();-->
+
 
       <update id="updateById" parameterClass="sys_dbJob"  >
           UPDATE sys_dbJob

@@ -2,7 +2,7 @@ using chapter9_2_2.constant;
 
 namespace chapter9_2_2.model {
 
-    public abstract class JobInfor {
+    public class JobInfor {
 
         // 主键id
         public int id;

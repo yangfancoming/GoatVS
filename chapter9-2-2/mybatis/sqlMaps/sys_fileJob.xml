@@ -41,6 +41,17 @@
       <delete id="deleteById" parameterclass="int">
           DELETE FROM sys_fileJob  WHERE id = #value#
       </delete>
+
+
+      <update id="updateById" parameterClass="sys_fileJob">
+          UPDATE sys_fileJob
+          <dynamic prepend="set">
+              <isNotNull prepend="," property="jobStatus">jobStatus = #jobStatus#</isNotNull>
+          </dynamic>
+          WHERE id = #id#
+      </update>
+
+
   </statements>
 
 </sqlMap>
