@@ -78,7 +78,7 @@ namespace chapter9_2_2 {
         }
 
 
-        // 关闭任务
+
         private async void btnStop_Click(object sender, EventArgs e) {
 
         }
@@ -122,28 +122,30 @@ namespace chapter9_2_2 {
         private void btnTestDb_Click(object sender, EventArgs e) {
 
         }
-
+        // 文件 暂停任务
         private void btnFilePause_Click(object sender, EventArgs e) {
 
         }
-
+        // 文件 恢复任务
         private void btnFileResume_Click(object sender, EventArgs e){
 
         }
-
+        // 数据库 暂停任务
         private void btnDbPause_Click(object sender, EventArgs e){
 
         }
-
+        // 数据库 恢复任务
         private void btnDbResume_Click(object sender, EventArgs e){
 
         }
 
+        // 数据库 关闭任务
         private async void btnDbStop_Click(object sender, EventArgs e) {
             DBJob dbJob = DataGridViewUtil.getCurrentRow<DBJob>(dataGridView2,"sys_dbJob.selectById");
             await JobUtil.stopJob(dbJob.dbConstr);
         }
 
+        // 文件 关闭任务
         private async void btnFileStop_Click(object sender, EventArgs e) {
             var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
             await JobUtil.startJob(key);
