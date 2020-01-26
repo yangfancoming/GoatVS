@@ -31,13 +31,13 @@ namespace chapter9_2_2.db {
             string dbSql = context.JobDetail.JobDataMap.GetString("dbSql");
             DataSet dataSet = new DataSet();
             try {
-                var dataAdapter = getDataAdapter(dbSql,dbConstr);
+                IDataAdapter dataAdapter = getDataAdapter(dbSql,dbConstr);
                 dataAdapter.Fill(dataSet);
             } catch (Exception e) {
                 Debug.Print(e.Message);
                 throw;
             }
-            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("返回记录条数\r\n"  +  dataSet.Tables[0].Rows.Count); }));
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("SQLiteImpl 返回记录条数\r\n"  +  dataSet.Tables[0].Rows.Count); }));
             return null;
         }
     }

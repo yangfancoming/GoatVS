@@ -45,6 +45,7 @@ namespace chapter9_2_2.job {
                 // 设置任务参数
                 .UsingJobData("dbConstr",dbJob.dbConstr)
                 .UsingJobData("dbSql",dbJob.dbSql)
+//                .WithIdentity(dbJob.dbConstr,dbJob.dbConstr)
                 .Build();
             ISimpleTrigger trigger = getTrigger();
             await scheduler.ScheduleJob(job, trigger);
@@ -52,9 +53,10 @@ namespace chapter9_2_2.job {
 
 
 
+        // Quartz.ObjectAlreadyExistsException: Unable to store Trigger: 'group1.trigger1', because one already exists with this identification.
         public static ISimpleTrigger getTrigger(int repeat = 3) {
             ISimpleTrigger trigger = (ISimpleTrigger)TriggerBuilder.Create()
-                .WithIdentity("trigger1", "group1")
+//                .WithIdentity("trigger1", "group1") // 多个job不能共用同一个trigger触发器 要想共用一个需要注释掉 WithIdentity
                 .StartNow().WithSimpleSchedule(x => x.WithIntervalInSeconds(repeat).RepeatForever()).Build();
             return trigger;
         }
