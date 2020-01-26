@@ -15,18 +15,23 @@ namespace chapter9_2_2.db {
             return DatabaseType.SQLite;
         }
 
-        public override IDataAdapter GetDataAdapter(string sql,string constr) {
+        public override IDataAdapter getDataAdapter(string sql,string constr) {
+            if (dataAdapter != null) return dataAdapter;
             SQLiteConnection SQLCon = new SQLiteConnection(constr);
-            IDataAdapter adapter = new SQLiteDataAdapter(sql,SQLCon);
-            return adapter;
+            dataAdapter = new SQLiteDataAdapter(sql,SQLCon);
+            return dataAdapter;
         }
 
+//        string connetStr = @"Data Source=E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-7\db\DemoDB.db";
+//        string dbSql = "select * from person";
+        // 定时任务执行函数
         public override Task Execute(IJobExecutionContext context) {
-            string connetStr = @"Data Source=E:\Code\C#_code\RiderLearning\GoatVS\chapter5-2-7\db\DemoDB.db";
-            string dbSql = "select * from person";
+            // 获取任务参数
+            string dbConstr = context.JobDetail.JobDataMap.GetString("dbConstr");
+            string dbSql = context.JobDetail.JobDataMap.GetString("dbSql");
             DataSet dataSet = new DataSet();
             try {
-                var dataAdapter = GetDataAdapter(dbSql,connetStr);
+                var dataAdapter = getDataAdapter(dbSql,dbConstr);
                 dataAdapter.Fill(dataSet);
             } catch (Exception e) {
                 Debug.Print(e.Message);

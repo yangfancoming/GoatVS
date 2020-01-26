@@ -16,7 +16,7 @@ namespace chapter9_2_2.db {
             return DatabaseType.MySql;
         }
 
-        public override IDataAdapter GetDataAdapter(string sql,string constr) {
+        public override IDataAdapter getDataAdapter(string sql,string constr) {
             if (dataAdapter != null) return dataAdapter;
             MySqlConnection SQLCon = new MySqlConnection(constr);
             dataAdapter = new MySqlDataAdapter(sql, SQLCon);
@@ -32,7 +32,7 @@ namespace chapter9_2_2.db {
 
             DataSet dataSet = new DataSet();
             try {
-                var dataAdapter = GetDataAdapter(dbSql,dbConstr);
+                var dataAdapter = getDataAdapter(dbSql,dbConstr);
                 dataAdapter.Fill(dataSet);
             } catch (Exception e) {
                 Debug.Print(e.Message);

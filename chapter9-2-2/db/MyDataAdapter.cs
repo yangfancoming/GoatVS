@@ -12,7 +12,7 @@ namespace chapter9_2_2.db {
 
         public abstract DatabaseType getDbType();
 
-        public abstract IDataAdapter GetDataAdapter(string sql,string constr);
+        public abstract IDataAdapter getDataAdapter(string sql,string constr);
 
         public abstract Task Execute(IJobExecutionContext context);
     }
