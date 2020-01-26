@@ -81,6 +81,7 @@
     <Compile Include="constant\Actions.cs" />
     <Compile Include="constant\DatabaseType.cs" />
     <Compile Include="constant\FileType.cs" />
+    <Compile Include="constant\JobStatus.cs" />
     <Compile Include="db\MyDataAdapter.cs" />
     <Compile Include="db\MySqlImpl.cs" />
     <Compile Include="db\SQLiteImpl.cs" />

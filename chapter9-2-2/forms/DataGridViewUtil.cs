@@ -6,7 +6,6 @@ using chapter9_2_2.mybatis;
 
 namespace chapter9_2_2.forms {
 
-
     public static class DataGridViewUtil {
 
         // 初始化表格样式

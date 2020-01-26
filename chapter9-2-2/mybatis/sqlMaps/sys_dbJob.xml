@@ -20,15 +20,26 @@
 
       <insert id="insert" parameterClass="sys_dbJob" >
           INSERT INTO sys_dbJob
-          (jobName,jobCycle,jobType,createTime,dbType,dbConstr,dbSql)
+          (jobName,jobCycle,jobType,jobStatus,createTime,dbType,dbConstr,dbSql)
           VALUES
-          (#jobName#,#jobCycle#,#jobType#,#createTime#,#dbType#,#dbConstr#,#dbSql#)
+          (#jobName#,#jobCycle#,#jobType#,#jobStatus#,#createTime#,#dbType#,#dbConstr#,#dbSql#)
       </insert>
 
 
       <delete id="deleteById" parameterclass="int">
           DELETE FROM sys_dbJob  WHERE id = #value#
       </delete>
+<!--      public string jobStatus = JobStatus.停止.ToString();-->
+
+      <update id="updateById" parameterClass="sys_dbJob"  >
+          UPDATE sys_dbJob
+          <dynamic prepend="set">
+              <isNotNull prepend="," property="jobStatus">jobStatus = #jobStatus#</isNotNull>
+          </dynamic>
+          WHERE id = #id#
+      </update>
+
+
   </statements>
 
 </sqlMap>

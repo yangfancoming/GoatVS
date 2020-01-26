@@ -1,3 +1,5 @@
+using chapter9_2_2.constant;
+
 namespace chapter9_2_2.model {
 
     public abstract class JobInfor {
@@ -10,8 +12,8 @@ namespace chapter9_2_2.model {
         public string jobType;
         // 任务周期
         public string jobCycle;
-        //任务状态 0 未执行  1 执行中
-        public string jobStatus = "0";
+        //任务状态  （停止,执行,暂停）
+        public string jobStatus = JobStatus.停止.ToString();
         // 创建时间
         public string createTime;
 

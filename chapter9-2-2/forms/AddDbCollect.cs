@@ -16,12 +16,13 @@ namespace chapter9_2_2.forms {
                 jobName = tb_jobName.Text,// 任务名称
                 jobCycle = tb_jobCycle.Text,// 任务周期
                 jobType = "数据库采集", // 任务类型
+                jobStatus = JobStatus.停止.ToString(),
                 dbConstr = tb_dbConstr.Text, // 数据库连接串
                 dbType =   cbox_dbType.Text, // 数据库类型
                 dbSql =   tb_dbSql.Text, // 待执行sql语句
                 createTime = DateTime.Now.ToString() // 创建时间
             };
-            BaseDao.insert("sys_dbJob.insert",dbJob);
+            "sys_dbJob.insert".insert(dbJob);
             MainForm.Pdgv2.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
             Close();
         }

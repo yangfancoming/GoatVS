@@ -16,6 +16,7 @@ namespace chapter9_2_2.forms {
         private void btnSave_Click(object sender, EventArgs e) {
             FileJob fileJob = new FileJob {
                 jobName = tb_jobName.Text,// 任务名称
+                jobStatus = JobStatus.停止.ToString(),
                 //jobCycle = tb_jobCycle.Text,// 任务周期
                 fileSuffix = cbox_fileType.Text, // 文件类型|后缀
                 fileDirectory = tb_fileDirectory.Text, // 文件目录
@@ -24,7 +25,7 @@ namespace chapter9_2_2.forms {
                 filehandlerOld =cb_handlerOld.Checked.ToString().ToLower(),// 处理已有文件
                 createTime = DateTime.Now.ToString() // 创建时间
             };
-            var insert = BaseDao.insert("sys_fileJob.insert",fileJob);
+            BaseDao.insert("sys_fileJob.insert",fileJob);
             MainForm.Pdgv1.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
             Close();
         }

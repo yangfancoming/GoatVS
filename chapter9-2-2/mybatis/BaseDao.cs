@@ -39,20 +39,16 @@ namespace chapter9_2_2.mybatis {
             return sqlMapper.QueryForObject(MapperStr, o);
         }
 
-        public static object insert(string MapperStr, object o) {
+        public static object insert(this string MapperStr, object o) {
             sqlMapper.BeginTransaction();
             var insert1 = sqlMapper.Insert(MapperStr, o);
             sqlMapper.CommitTransaction();
             return insert1;
         }
-        public static int update(string MapperStr, object o){
+        public static int update<T>(this string MapperStr, T o){
             return sqlMapper.Update(MapperStr, o);
         }
-        //public IList<T> List()
-        //{
 
-        //    return sqlMapper.QueryForList<T>("DEPT.List", null);
-        //}
         public static int deleteList(String MapperStr, int[] ids){
             return sqlMapper.Delete(MapperStr, ids);
         }

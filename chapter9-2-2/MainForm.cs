@@ -141,8 +141,14 @@ namespace chapter9_2_2 {
 
         }
         // 数据库 暂停任务
-        private void btnDbPause_Click(object sender, EventArgs e){
-
+        private void btnDbPause_Click(object sender, EventArgs e) {
+//        public string jobStatus = JobStatus.停止.ToString();
+            DBJob dbJob = new DBJob();
+            dbJob.id = Convert.ToInt32(DataGridViewUtil.getCurrentRowById(dataGridView2));
+            dbJob.jobStatus = JobStatus.暂停.ToString();
+            var update = "sys_dbJob.updateById".update(dbJob);
+            Debug.Print(update.ToString());
+            dataGridView2.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
         }
         // 数据库 恢复任务
         private void btnDbResume_Click(object sender, EventArgs e){

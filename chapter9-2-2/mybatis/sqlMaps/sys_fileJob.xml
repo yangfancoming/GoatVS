@@ -32,9 +32,9 @@
 
       <insert id="insert" parameterClass="sys_fileJob" >
           INSERT INTO sys_fileJob
-          (jobName,jobCycle,jobType,createTime,fileDirectory,fileMatched,fileSuffix)
+          (jobName,jobCycle,jobType,jobStatus,createTime,fileDirectory,fileMatched,fileSuffix)
           VALUES
-          (#jobName#,#jobCycle#,#jobType#,#createTime#,#fileDirectory#,#fileMatched#,#fileSuffix#)
+          (#jobName#,#jobCycle#,#jobType#,#jobStatus#,#createTime#,#fileDirectory#,#fileMatched#,#fileSuffix#)
       </insert>
 
 
