@@ -87,5 +87,11 @@ namespace chapter9_2_2.forms {
         public static string getKeyByFileJob(this FileJob fileJob) {
             return fileJob.fileSuffix + fileJob.fileDirectory;
         }
+
+        public static void deleteRowById<T>(DataGridView dgv,string namespaces,string deleteById,string selectList) {
+            string id = getCurrentRowById(dgv);
+            (namespaces + "." + deleteById).deleteById(Convert.ToInt32(id));
+            dgv.DataSource = (namespaces  + "." + selectList).selectList<T>();
+        }
     }
 }

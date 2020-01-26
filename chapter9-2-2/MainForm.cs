@@ -117,13 +117,16 @@ namespace chapter9_2_2 {
             }
             JobUtil.configDbAndStart(db,dbJob.dbConstr);
         }
+        // 数据库 删除按钮
+        private void btnDbDel_Click(object sender, EventArgs e) {
+            if (dataGridView2.SelectedRows.Count <= 0) return;
+            DataGridViewUtil.deleteRowById<FileJob>(dataGridView2,"sys_dbJob","deleteById","selectList");
+        }
 
+        // 文件 删除按钮
         private void btnFileDel_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
-            string id = DataGridViewUtil.getCurrentRowById(dataGridView1);
-            int num  = "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
-            Debug.Print(num.ToString());
-            dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
+            DataGridViewUtil.deleteRowById<FileJob>(dataGridView1,"sys_fileJob","deleteById","selectList");
         }
 
         private void btnTestDb_Click(object sender, EventArgs e) {
@@ -157,5 +160,7 @@ namespace chapter9_2_2 {
             var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
             await JobUtil.startJob(key);
         }
+
+
     }
 }

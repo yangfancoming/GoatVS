@@ -50,7 +50,7 @@ namespace chapter9_2_2 {
             this.btnTestDb = new System.Windows.Forms.Button();
             this.btnDbResume = new System.Windows.Forms.Button();
             this.btnDbPause = new System.Windows.Forms.Button();
-            this.btnDBDel = new System.Windows.Forms.Button();
+            this.btnDbDel = new System.Windows.Forms.Button();
             this.btnDbStart = new System.Windows.Forms.Button();
             this.btnDbStop = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -307,7 +307,7 @@ namespace chapter9_2_2 {
             this.panel4.Controls.Add(this.btnTestDb);
             this.panel4.Controls.Add(this.btnDbResume);
             this.panel4.Controls.Add(this.btnDbPause);
-            this.panel4.Controls.Add(this.btnDBDel);
+            this.panel4.Controls.Add(this.btnDbDel);
             this.panel4.Controls.Add(this.btnDbStart);
             this.panel4.Controls.Add(this.btnDbStop);
             this.panel4.Controls.Add(this.btnAddDb);
@@ -351,15 +351,16 @@ namespace chapter9_2_2 {
             this.btnDbPause.UseVisualStyleBackColor = true;
             this.btnDbPause.Click += new System.EventHandler(this.btnDbPause_Click);
             // 
-            // btnDBDel
+            // btnDbDel
             // 
-            this.btnDBDel.Location = new System.Drawing.Point(253, 21);
-            this.btnDBDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnDBDel.Name = "btnDBDel";
-            this.btnDBDel.Size = new System.Drawing.Size(80, 35);
-            this.btnDBDel.TabIndex = 11;
-            this.btnDBDel.Text = "删除";
-            this.btnDBDel.UseVisualStyleBackColor = true;
+            this.btnDbDel.Location = new System.Drawing.Point(253, 21);
+            this.btnDbDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDbDel.Name = "btnDbDel";
+            this.btnDbDel.Size = new System.Drawing.Size(80, 35);
+            this.btnDbDel.TabIndex = 11;
+            this.btnDbDel.Text = "删除";
+            this.btnDbDel.UseVisualStyleBackColor = true;
+            this.btnDbDel.Click += new System.EventHandler(this.btnDbDel_Click);
             // 
             // btnDbStart
             // 
@@ -469,9 +470,9 @@ namespace chapter9_2_2 {
         private System.Windows.Forms.Button btnDbResume;
         private System.Windows.Forms.Button btnFileStart;
         private System.Windows.Forms.Button btnFileDel;
-        private System.Windows.Forms.Button btnDBDel;
         private System.Windows.Forms.Button btnTestDb;
         private System.Windows.Forms.Button btnFilePause;
         private System.Windows.Forms.Button btnFileResume;
+        private System.Windows.Forms.Button btnDbDel;
     }
 }
