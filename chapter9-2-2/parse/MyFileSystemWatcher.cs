@@ -44,6 +44,9 @@ namespace chapter3_5_5 {
             MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("初始化文件狗： " + key  + " \r\n"); }));
         }
 
+        public static void removeWatcher(string key) {
+            watchers.Remove(key);
+        }
         /**
             Name——这个属性中使事件被提交的文件的名称。其中并不包含文件的路径——只包含使用事件被提交的文件或目录名称。
             ChangeType——这是一个WatcherChangeTypes，它指出要提交哪个类型的事件。其有效值包括：Changed、Created、Deleted、Renamed

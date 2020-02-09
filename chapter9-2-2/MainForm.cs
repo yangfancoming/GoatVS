@@ -97,6 +97,14 @@ namespace chapter9_2_2 {
             MyFileSystemWatcher.stopWatcher(key);
         }
 
+        // 文件采集 删除按钮
+        private void btnFileDel_Click(object sender, EventArgs e) {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
+            MyFileSystemWatcher.removeWatcher(key);
+            DataGridViewUtil.deleteRowById<FileJob>(dataGridView1,"sys_fileJob","deleteById","selectList");
+        }
+
         // 数据库 开启任务
         private void btnDbStart_Click(object sender, EventArgs e) {
             if (dataGridView2.SelectedRows.Count <= 0) return;
@@ -118,11 +126,7 @@ namespace chapter9_2_2 {
             DataGridViewUtil.deleteRowById<FileJob>(dataGridView2,"sys_dbJob","deleteById","selectList");
         }
 
-        // 文件 删除按钮
-        private void btnFileDel_Click(object sender, EventArgs e) {
-            if (dataGridView1.SelectedRows.Count <= 0) return;
-            DataGridViewUtil.deleteRowById<FileJob>(dataGridView1,"sys_fileJob","deleteById","selectList");
-        }
+
 
         private void btnTestDb_Click(object sender, EventArgs e) {
 

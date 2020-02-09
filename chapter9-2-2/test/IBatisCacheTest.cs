@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using chapter9_2_2.constant;
 using chapter9_2_2.model;
@@ -14,13 +15,27 @@ namespace chapter9_2_2.test {
 
         // IBatis 一级缓存测试
         public static void test1() {
-            init();
+//            init();
             // 相同的查询条件
             FileJob condition = new FileJob { fileSuffix = suffix, fileDirectory =  directory};
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
             // 第一次查询  走数据库
             FileJob selectOne1 = "sys_fileJob.selectOne".selectOne<FileJob>(condition);// Retrieved cached object 'chapter9_2_2.model.FileJob' using key '567820725|9223372032384783854'
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Debug.Print("Stopwatch总共花费{0}ms.", ts.TotalMilliseconds); // Stopwatch总共花费120.6368ms.
+
+
+            Stopwatch sw2 = new Stopwatch();
+            sw2.Start();
             // 第二次查询  走一级缓存
             FileJob selectOne2 = "sys_fileJob.selectOne".selectOne<FileJob>(condition); // Retrieved cached object 'chapter9_2_2.model.FileJob' using key '567820725|9223372032384783854'
+
+            sw2.Stop();
+            TimeSpan ts2 = sw2.Elapsed;
+            Debug.Print("Stopwatch总共花费{0}ms.", ts2.TotalMilliseconds); // Stopwatch总共花费1.7056ms.
             // true
             MessageBox.Show((selectOne1 == selectOne2).ToString());
         }
