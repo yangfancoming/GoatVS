@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
@@ -7,14 +8,14 @@ namespace chapter3_5_5 {
 
     public static class MyFileSystemWatcher {
 
-       private static readonly FileSystemWatcher watcher = new FileSystemWatcher();
+        private static readonly Dictionary<string,FileSystemWatcher> watchers = new Dictionary<string,FileSystemWatcher>();
 
-        public static void startWatcher() {
-            watcher.EnableRaisingEvents = true; // 收到改变通知时是否提交事件。如果EnableRaisingEvents属性设为假，对象将不会提交改变事件。如果设为真，它将提交改变事件
+        public static void startWatcher(string key) {
+            watchers[key].EnableRaisingEvents = true; // 收到改变通知时是否提交事件。如果EnableRaisingEvents属性设为假，对象将不会提交改变事件。如果设为真，它将提交改变事件
         }
 
-        public static void stopWatcher() {
-            watcher.EnableRaisingEvents = false;
+        public static void stopWatcher(string key) {
+            watchers[key].EnableRaisingEvents = false;
         }
 
         /**
@@ -25,7 +26,8 @@ namespace chapter3_5_5 {
         例如，若要监视文本文件中的更改，请将 Filter 属性设置为“*.txt”。
         指定类型文件，格式如:*.txt,*.doc,*.rar
         */
-        public static void initWatcher(string path, string filter = "*.*") {
+        public static void initWatcher(string key,string path, string filter = "*.*") {
+            FileSystemWatcher watcher = new FileSystemWatcher();
             watcher.Path = path; //  监控 指定目录下发生的所有改变。
             watcher.Filter = filter; // 过滤掉某些类型的文件发生的变化。例如，如果我们只希望在TXT文件被修改/新建/删除时提交通知，可以将这个属性设为“*txt”。在处理高流量或大型目录时，使用这个属性非常方便。
             watcher.Changed += OnChanged; // 当被监控的目录中有一个文件被修改时，就提交这个事件。值得注意的是，这个事件可能会被提交多次，即使文件的内容仅仅发生一项改变。这是由于在保存文件时，文件的其它属性也发生了改变。
@@ -34,7 +36,8 @@ namespace chapter3_5_5 {
             watcher.Renamed += OnRenamed; // 当被监控的目录中有一个文件被重命名，就提交这个事件。
             watcher.NotifyFilter = NotifyFilters.Attributes | NotifyFilters.CreationTime | NotifyFilters.DirectoryName | NotifyFilters.FileName | NotifyFilters.LastAccess | NotifyFilters.LastWrite | NotifyFilters.Security | NotifyFilters.Size;
             watcher.EnableRaisingEvents = false;
-            watcher.IncludeSubdirectories = true; // 是否应该监控子目录中发生的改变
+            watcher.IncludeSubdirectories = false; // 是否应该监控子目录中发生的改变
+            watchers.Add(key,watcher);
         }
 
         /**

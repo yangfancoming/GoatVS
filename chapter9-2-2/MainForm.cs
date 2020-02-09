@@ -82,22 +82,11 @@ namespace chapter9_2_2 {
             }
         }
 
-        // 文件采集 开启任务
+        // 文件采集 开启监视
         private void btnStart_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
-            FileJob fileJob = DataGridViewUtil.getCurrentRow<FileJob>(dataGridView1,"sys_fileJob.selectById");
-            // 通过 fileSuffix 字段 获取对应的实现类
-            var o = (FileType)Enum.Parse(typeof(FileType), fileJob.fileSuffix, true);
-            // 从字典中取出对应的 枚举类实现类
-            IParse<string, string> mParse;
-            try {
-                mParse = ParseStrategy.mParses[o];
-            } catch (Exception) {
-                MessageBox.Show("不支持文件类型!");
-                return;
-            }
-            string key = fileJob.getKeyByFileJob();
-            JobUtil.configFileAndStart(mParse,key);
+            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
+            MessageBox.Show(key);
         }
 
 
@@ -157,6 +146,7 @@ namespace chapter9_2_2 {
 
         // 文件 关闭任务
         private async void btnFileStop_Click(object sender, EventArgs e) {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
             var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
             await JobUtil.startJob(key);
         }
