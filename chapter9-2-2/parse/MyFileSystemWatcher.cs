@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using chapter9_2_2;
 
 namespace chapter3_5_5 {
 
@@ -12,10 +13,12 @@ namespace chapter3_5_5 {
 
         public static void startWatcher(string key) {
             watchers[key].EnableRaisingEvents = true; // 收到改变通知时是否提交事件。如果EnableRaisingEvents属性设为假，对象将不会提交改变事件。如果设为真，它将提交改变事件
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("开启文件狗： " + key  + " \r\n"); }));
         }
 
         public static void stopWatcher(string key) {
             watchers[key].EnableRaisingEvents = false;
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("关闭文件狗： " + key  + " \r\n"); }));
         }
 
         /**
@@ -38,6 +41,7 @@ namespace chapter3_5_5 {
             watcher.EnableRaisingEvents = false;
             watcher.IncludeSubdirectories = false; // 是否应该监控子目录中发生的改变
             watchers.Add(key,watcher);
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("初始化文件狗： " + key  + " \r\n"); }));
         }
 
         /**

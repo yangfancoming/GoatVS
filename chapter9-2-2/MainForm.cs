@@ -1,12 +1,12 @@
 using System;
 using System.Windows.Forms;
+using chapter3_5_5;
 using chapter9_2_2.constant;
 using chapter9_2_2.db;
 using chapter9_2_2.forms;
 using chapter9_2_2.job;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
-using chapter9_2_2.parse;
 
 namespace chapter9_2_2 {
     public partial class MainForm : Form {
@@ -65,8 +65,6 @@ namespace chapter9_2_2 {
             settings.ShowDialog();
         }
 
-
-
         // TabControl控件中TabPage选项卡切换时触发的事件
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e) {
             switch (tabControl1.SelectedTab.Text) {
@@ -86,9 +84,15 @@ namespace chapter9_2_2 {
         private void btnStart_Click(object sender, EventArgs e) {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
-            MessageBox.Show(key);
+            MyFileSystemWatcher.startWatcher(key);
         }
 
+        // 文件采集 关闭监视
+        private  void btnFileStop_Click(object sender, EventArgs e) {
+            if (dataGridView1.SelectedRows.Count <= 0) return;
+            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
+            MyFileSystemWatcher.stopWatcher(key);
+        }
 
         // 数据库 开启任务
         private void btnDbStart_Click(object sender, EventArgs e) {
@@ -144,12 +148,6 @@ namespace chapter9_2_2 {
             await JobUtil.stopJob(dbJob.dbConstr);
         }
 
-        // 文件 关闭任务
-        private async void btnFileStop_Click(object sender, EventArgs e) {
-            if (dataGridView1.SelectedRows.Count <= 0) return;
-            var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
-            await JobUtil.startJob(key);
-        }
 
 
     }

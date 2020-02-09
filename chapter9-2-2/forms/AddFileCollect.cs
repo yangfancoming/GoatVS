@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using chapter3_5_5;
 using chapter9_2_2.constant;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
@@ -27,6 +28,9 @@ namespace chapter9_2_2.forms {
             };
             BaseDao.insert("sys_fileJob.insert",fileJob);
             MainForm.Pdgv1.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
+
+            // 初始化 文件狗
+            MyFileSystemWatcher.initWatcher(fileJob.getKeyByFileJob(),fileJob.fileDirectory,"*." + fileJob.fileSuffix);
             Close();
         }
 
