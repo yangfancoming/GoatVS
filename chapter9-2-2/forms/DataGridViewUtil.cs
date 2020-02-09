@@ -30,10 +30,11 @@ namespace chapter9_2_2.forms {
             dgv.Columns["任务名称"].DisplayIndex = 0;
             dgv.Columns["任务类型"].DisplayIndex = 1;
             dgv.Columns["任务周期"].DisplayIndex = 2;
+            dgv.Columns["任务周期"].Visible = false;
             dgv.Columns["任务状态"].DisplayIndex = 3;
             dgv.Columns["文件后缀"].DisplayIndex = 4;
             dgv.Columns["匹配条件"].DisplayIndex = 5;
-            dgv.Columns["所在目录"].DisplayIndex = 6;
+            dgv.Columns["监视目录"].DisplayIndex = 6;
             dgv.Columns["创建时间"].DisplayIndex = 7;
         }
 

@@ -14,7 +14,7 @@ namespace chapter9_2_2.model {
 
         // 处理已有文件
         public string filehandlerOld;
-        public string 所在目录 {
+        public string 监视目录 {
             get => fileDirectory;
             set => fileDirectory = value;
         }

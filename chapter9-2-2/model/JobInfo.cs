@@ -1,11 +1,12 @@
+using System;
 using chapter9_2_2.constant;
 
 namespace chapter9_2_2.model {
 
     public class JobInfor {
 
-        // 主键id
-        public int id;
+        // 主键id   IBatis的动态多条件查询 需要主键id为null的情况 不加?  查询条件id默认为0 导致查询条件错误
+        public int? id;
         // 任务名称
         public string jobName;
         // 任务类型
@@ -18,7 +19,7 @@ namespace chapter9_2_2.model {
         public string createTime;
 
         public int 编码 {
-            get => id;
+            get => (int) id;
             set => id = value;
         }
 

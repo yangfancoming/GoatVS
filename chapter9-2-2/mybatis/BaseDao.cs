@@ -34,10 +34,13 @@ namespace chapter9_2_2.mybatis {
         public static T selectById<T>(this string MapperStr, object o){
             return sqlMapper.QueryForObject<T>(MapperStr, o);
         }
-
-        public static object selectOne(string MapperStr, object o){
-            return sqlMapper.QueryForObject(MapperStr, o);
+        public static T selectOne<T>(this string MapperStr, object o){
+            return sqlMapper.QueryForObject<T>(MapperStr, o);
         }
+
+//        public static object selectOne(string MapperStr, object o){
+//            return sqlMapper.QueryForObject(MapperStr, o);
+//        }
 
         public static object insert(this string MapperStr, object o) {
             sqlMapper.BeginTransaction();

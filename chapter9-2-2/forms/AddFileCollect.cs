@@ -15,20 +15,35 @@ namespace chapter9_2_2.forms {
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
+            // 空校检
+            if (tb_fileDirectory.Text.Trim() == string.Empty) {
+                MessageBox.Show("请选择文件监视目录！");
+                return;
+            }
+
+            // 重复key校检
+            FileJob condition = new FileJob { fileSuffix = cbox_fileType.Text, fileDirectory = tb_fileDirectory.Text };
+            FileJob selectOne = "sys_fileJob.selectOne".selectOne<FileJob>(condition);
+            if (selectOne != null) {
+                MessageBox.Show("相同类型文件和目录已经存在！");
+                return;
+            }
+
             FileJob fileJob = new FileJob {
                 jobName = tb_jobName.Text,// 任务名称
                 jobStatus = JobStatus.停止.ToString(),
-                //jobCycle = tb_jobCycle.Text,// 任务周期
                 fileSuffix = cbox_fileType.Text, // 文件类型|后缀
                 fileDirectory = tb_fileDirectory.Text, // 文件目录
                 fileMatched = tb_fileMatched.Text, // 文件名匹配条件
                 jobType = "文件采集", // 任务类型
-                filehandlerOld =cb_handlerOld.Checked.ToString().ToLower(),// 处理已有文件
+                filehandlerOld = cb_handlerOld.Checked.ToString().ToLower(),// 处理已有文件
                 createTime = DateTime.Now.ToString() // 创建时间
             };
-            BaseDao.insert("sys_fileJob.insert",fileJob);
-            MainForm.Pdgv1.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
 
+            // 插库
+            "sys_fileJob.insert".insert(fileJob);
+            // 更新table显示
+            MainForm.Pdgv1.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
             // 初始化 文件狗
             MyFileSystemWatcher.initWatcher(fileJob.getKeyByFileJob(),fileJob.fileDirectory,"*." + fileJob.fileSuffix);
             Close();

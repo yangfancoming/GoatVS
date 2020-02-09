@@ -33,6 +33,8 @@ namespace chapter9_2_2 {
 //            Debug.Print(selectList.Count.ToString());
 //            var selectById = "sys_fileJob.selectById".selectById<FileJob>(2);
 //            Debug.Print(selectById.fileDirectory);
+
+
         }
 
 

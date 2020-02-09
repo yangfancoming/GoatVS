@@ -3,55 +3,70 @@
 <sqlMap namespace="sys_fileJob" xmlns="http://ibatis.apache.org/mapping">
 
     <cacheModels>
-<!--        <cacheModel id="sys_fileJob-cache"  implementation="MEMORY" readOnly="false" serialize="false">-->
+        <!--        <cacheModel id="sys_fileJob-cache"  implementation="MEMORY" readOnly="false" serialize="false">-->
         <cacheModel id="sys_fileJob-cache"  implementation="MEMORY" >
             <flushInterval hours="24"/>
-<!--            <flushOnExecute  statement="sys_fileJob.selectList"/>-->
-<!--            <flushOnExecute  statement="sys_fileJob.deleteById"/>-->
-            <flushOnExecute  statement="sys_fileJob.selectById"/>
-<!--            <flushOnExecute  statement="sys_fileJob.insert"/>-->
+            <!--            <flushOnExecute  statement="sys_fileJob.selectList"/>-->
+            <!--            <flushOnExecute  statement="sys_fileJob.deleteById"/>-->
+<!--            <flushOnExecute  statement="sys_fileJob.selectById"/>-->
+            <flushOnExecute  statement="sys_fileJob.selectOne"/>
+            <!--            <flushOnExecute  statement="sys_fileJob.insert"/>-->
             <property name="Type" value="Weak"/>
         </cacheModel>
     </cacheModels>
 
-  <alias>
-    <typeAlias alias="sys_fileJob" type="chapter9_2_2.model.FileJob,chapter9_2_2" />
-  </alias>
+    <alias>
+        <typeAlias alias="sys_fileJob" type="chapter9_2_2.model.FileJob,chapter9_2_2" />
+    </alias>
 
-  <statements>
+    <statements>
 
-    <select id="selectList" resultClass="sys_fileJob" >
-<!--      select   jobName, jobCycle, jobType,   fileMatched, fileSuffix, fileDirectory, createTime from   sys_fileJob-->
-      select  *  from   sys_fileJob
-    </select>
+        <select id="selectList" resultClass="sys_fileJob" >
+            <!--      select   jobName, jobCycle, jobType,   fileMatched, fileSuffix, fileDirectory, createTime from   sys_fileJob-->
+            select  *  from   sys_fileJob
+        </select>
 
-    <select id="selectById" parameterclass="int" resultClass="sys_fileJob" cacheModel="sys_fileJob-cache">
-      select  *  from   sys_fileJob  WHERE id = #value#
-    </select>
-
-
-      <insert id="insert" parameterClass="sys_fileJob" >
-          INSERT INTO sys_fileJob
-          (jobName,jobCycle,jobType,jobStatus,createTime,fileDirectory,fileMatched,fileSuffix)
-          VALUES
-          (#jobName#,#jobCycle#,#jobType#,#jobStatus#,#createTime#,#fileDirectory#,#fileMatched#,#fileSuffix#)
-      </insert>
+        <select id="selectById" parameterclass="int" resultClass="sys_fileJob" cacheModel="sys_fileJob-cache">
+            select  *  from   sys_fileJob  WHERE id = #value#
+        </select>
 
 
-      <delete id="deleteById" parameterclass="int">
-          DELETE FROM sys_fileJob  WHERE id = #value#
-      </delete>
+        <select id="selectOne" resultClass="sys_fileJob">
+            select   *   from   sys_fileJob   where 1=1
+            <isNotNull prepend="and" property="id">
+                id =   #id#
+            </isNotNull >
+            <isNotEmpty  prepend="and" property="fileSuffix">
+                fileSuffix =   #fileSuffix#
+            </isNotEmpty >
+            <isNotEmpty  prepend="and" property="fileDirectory">
+                fileDirectory =   #fileDirectory#
+            </isNotEmpty >
+        </select>
 
 
-      <update id="updateById" parameterClass="sys_fileJob">
-          UPDATE sys_fileJob
-          <dynamic prepend="set">
-              <isNotNull prepend="," property="jobStatus">jobStatus = #jobStatus#</isNotNull>
-          </dynamic>
-          WHERE id = #id#
-      </update>
+        <insert id="insert" parameterClass="sys_fileJob" >
+            INSERT INTO sys_fileJob
+            (jobName,jobCycle,jobType,jobStatus,createTime,fileDirectory,fileMatched,fileSuffix)
+            VALUES
+            (#jobName#,#jobCycle#,#jobType#,#jobStatus#,#createTime#,#fileDirectory#,#fileMatched#,#fileSuffix#)
+        </insert>
 
 
-  </statements>
+        <delete id="deleteById" parameterclass="int">
+            DELETE FROM sys_fileJob  WHERE id = #value#
+        </delete>
+
+
+        <update id="updateById" parameterClass="sys_fileJob">
+            UPDATE sys_fileJob
+            <dynamic prepend="set">
+                <isNotNull prepend="," property="jobStatus">jobStatus = #jobStatus#</isNotNull>
+            </dynamic>
+            WHERE id = #id#
+        </update>
+
+
+    </statements>
 
 </sqlMap>
