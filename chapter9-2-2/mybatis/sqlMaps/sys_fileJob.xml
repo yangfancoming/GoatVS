@@ -7,11 +7,13 @@
         <cacheModel id="sys_fileJob-cache"  implementation="MEMORY" >
             <!-- 设定缓存有效期，如果超过此设定值，则将此CacheModel缓存清空 -->
             <flushInterval hours="24"/>
+            <!-- 指定指定sql语句更新缓存-->
+            <flushOnExecute  statement="sys_fileJob.selectOne"/>
+            <flushOnExecute  statement="sys_fileJob.insert"/>
             <!--            <flushOnExecute  statement="sys_fileJob.selectList"/>-->
             <!--            <flushOnExecute  statement="sys_fileJob.deleteById"/>-->
 <!--            <flushOnExecute  statement="sys_fileJob.selectById"/>-->
-            <flushOnExecute  statement="sys_fileJob.selectOne"/>
-            <!--            <flushOnExecute  statement="sys_fileJob.insert"/>-->
+
 <!--            <property name="Type" value="Weak"/>-->
             <property name="size" value="1000" />
         </cacheModel>
