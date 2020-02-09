@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.Windows.Forms;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
@@ -32,6 +33,7 @@ namespace chapter9_2_2.forms {
             dgv.Columns["任务周期"].DisplayIndex = 2;
             dgv.Columns["任务周期"].Visible = false;
             dgv.Columns["任务状态"].DisplayIndex = 3;
+            dgv.Columns["任务状态"].DefaultCellStyle.ForeColor = Color.Red; // 设定指定列字体颜色
             dgv.Columns["文件后缀"].DisplayIndex = 4;
             dgv.Columns["匹配条件"].DisplayIndex = 5;
             dgv.Columns["监视目录"].DisplayIndex = 6;
@@ -46,6 +48,7 @@ namespace chapter9_2_2.forms {
             dgv.Columns["任务类型"].DisplayIndex = 1;
             dgv.Columns["任务周期"].DisplayIndex = 2;
             dgv.Columns["任务状态"].DisplayIndex = 3;
+            dgv.Columns["任务状态"].DefaultCellStyle.ForeColor = Color.Red; // 设定指定列字体颜色
             dgv.Columns["数据库类型"].DisplayIndex = 4;
             dgv.Columns["连接串"].DisplayIndex = 5;
             dgv.Columns["SQL"].DisplayIndex = 6;
