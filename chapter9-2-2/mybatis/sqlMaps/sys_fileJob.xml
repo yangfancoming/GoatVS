@@ -31,7 +31,8 @@
         </select>
 
 
-        <select id="selectOne" resultClass="sys_fileJob">
+        <select id="selectOne" resultClass="sys_fileJob" cacheModel="sys_fileJob-cache">
+<!--        <select id="selectOne" resultClass="sys_fileJob" >-->
             select   *   from   sys_fileJob   where 1=1
             <isNotNull prepend="and" property="id">
                 id =   #id#

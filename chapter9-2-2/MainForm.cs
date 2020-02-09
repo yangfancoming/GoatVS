@@ -7,6 +7,7 @@ using chapter9_2_2.forms;
 using chapter9_2_2.job;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
+using chapter9_2_2.test;
 
 namespace chapter9_2_2 {
     public partial class MainForm : Form {
@@ -33,7 +34,7 @@ namespace chapter9_2_2 {
 //            Debug.Print(selectList.Count.ToString());
 //            var selectById = "sys_fileJob.selectById".selectById<FileJob>(2);
 //            Debug.Print(selectById.fileDirectory);
-
+            IBatisCacheTest.test1();
 
         }
 

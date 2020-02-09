@@ -132,6 +132,7 @@
     <Compile Include="parse\ParseXml.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="test\IBatisCacheTest.cs" />
     <Compile Include="upload\ftp\MyFtpUtil.cs" />
     <EmbeddedResource Include="forms\AddDbCollect.resx">
       <DependentUpon>AddDbCollect.cs</DependentUpon>
