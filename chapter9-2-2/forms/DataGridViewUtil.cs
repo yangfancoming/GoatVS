@@ -120,6 +120,5 @@ namespace chapter9_2_2.forms {
             dgv.ClearSelection();
         }
 
-
     }
 }

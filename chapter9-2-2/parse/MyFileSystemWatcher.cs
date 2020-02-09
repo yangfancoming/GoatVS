@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
+using System.Threading;
 using chapter9_2_2;
+using chapter9_2_2.constant;
+using chapter9_2_2.parse;
 
 namespace chapter3_5_5 {
 
@@ -55,9 +57,7 @@ namespace chapter3_5_5 {
         private static void OnCreated(object source, FileSystemEventArgs e) {
            Debug.Print("文件新建事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
 
-           string xmlStr = string.Empty;
            while (true){
-               Debug.Print("进入while循环:-----" + xmlStr);
                try{
                    using (Stream stream = File.Open(e.FullPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite)){
                        if (stream != null) break;
@@ -67,14 +67,20 @@ namespace chapter3_5_5 {
                    Console.WriteLine($"Output file {e.Name} not yet ready ({ex.Message})");
                }
            }
+           Debug.Print("while循环 判断文件写入完毕:-----");
+//           using (FileStream fs = new FileStream(e.FullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
+//               using (StreamReader sr = new StreamReader(fs, Encoding.UTF8)) {
+//                   xmlStr = sr.ReadToEnd();
+//               }
+//           }
 
-           using (FileStream fs = new FileStream(e.FullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
-               using (StreamReader sr = new StreamReader(fs, Encoding.UTF8)) {
-                   xmlStr = sr.ReadToEnd();
-               }
-           }
-
-           Debug.Print("读取的文件内容:-----" + xmlStr);
+            string extension = Path.GetExtension(e.Name).Replace(".","");//扩展名 ".xml"
+//             通过 fileSuffix 字段 获取对应的实现类
+            FileType o = (FileType)Enum.Parse(typeof(FileType), extension, true);
+//             从字典中取出对应的 枚举类实现类
+            var mParse = ParseStrategy.mParses[o];
+            var s = mParse.parse(e.FullPath);
+           Debug.Print("当前线程id:-----" + Thread.CurrentThread.ManagedThreadId);
         }
         
         private static void OnChanged(object source, FileSystemEventArgs e){

@@ -10,6 +10,7 @@ namespace chapter9_2_2.parse {
     public class ParseXml : IParse<string,string> {
 
         private static readonly ILog log = LogManager.GetLogger(typeof(ParseXml));
+
         public FileType fileType() {
             return FileType.xml;
         }
@@ -20,6 +21,7 @@ namespace chapter9_2_2.parse {
         /// <param name="filePath">待解析的 xml 文件全路径</param>
         /// <param name="R">输出参数  解析结果</param>
         public string parse(string t) {
+            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析 ++++++++++" + t + "\r\n"); }));
             return t;
         }
 
