@@ -42,7 +42,7 @@ namespace chapter9_2_2.forms {
             // 插库
             "sys_fileJob.insert".insert(fileJob);
             // 更新table显示
-            MainForm.Pdgv1.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
+            DataGridViewUtil.flushDgv<FileJob>(MainForm.Pdgv1,"sys_fileJob","selectList");
             // 初始化 文件狗
             MyFileSystemWatcher.initWatcher(fileJob.getKeyByFileJob(),fileJob.fileDirectory,"*." + fileJob.fileSuffix);
             Close();

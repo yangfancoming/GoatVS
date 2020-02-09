@@ -50,7 +50,7 @@ namespace chapter9_2_2 {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             string id = DataGridViewUtil.getCurrentRowById(dataGridView1);
             "sys_fileJob.deleteById".deleteById(Convert.ToInt32(id));
-            dataGridView1.DataSource = "sys_fileJob.selectList".selectList<FileJob>(); //将DataGridView里的数据源绑
+            DataGridViewUtil.flushDgv<FileJob>(dataGridView1,"sys_fileJob","selectList");
         }
 
         private void btnAddSerial_Click(object sender, EventArgs e) {
@@ -88,6 +88,7 @@ namespace chapter9_2_2 {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
             MyFileSystemWatcher.startWatcher(key);
+            DataGridViewUtil.updateRowById<FileJob>(dataGridView1,"sys_fileJob","updateById","selectList",JobStatus.执行.ToString());
         }
 
         // 文件采集 关闭监视
@@ -95,6 +96,7 @@ namespace chapter9_2_2 {
             if (dataGridView1.SelectedRows.Count <= 0) return;
             var key = DataGridViewUtil.getCurrentRowFileAsKey<FileJob>(dataGridView1,"sys_fileJob.selectById");
             MyFileSystemWatcher.stopWatcher(key);
+            DataGridViewUtil.updateRowById<FileJob>(dataGridView1,"sys_fileJob","updateById","selectList",JobStatus.停止.ToString());
         }
 
         // 文件采集 删除按钮

@@ -59,14 +59,14 @@ namespace chapter9_2_2.forms {
         public static void initFilePage(DataGridView dgv) {
             initColumnsFile(dgv);
             initStyle(dgv);
-            dgv.DataSource = "sys_fileJob.selectList".selectList<FileJob>();
+            flushDgv<FileJob>(dgv,"sys_fileJob","selectList");
         }
 
         // 初始化 数据库采集页面
         public static void initDBPage(DataGridView dgv) {
             initColumnsDB(dgv);
             initStyle(dgv);
-            dgv.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
+            flushDgv<DBJob>(dgv,"sys_dbJob","selectList");
         }
 
         // 获取表格内选中记录
@@ -103,14 +103,23 @@ namespace chapter9_2_2.forms {
         public static void deleteRowById<T>(DataGridView dgv,string namespaces,string deleteById,string selectList) {
             string id = getCurrentRowById(dgv);
             (namespaces + "." + deleteById).deleteById(Convert.ToInt32(id));
-            dgv.DataSource = (namespaces  + "." + selectList).selectList<T>();
+            flushDgv<T>(dgv,namespaces,selectList);
         }
 
         // 通用更改行 功能
         public static void updateRowById<T>(DataGridView dgv,string namespaces,string deleteById,string selectList,string jobStatus) {
             JobInfor job = new JobInfor() {id = Convert.ToInt32(getCurrentRowById(dgv)), jobStatus = jobStatus };
             (namespaces + "." + deleteById).update(job);
-            dgv.DataSource = (namespaces  + "." + selectList).selectList<T>();
+            flushDgv<T>(dgv,namespaces,selectList);
         }
+
+        public static void flushDgv<T>(DataGridView dgv,string namespaces,string selectList) {
+            // 更新table显示
+            dgv.DataSource = (namespaces  + "." + selectList).selectList<T>();
+            // 取消默认选中行
+            dgv.ClearSelection();
+        }
+
+
     }
 }

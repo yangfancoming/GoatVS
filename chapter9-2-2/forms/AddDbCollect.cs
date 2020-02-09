@@ -23,7 +23,7 @@ namespace chapter9_2_2.forms {
                 createTime = DateTime.Now.ToString() // 创建时间
             };
             "sys_dbJob.insert".insert(dbJob);
-            MainForm.Pdgv2.DataSource = "sys_dbJob.selectList".selectList<DBJob>();
+            DataGridViewUtil.flushDgv<DBJob>(MainForm.Pdgv2,"sys_dbJob","selectList");
             Close();
         }
 
