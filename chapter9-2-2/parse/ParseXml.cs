@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 using chapter9_2_2.constant;
 using IBatisNet.Common.Logging;
@@ -21,7 +22,8 @@ namespace chapter9_2_2.parse {
         /// <param name="filePath">待解析的 xml 文件全路径</param>
         /// <param name="R">输出参数  解析结果</param>
         public string parse(string t) {
-            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析 ++++++++++" + t + "\r\n"); }));
+//            MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("xml 解析 ++++++++++" + t + "\r\n"); }));
+            Debug.Print("ParseXml  当前线程id:-----" + Thread.CurrentThread.ManagedThreadId +  "---"+ t);
             return t;
         }
 

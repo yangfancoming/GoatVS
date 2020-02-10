@@ -11,6 +11,9 @@ namespace chapter3_5_5 {
 
     public static class MyFileSystemWatcher {
 
+        // 多线程文件读取同步锁
+        private static readonly object lockedObj = new object();
+
         private static readonly Dictionary<string,FileSystemWatcher> watchers = new Dictionary<string,FileSystemWatcher>();
 
         public static void startWatcher(string key) {
@@ -45,7 +48,6 @@ namespace chapter3_5_5 {
             watchers.Add(key,watcher);
             MainForm.PrtbLog.Invoke(new Action(() => { MainForm.PrtbLog.AppendText("初始化文件狗： " + key  + " \r\n"); }));
         }
-
         public static void removeWatcher(string key) {
             watchers.Remove(key);
         }
@@ -55,19 +57,21 @@ namespace chapter3_5_5 {
             FullPath——这个属性中包含使事件被提交的文件的完整路径，包括文件名和目录名。
         */
         private static void OnCreated(object source, FileSystemEventArgs e) {
-           Debug.Print("文件新建事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
+            Debug.Print("当前线程id:-----" + Thread.CurrentThread.ManagedThreadId + "文件新建事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
+            Thread.Sleep(500);
+            while (true){
+                try{
+                    using (Stream stream = File.Open(e.FullPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite)){
+                        Debug.Print("当前线程id:-----" + Thread.CurrentThread.ManagedThreadId + "while循环解析中。。。。");
+                        if (stream != null) break;
+                    }
+                }
+                catch (Exception ex){
+                    Console.WriteLine($"Output file {e.Name} not yet ready ({ex.Message})");
+                }
+            }
 
-           while (true){
-               try{
-                   using (Stream stream = File.Open(e.FullPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite)){
-                       if (stream != null) break;
-                   }
-               }
-               catch (Exception ex){
-                   Console.WriteLine($"Output file {e.Name} not yet ready ({ex.Message})");
-               }
-           }
-           Debug.Print("while循环 判断文件写入完毕:-----");
+            Debug.Print("当前线程id:-----" + Thread.CurrentThread.ManagedThreadId + "while循环 判断文件写入完毕:-----");
 //           using (FileStream fs = new FileStream(e.FullPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)) {
 //               using (StreamReader sr = new StreamReader(fs, Encoding.UTF8)) {
 //                   xmlStr = sr.ReadToEnd();
@@ -80,19 +84,19 @@ namespace chapter3_5_5 {
 //             从字典中取出对应的 枚举类实现类
             var mParse = ParseStrategy.mParses[o];
             var s = mParse.parse(e.FullPath);
-           Debug.Print("当前线程id:-----" + Thread.CurrentThread.ManagedThreadId);
+            Debug.Print("解析完毕！！！当前线程id:-----" + Thread.CurrentThread.ManagedThreadId +  "---"+ s);
         }
         
         private static void OnChanged(object source, FileSystemEventArgs e){
-            Debug.Print("文件 改变 事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
+//            Debug.Print("文件 改变 事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
         }
 
         private static void OnDeleted(object source, FileSystemEventArgs e) {
-            Debug.Print("文件 删除 事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
+//            Debug.Print("文件 删除 事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
         }
 
         private static void OnRenamed(object source, RenamedEventArgs e){
-            Debug.Print("文件 重命名 事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
+//            Debug.Print("文件 重命名 事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
         }
 
     }
