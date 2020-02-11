@@ -58,6 +58,8 @@
         <Compile Include="log4c\Log4C.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="uilog\UiLogAppender.cs" />
+        <Compile Include="uilog\UiLogEventArgs.cs" />
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
         </EmbeddedResource>
