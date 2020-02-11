@@ -3,10 +3,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
 using FluentFTP;
-using IBatisNet.Common.Logging;
-using Quartz.Logging;
 
 namespace chapter1_9_3 {
 

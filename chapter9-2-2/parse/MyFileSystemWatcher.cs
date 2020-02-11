@@ -59,7 +59,8 @@ namespace chapter3_5_5 {
             FullPath——这个属性中包含使事件被提交的文件的完整路径，包括文件名和目录名。
         */
         private static void OnCreated(object source, FileSystemEventArgs e) {
-            "file_upload.insert".insert(new FileUpload(e.FullPath));
+//            "file_upload.insert".insert(new FileUpload(e.FullPath));
+
             Debug.Print("当前线程id:-----" + Thread.CurrentThread.ManagedThreadId + "文件新建事件 ChangeType： {0}  FullPath：{1} Name： {2}", e.ChangeType, e.FullPath, e.Name);
             Thread.Sleep(500);
             while (true){

@@ -40,6 +40,8 @@
     
     
     - chapter6-2-3  IBatis +  mdb 
+    
+    - chapter7-1-2  log4net
 # 控件 目录
 
     - chapter8-2-1   ListBox
