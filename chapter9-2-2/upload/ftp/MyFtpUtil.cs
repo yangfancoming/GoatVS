@@ -39,7 +39,7 @@ namespace chapter1_9_3 {
         public static bool deleteFile(string remotePath){
             try{
                 _ftpClient.Connect();
-                _ftpClient.DeleteFile( remotePath);
+                _ftpClient.DeleteFile(remotePath);
                 _ftpClient.Disconnect();
             }
             catch (Exception e) {
@@ -49,6 +49,18 @@ namespace chapter1_9_3 {
             return true;
         }
 
+        public static bool deleteDirectory(string fullPath){
+            try{
+                _ftpClient.Connect();
+                _ftpClient.DeleteDirectory(fullPath);
+                _ftpClient.Disconnect();
+            }
+            catch (Exception e) {
+                Debug.Print(e.Message);
+                return false;
+            }
+            return true;
+        }
         /// <summary>
         ///  给远程ftp服务器文件改名
         /// MyFtpUtil.reNameFile("12.txt", "1111112.txt");
