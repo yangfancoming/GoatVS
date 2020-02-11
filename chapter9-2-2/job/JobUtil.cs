@@ -5,6 +5,7 @@ using chapter9_2_2.db;
 using chapter9_2_2.forms;
 using chapter9_2_2.model;
 using chapter9_2_2.parse;
+using chapter9_2_2.upload;
 using Quartz;
 using Quartz.Impl;
 
@@ -23,6 +24,7 @@ namespace chapter9_2_2.job {
             await configFile(mParse, key);
             await startJob(key);
         }
+
         public static async void configDbAndStart(MyDataAdapter myDataAdapter,DBJob dbJob) {
             await configDb(myDataAdapter,dbJob);
             await startJob(dbJob.getKeyByDbJob());
@@ -31,10 +33,17 @@ namespace chapter9_2_2.job {
         private static async Task configFile(IParse<string,string> mParse,string key) {
             IScheduler scheduler = await factory.GetScheduler();
             schedulerDic.Add(key,scheduler);
-            //OfType的方式加载类型
             IJobDetail job = JobBuilder.Create().OfType(mParse.GetType()).UsingJobData("key",key).Build();
             ISimpleTrigger trigger = getTrigger();
             await scheduler.ScheduleJob(job, trigger);
+        }
+
+        public static async Task configFileScanAndStart(FileScheduleScan fileScheduleScan) {
+            IScheduler scheduler = await factory.GetScheduler();
+            IJobDetail job = JobBuilder.Create().OfType(fileScheduleScan.GetType()).Build();
+            ISimpleTrigger trigger = getTrigger(2);
+            await scheduler.ScheduleJob(job, trigger);
+            scheduler.Start();
         }
 
         private static async Task configDb(MyDataAdapter myDataAdapter,DBJob dbJob) {

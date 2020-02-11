@@ -8,6 +8,7 @@ using chapter9_2_2.job;
 using chapter9_2_2.model;
 using chapter9_2_2.mybatis;
 using chapter9_2_2.test;
+using chapter9_2_2.upload;
 
 namespace chapter9_2_2 {
     public partial class MainForm : Form {
@@ -26,6 +27,8 @@ namespace chapter9_2_2 {
 
         private void MainForm_Load(object sender, EventArgs e) {
             DataGridViewUtil.initFilePage(dataGridView1);
+            // 开启文件上传定时扫描任务
+            JobUtil.configFileScanAndStart(new FileScheduleScan());
         }
 
         // 测试按钮

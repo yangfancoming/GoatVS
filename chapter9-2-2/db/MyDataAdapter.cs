@@ -5,7 +5,7 @@ using Quartz;
 
 namespace chapter9_2_2.db {
 
-    public abstract class MyDataAdapter: IJob {
+    public abstract class MyDataAdapter : IJob {
 
         // 这里必须是 static 否则定时任务每次都会 新建连接
         protected static IDataAdapter dataAdapter;
