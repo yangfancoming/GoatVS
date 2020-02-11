@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="model\DBJob.cs" />
     <Compile Include="model\FileJob.cs" />
+    <Compile Include="model\FileUpload.cs" />
     <Compile Include="model\JobInfo.cs" />
     <Compile Include="mybatis\BaseDao.cs" />
     <Compile Include="parse\MyFileSystemWatcher.cs" />
@@ -153,6 +154,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="mybatis\SqlMap.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mybatis\sqlMaps\file_upload.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="mybatis\sqlMaps\sys_dbJob.xml">

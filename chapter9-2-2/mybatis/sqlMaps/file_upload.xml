@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<sqlMap namespace="file_upload" xmlns="http://ibatis.apache.org/mapping">
+    
+    <alias>
+        <typeAlias alias="file_upload" type="chapter9_2_2.model.FileUpload,chapter9_2_2" />
+    </alias>
+
+    <statements>
+
+        <insert id="insert" parameterClass="file_upload" >
+            INSERT INTO file_upload
+            (fileFullPath)
+            VALUES
+            (#fileFullPath#)
+        </insert>
+
+
+        <delete id="deleteById" parameterclass="int">
+            DELETE FROM file_upload  WHERE id = #value#
+        </delete>
+
+
+    </statements>
+
+</sqlMap>

@@ -34,8 +34,11 @@ namespace chapter9_2_2 {
 //            Debug.Print(selectList.Count.ToString());
 //            var selectById = "sys_fileJob.selectById".selectById<FileJob>(2);
 //            Debug.Print(selectById.fileDirectory);
-            IBatisCacheTest.test1();
+//            IBatisCacheTest.test1();
 
+//            string path = @"C:\Users\Administrator\Desktop\123\xml1.xml";
+//            FileUpload fileUpload = new FileUpload(path);
+//            "file_upload.insert".insert(fileUpload);
         }
 
 
