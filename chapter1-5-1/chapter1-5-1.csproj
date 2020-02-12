@@ -38,9 +38,11 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="App.cs" />
         <Compile Include="Enum1.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Weekdays.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include=".gitignore" />

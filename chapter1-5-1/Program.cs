@@ -5,12 +5,12 @@ namespace chapter1_5_1 {
     internal class Program {
 
         static void Main(string[] args) {
-            Enum1.weekday(Enum1.Weekdays.Tues);
+            Enum1.weekday(Weekdays.Tues);
             // Parse() 第一个是要使用的枚举类型，第二个是要转换的枚举成员的字符串，第三个是bool类型，定义转换时是否忽略大小写
-            Enum1.Weekdays day = (Enum1.Weekdays)Enum.Parse(typeof(Enum1.Weekdays), "Mon", true);
+            Weekdays day = (Weekdays)Enum.Parse(typeof(Weekdays), "Mon", true);
             Debug.Print("Mon的值是{0}",(int)day);
 
-            foreach (Enum1.Weekdays temp in Enum.GetValues(typeof(Enum1.Weekdays))){
+            foreach (Weekdays temp in Enum.GetValues(typeof(Weekdays))){
                 Debug.Print((int)temp + ":" + temp);//int可以获取枚举值
             }
         }

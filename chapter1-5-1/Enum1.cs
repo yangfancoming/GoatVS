@@ -1,11 +1,8 @@
-using System;
 using System.Diagnostics;
 
 namespace chapter1_5_1 {
     public class Enum1 {
         // 默认情况下枚举中每个元素的基本类型都是int。可以使用冒号指定另一种整数类型。
-        public enum Weekdays { Mon, Tues,Wed,Thur,Fri,Sat,Sun }
-
         public static void weekday(Weekdays day){
             switch (day){
                 case Weekdays.Mon:
