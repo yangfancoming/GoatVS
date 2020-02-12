@@ -41,6 +41,9 @@
         <Compile Include="item01\App.cs" />
         <Compile Include="item01\BaseClass.cs" />
         <Compile Include="item01\DerivedClass.cs" />
+        <Compile Include="item02\App.cs" />
+        <Compile Include="item02\FromatDitits.cs" />
+        <Compile Include="item02\FtpSettings.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
