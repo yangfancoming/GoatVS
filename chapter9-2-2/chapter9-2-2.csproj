@@ -137,6 +137,7 @@
     <Compile Include="test\MyFtpUtilTest.cs" />
     <Compile Include="upload\FileScheduleScan.cs" />
     <Compile Include="upload\ftp\MyFtpUtil.cs" />
+    <Compile Include="upload\IOperFile.cs" />
     <EmbeddedResource Include="forms\AddDbCollect.resx">
       <DependentUpon>AddDbCollect.cs</DependentUpon>
     </EmbeddedResource>

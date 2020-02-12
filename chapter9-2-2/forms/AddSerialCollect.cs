@@ -10,5 +10,9 @@ namespace chapter9_2_2.forms {
         private void btnEsc_Click(object sender, EventArgs e) {
             Close();
         }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            throw new System.NotImplementedException();
+        }
     }
 }

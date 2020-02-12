@@ -104,6 +104,7 @@ namespace chapter9_2_2.forms {
             this.btnSave.TabIndex = 41;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEsc
             // 

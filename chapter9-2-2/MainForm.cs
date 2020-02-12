@@ -70,7 +70,7 @@ namespace chapter9_2_2 {
         }
 
         private void btnSettings_Click(object sender, EventArgs e) {
-            var settings = new Settings { ShowInTaskbar = false }; ;
+            var settings = new Settings { ShowInTaskbar = false };
             settings.ShowDialog();
         }
 
