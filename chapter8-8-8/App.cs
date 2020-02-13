@@ -16,8 +16,8 @@ namespace chapter8_8_8 {
         /// </summary>
         /// <returns>本机MAC地址</returns>
         private static string GetMacAddress(){
+            var strMac = string.Empty;
             try{
-                var strMac = string.Empty;
                 var mc = new ManagementClass("Win32_NetworkAdapterConfiguration");
                 var moc = mc.GetInstances();
                 foreach (ManagementObject mo in moc){
@@ -30,7 +30,7 @@ namespace chapter8_8_8 {
                 return strMac;
             }
             catch{
-                return "unknown";
+                return strMac;
             }
         }
     }

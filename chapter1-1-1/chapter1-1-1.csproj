@@ -38,8 +38,10 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Delegate1.cs" />
-        <Compile Include="Delegate2.cs" />
+        <Compile Include="item01\Delegate1.cs" />
+        <Compile Include="item01\Delegate2.cs" />
+        <Compile Include="item02\App.cs" />
+        <Compile Include="item03\App.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
