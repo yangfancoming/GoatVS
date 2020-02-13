@@ -26,7 +26,6 @@ namespace chapter1_1_1.item03 {
             Debug.Print(a().ToString());
         }
 
-
         private static int Test2(string str){
             return 100;
         }
