@@ -38,7 +38,6 @@
     - chapter5-2-9  连接 Oracle
     - chapter5-3-0  连接 mysql
     
-    
     - chapter6-2-3  IBatis +  mdb 
     
     - chapter7-1-2  log4net
@@ -50,6 +49,7 @@
     - chapter8-2-4  combox
     - chapter8-3-2  DataGridView
     
+     - chapter8-8-8  系统信息相关
  # 综合类
     - chapter9-2-2  DataGridView + crud + ibatis + sqlite
 
