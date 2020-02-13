@@ -2,8 +2,6 @@ using System;
 using System.Diagnostics;
 
 namespace chapter1_1_1.item03 {
-
-
     /**
             Func委托
             Func是有返回值的泛型委托，<>中，最后一个类型为返回值类型。
@@ -19,22 +17,31 @@ namespace chapter1_1_1.item03 {
     */
     public class App {
 
+        private static int Test1(){
+            return 1;
+        }
+        // 无参 有返回值
         public static void test1() {
             Func<int> a = Test1;
             Debug.Print(a().ToString());
         }
 
-        public static int Test1(){
-            return 1;
-        }
 
-         static int Test2(string str){
+        private static int Test2(string str){
             return 100;
         }
 
+        // 有参  有返回值
         public static void test2() {
             Func<string, int> a = Test2;
             Console.WriteLine(a("Test1"));
+        }
+
+        private static readonly Func<string, int> test3 = s => 100 + Convert.ToInt32(s);
+
+        // lambda 方式
+        public static void test33() {
+            Console.WriteLine(test3("200"));
         }
 
     }
