@@ -96,9 +96,9 @@ namespace chapter9_2_2 {
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // dataGridView1
-            //
+            // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -110,9 +110,9 @@ namespace chapter9_2_2 {
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(945, 315);
             this.dataGridView1.TabIndex = 0;
-            //
+            // 
             // button1
-            //
+            // 
             this.button1.Location = new System.Drawing.Point(52, 30);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
@@ -121,9 +121,9 @@ namespace chapter9_2_2 {
             this.button1.Text = "测试";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
+            // 
             // btnAdd
-            //
+            // 
             this.btnAdd.Location = new System.Drawing.Point(20, 18);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
@@ -132,9 +132,9 @@ namespace chapter9_2_2 {
             this.btnAdd.Text = "新增文件采集";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            //
+            // 
             // btnDel
-            //
+            // 
             this.btnDel.Location = new System.Drawing.Point(488, 30);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDel.Name = "btnDel";
@@ -143,9 +143,9 @@ namespace chapter9_2_2 {
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            //
+            // 
             // btnSettings
-            //
+            // 
             this.btnSettings.Location = new System.Drawing.Point(584, 30);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnSettings.Name = "btnSettings";
@@ -154,9 +154,9 @@ namespace chapter9_2_2 {
             this.btnSettings.Text = "系统设置";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            //
+            // 
             // btnAddSerial
-            //
+            // 
             this.btnAddSerial.Location = new System.Drawing.Point(248, 30);
             this.btnAddSerial.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddSerial.Name = "btnAddSerial";
@@ -165,9 +165,9 @@ namespace chapter9_2_2 {
             this.btnAddSerial.Text = "新增串口采集";
             this.btnAddSerial.UseVisualStyleBackColor = true;
             this.btnAddSerial.Click += new System.EventHandler(this.btnAddSerial_Click);
-            //
+            // 
             // btnAddDb
-            //
+            // 
             this.btnAddDb.Location = new System.Drawing.Point(49, 21);
             this.btnAddDb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddDb.Name = "btnAddDb";
@@ -176,9 +176,9 @@ namespace chapter9_2_2 {
             this.btnAddDb.Text = "新增DB采集";
             this.btnAddDb.UseVisualStyleBackColor = true;
             this.btnAddDb.Click += new System.EventHandler(this.btnAddDb_Click);
-            //
+            // 
             // btnFileStart
-            //
+            // 
             this.btnFileStart.Location = new System.Drawing.Point(396, 18);
             this.btnFileStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFileStart.Name = "btnFileStart";
@@ -187,9 +187,9 @@ namespace chapter9_2_2 {
             this.btnFileStart.Text = "开启监视";
             this.btnFileStart.UseVisualStyleBackColor = true;
             this.btnFileStart.Click += new System.EventHandler(this.btnStart_Click);
-            //
+            // 
             // btnFileStop
-            //
+            // 
             this.btnFileStop.Location = new System.Drawing.Point(668, 18);
             this.btnFileStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFileStop.Name = "btnFileStop";
@@ -198,9 +198,9 @@ namespace chapter9_2_2 {
             this.btnFileStop.Text = "关闭监视";
             this.btnFileStop.UseVisualStyleBackColor = true;
             this.btnFileStop.Click += new System.EventHandler(this.btnFileStop_Click);
-            //
+            // 
             // tabControl1
-            //
+            // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -212,9 +212,9 @@ namespace chapter9_2_2 {
             this.tabControl1.Size = new System.Drawing.Size(961, 428);
             this.tabControl1.TabIndex = 9;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-            //
+            // 
             // tabPage1
-            //
+            // 
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -224,9 +224,9 @@ namespace chapter9_2_2 {
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "文件采集";
             this.tabPage1.UseVisualStyleBackColor = true;
-            //
+            // 
             // panel1
-            //
+            // 
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -235,9 +235,9 @@ namespace chapter9_2_2 {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(945, 390);
             this.panel1.TabIndex = 0;
-            //
+            // 
             // panel3
-            //
+            // 
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 75);
@@ -245,9 +245,9 @@ namespace chapter9_2_2 {
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(945, 315);
             this.panel3.TabIndex = 1;
-            //
+            // 
             // panel2
-            //
+            // 
             this.panel2.Controls.Add(this.btnFileDel);
             this.panel2.Controls.Add(this.btnFileResume);
             this.panel2.Controls.Add(this.btnFilePause);
@@ -260,9 +260,9 @@ namespace chapter9_2_2 {
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(945, 75);
             this.panel2.TabIndex = 0;
-            //
+            // 
             // btnFileDel
-            //
+            // 
             this.btnFileDel.Location = new System.Drawing.Point(160, 18);
             this.btnFileDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFileDel.Name = "btnFileDel";
@@ -271,9 +271,9 @@ namespace chapter9_2_2 {
             this.btnFileDel.Text = "删除";
             this.btnFileDel.UseVisualStyleBackColor = true;
             this.btnFileDel.Click += new System.EventHandler(this.btnFileDel_Click);
-            //
+            // 
             // btnFileResume
-            //
+            // 
             this.btnFileResume.Location = new System.Drawing.Point(584, 18);
             this.btnFileResume.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFileResume.Name = "btnFileResume";
@@ -283,9 +283,9 @@ namespace chapter9_2_2 {
             this.btnFileResume.UseVisualStyleBackColor = false;
             this.btnFileResume.Visible = false;
             this.btnFileResume.Click += new System.EventHandler(this.btnFileResume_Click);
-            //
+            // 
             // btnFilePause
-            //
+            // 
             this.btnFilePause.Location = new System.Drawing.Point(496, 18);
             this.btnFilePause.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnFilePause.Name = "btnFilePause";
@@ -295,9 +295,9 @@ namespace chapter9_2_2 {
             this.btnFilePause.UseVisualStyleBackColor = false;
             this.btnFilePause.Visible = false;
             this.btnFilePause.Click += new System.EventHandler(this.btnFilePause_Click);
-            //
+            // 
             // tabPage2
-            //
+            // 
             this.tabPage2.Controls.Add(this.panel5);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
@@ -308,9 +308,9 @@ namespace chapter9_2_2 {
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "数据库采集";
             this.tabPage2.UseVisualStyleBackColor = true;
-            //
+            // 
             // panel5
-            //
+            // 
             this.panel5.Controls.Add(this.dataGridView2);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(4, 85);
@@ -318,9 +318,9 @@ namespace chapter9_2_2 {
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(945, 309);
             this.panel5.TabIndex = 1;
-            //
+            // 
             // dataGridView2
-            //
+            // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -332,9 +332,9 @@ namespace chapter9_2_2 {
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(945, 309);
             this.dataGridView2.TabIndex = 1;
-            //
+            // 
             // panel4
-            //
+            // 
             this.panel4.Controls.Add(this.btnTestDb);
             this.panel4.Controls.Add(this.btnDbResume);
             this.panel4.Controls.Add(this.btnDbPause);
@@ -348,9 +348,9 @@ namespace chapter9_2_2 {
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(945, 81);
             this.panel4.TabIndex = 0;
-            //
+            // 
             // btnTestDb
-            //
+            // 
             this.btnTestDb.Location = new System.Drawing.Point(164, 21);
             this.btnTestDb.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnTestDb.Name = "btnTestDb";
@@ -359,9 +359,9 @@ namespace chapter9_2_2 {
             this.btnTestDb.Text = "测试连接";
             this.btnTestDb.UseVisualStyleBackColor = true;
             this.btnTestDb.Click += new System.EventHandler(this.btnTestDb_Click);
-            //
+            // 
             // btnDbResume
-            //
+            // 
             this.btnDbResume.Location = new System.Drawing.Point(562, 21);
             this.btnDbResume.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDbResume.Name = "btnDbResume";
@@ -371,9 +371,9 @@ namespace chapter9_2_2 {
             this.btnDbResume.UseVisualStyleBackColor = false;
             this.btnDbResume.Visible = false;
             this.btnDbResume.Click += new System.EventHandler(this.btnDbResume_Click);
-            //
+            // 
             // btnDbPause
-            //
+            // 
             this.btnDbPause.Location = new System.Drawing.Point(475, 21);
             this.btnDbPause.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDbPause.Name = "btnDbPause";
@@ -383,10 +383,10 @@ namespace chapter9_2_2 {
             this.btnDbPause.UseVisualStyleBackColor = false;
             this.btnDbPause.Visible = false;
             this.btnDbPause.Click += new System.EventHandler(this.btnDbPause_Click);
-            //
+            // 
             // btnDbDel
-            //
-            this.btnDbDel.Location = new System.Drawing.Point(253, 21);
+            // 
+            this.btnDbDel.Location = new System.Drawing.Point(273, 21);
             this.btnDbDel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDbDel.Name = "btnDbDel";
             this.btnDbDel.Size = new System.Drawing.Size(80, 35);
@@ -394,9 +394,9 @@ namespace chapter9_2_2 {
             this.btnDbDel.Text = "删除";
             this.btnDbDel.UseVisualStyleBackColor = true;
             this.btnDbDel.Click += new System.EventHandler(this.btnDbDel_Click);
-            //
+            // 
             // btnDbStart
-            //
+            // 
             this.btnDbStart.Location = new System.Drawing.Point(388, 21);
             this.btnDbStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDbStart.Name = "btnDbStart";
@@ -405,9 +405,9 @@ namespace chapter9_2_2 {
             this.btnDbStart.Text = "开启任务";
             this.btnDbStart.UseVisualStyleBackColor = true;
             this.btnDbStart.Click += new System.EventHandler(this.btnDbStart_Click);
-            //
+            // 
             // btnDbStop
-            //
+            // 
             this.btnDbStop.Location = new System.Drawing.Point(650, 21);
             this.btnDbStop.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDbStop.Name = "btnDbStop";
@@ -416,9 +416,9 @@ namespace chapter9_2_2 {
             this.btnDbStop.Text = "关闭任务";
             this.btnDbStop.UseVisualStyleBackColor = true;
             this.btnDbStop.Click += new System.EventHandler(this.btnDbStop_Click);
-            //
+            // 
             // tabPage3
-            //
+            // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
@@ -426,9 +426,9 @@ namespace chapter9_2_2 {
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "串口采集";
             this.tabPage3.UseVisualStyleBackColor = true;
-            //
+            // 
             // tabPage4
-            //
+            // 
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.groupBox2);
@@ -440,9 +440,9 @@ namespace chapter9_2_2 {
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "系统设置";
             this.tabPage4.UseVisualStyleBackColor = true;
-            //
+            // 
             // groupBox4
-            //
+            // 
             this.groupBox4.Controls.Add(this.tb_MinioAccessKey);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.tb_MiniosecretKey);
@@ -457,17 +457,17 @@ namespace chapter9_2_2 {
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Minio 配置";
-            //
+            // 
             // tb_MinioAccessKey
-            //
+            // 
             this.tb_MinioAccessKey.Location = new System.Drawing.Point(103, 78);
             this.tb_MinioAccessKey.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_MinioAccessKey.Name = "tb_MinioAccessKey";
             this.tb_MinioAccessKey.Size = new System.Drawing.Size(140, 23);
             this.tb_MinioAccessKey.TabIndex = 29;
-            //
+            // 
             // label9
-            //
+            // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(18, 82);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -475,17 +475,17 @@ namespace chapter9_2_2 {
             this.label9.Size = new System.Drawing.Size(79, 17);
             this.label9.TabIndex = 28;
             this.label9.Text = "accessKey：";
-            //
+            // 
             // tb_MiniosecretKey
-            //
+            // 
             this.tb_MiniosecretKey.Location = new System.Drawing.Point(103, 122);
             this.tb_MiniosecretKey.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_MiniosecretKey.Name = "tb_MiniosecretKey";
             this.tb_MiniosecretKey.Size = new System.Drawing.Size(140, 23);
             this.tb_MiniosecretKey.TabIndex = 25;
-            //
+            // 
             // label11
-            //
+            // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(18, 126);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -493,17 +493,17 @@ namespace chapter9_2_2 {
             this.label11.Size = new System.Drawing.Size(76, 17);
             this.label11.TabIndex = 24;
             this.label11.Text = "secretKey：";
-            //
+            // 
             // tb_MinioEndpoint
-            //
+            // 
             this.tb_MinioEndpoint.Location = new System.Drawing.Point(103, 34);
             this.tb_MinioEndpoint.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_MinioEndpoint.Name = "tb_MinioEndpoint";
             this.tb_MinioEndpoint.Size = new System.Drawing.Size(140, 23);
             this.tb_MinioEndpoint.TabIndex = 23;
-            //
+            // 
             // label12
-            //
+            // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(24, 38);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -511,9 +511,9 @@ namespace chapter9_2_2 {
             this.label12.Size = new System.Drawing.Size(72, 17);
             this.label12.TabIndex = 22;
             this.label12.Text = "endpoint：";
-            //
+            // 
             // groupBox3
-            //
+            // 
             this.groupBox3.Controls.Add(this.tb_DeviceCode);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(10, 18);
@@ -524,17 +524,17 @@ namespace chapter9_2_2 {
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "设备编码 配置";
-            //
+            // 
             // tb_DeviceCode
-            //
+            // 
             this.tb_DeviceCode.Location = new System.Drawing.Point(106, 35);
             this.tb_DeviceCode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_DeviceCode.Name = "tb_DeviceCode";
             this.tb_DeviceCode.Size = new System.Drawing.Size(194, 23);
             this.tb_DeviceCode.TabIndex = 25;
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(14, 42);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -542,9 +542,9 @@ namespace chapter9_2_2 {
             this.label6.Size = new System.Drawing.Size(68, 17);
             this.label6.TabIndex = 24;
             this.label6.Text = "设备编码：";
-            //
+            // 
             // groupBox2
-            //
+            // 
             this.groupBox2.Controls.Add(this.tb_JavaUri);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Location = new System.Drawing.Point(10, 173);
@@ -555,17 +555,17 @@ namespace chapter9_2_2 {
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "后台服务器 配置";
-            //
+            // 
             // tb_JavaUri
-            //
+            // 
             this.tb_JavaUri.Location = new System.Drawing.Point(108, 41);
             this.tb_JavaUri.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_JavaUri.Name = "tb_JavaUri";
             this.tb_JavaUri.Size = new System.Drawing.Size(192, 23);
             this.tb_JavaUri.TabIndex = 25;
-            //
+            // 
             // label7
-            //
+            // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(12, 47);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -573,9 +573,9 @@ namespace chapter9_2_2 {
             this.label7.Size = new System.Drawing.Size(80, 17);
             this.label7.TabIndex = 24;
             this.label7.Text = "服务器地址：";
-            //
+            // 
             // groupBox1
-            //
+            // 
             this.groupBox1.Controls.Add(this.tb_ftpDirRule);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.tb_ftpPort);
@@ -594,18 +594,18 @@ namespace chapter9_2_2 {
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FTP 配置";
-            //
+            // 
             // tb_ftpDirRule
-            //
+            // 
             this.tb_ftpDirRule.FormattingEnabled = true;
             this.tb_ftpDirRule.Location = new System.Drawing.Point(121, 210);
             this.tb_ftpDirRule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_ftpDirRule.Name = "tb_ftpDirRule";
             this.tb_ftpDirRule.Size = new System.Drawing.Size(140, 25);
             this.tb_ftpDirRule.TabIndex = 31;
-            //
+            // 
             // label5
-            //
+            // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 214);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -613,17 +613,17 @@ namespace chapter9_2_2 {
             this.label5.Size = new System.Drawing.Size(92, 17);
             this.label5.TabIndex = 30;
             this.label5.Text = "生成目录规则：";
-            //
+            // 
             // tb_ftpPort
-            //
+            // 
             this.tb_ftpPort.Location = new System.Drawing.Point(121, 78);
             this.tb_ftpPort.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_ftpPort.Name = "tb_ftpPort";
             this.tb_ftpPort.Size = new System.Drawing.Size(140, 23);
             this.tb_ftpPort.TabIndex = 29;
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(47, 82);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -631,17 +631,17 @@ namespace chapter9_2_2 {
             this.label3.Size = new System.Drawing.Size(60, 17);
             this.label3.TabIndex = 28;
             this.label3.Text = "ftp端口：";
-            //
+            // 
             // tb_ftpPassword
-            //
+            // 
             this.tb_ftpPassword.Location = new System.Drawing.Point(121, 166);
             this.tb_ftpPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_ftpPassword.Name = "tb_ftpPassword";
             this.tb_ftpPassword.Size = new System.Drawing.Size(140, 23);
             this.tb_ftpPassword.TabIndex = 27;
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(68, 170);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -649,17 +649,17 @@ namespace chapter9_2_2 {
             this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 26;
             this.label2.Text = "密码：";
-            //
+            // 
             // tb_ftpAccount
-            //
+            // 
             this.tb_ftpAccount.Location = new System.Drawing.Point(121, 122);
             this.tb_ftpAccount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_ftpAccount.Name = "tb_ftpAccount";
             this.tb_ftpAccount.Size = new System.Drawing.Size(140, 23);
             this.tb_ftpAccount.TabIndex = 25;
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(68, 126);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -667,17 +667,17 @@ namespace chapter9_2_2 {
             this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 24;
             this.label1.Text = "账号：";
-            //
+            // 
             // tb_ftpAddr
-            //
+            // 
             this.tb_ftpAddr.Location = new System.Drawing.Point(121, 34);
             this.tb_ftpAddr.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tb_ftpAddr.Name = "tb_ftpAddr";
             this.tb_ftpAddr.Size = new System.Drawing.Size(140, 23);
             this.tb_ftpAddr.TabIndex = 23;
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(47, 38);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -685,18 +685,18 @@ namespace chapter9_2_2 {
             this.label4.Size = new System.Drawing.Size(60, 17);
             this.label4.TabIndex = 22;
             this.label4.Text = "ftp地址：";
-            //
+            // 
             // rtbLog
-            //
+            // 
             this.rtbLog.Location = new System.Drawing.Point(29, 540);
             this.rtbLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.Size = new System.Drawing.Size(951, 350);
             this.rtbLog.TabIndex = 10;
             this.rtbLog.Text = "";
-            //
+            // 
             // MainForm
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1009, 908);
