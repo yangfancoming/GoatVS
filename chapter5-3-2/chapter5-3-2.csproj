@@ -78,8 +78,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BaseClass.cs" />
+        <Compile Include="InsertApp.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="QueryApp.cs" />
+        <Compile Include="UpdateApp.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include=".gitignore" />
