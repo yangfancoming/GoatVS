@@ -38,6 +38,7 @@
     - chapter5-2-8  连接 sqlserver  本地 MDF文件
     - chapter5-2-9  连接 Oracle
     - chapter5-3-0  连接 mysql
+    - chapter5-3-2  连接 mongodb
     
     - chapter6-2-3  IBatis +  mdb 
     
