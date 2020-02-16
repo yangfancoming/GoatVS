@@ -39,6 +39,8 @@
     - chapter5-2-9  连接 Oracle
     - chapter5-3-0  连接 mysql
     - chapter5-3-2  连接 mongodb
+    - chapter5-3-5  连接 emq client 
+    - chapter5-3-6  连接 emq server
     
     - chapter6-2-3  IBatis +  mdb 
     
