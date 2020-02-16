@@ -34,7 +34,8 @@ namespace chapter5_3_5 {
                 mqttClient.Connected += MqttClient_Connected;
                 mqttClient.Disconnected += MqttClient_Disconnected;
             }
-
+            // <!--******************本地服务器********************--> 第三方MQTT服务器连接地址
+            //     <!--******************EMQ服务器********************-->  MQTT服务器连接地址
             try{
                 var index = CombServer.InvokeRequired ?
                     (int)CombServer.EndInvoke(CombServer.BeginInvoke(new Func<int>(()=> CombServer.SelectedIndex) ))
