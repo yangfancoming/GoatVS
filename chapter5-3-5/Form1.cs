@@ -41,7 +41,7 @@ namespace chapter5_3_5 {
                     (int)CombServer.EndInvoke(CombServer.BeginInvoke(new Func<int>(()=> CombServer.SelectedIndex) ))
                     : CombServer.SelectedIndex;
 
-                Base config = new Base { MqttUrl = (index == 1) ? "192.168.2111.128"  : "127.0.0.1" };
+                Base config = new Base { MqttUrl = (index == 1) ? "192.168.211.128"  : "127.0.0.1" };
                 var options = new MqttClientOptionsBuilder()
                     .WithClientId(Guid.NewGuid().ToString().Substring(0, 5))
                     .WithTcpServer(config.MqttUrl,Convert.ToInt32(config.MqttPort))
