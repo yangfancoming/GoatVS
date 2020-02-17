@@ -28,6 +28,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.btn_test = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -72,11 +73,23 @@
             this.button4.Text = "删除";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // btn_test
+            // 
+            this.btn_test.Location = new System.Drawing.Point(58, 116);
+            this.btn_test.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_test.Name = "btn_test";
+            this.btn_test.Size = new System.Drawing.Size(97, 38);
+            this.btn_test.TabIndex = 4;
+            this.btn_test.Text = "测试";
+            this.btn_test.UseVisualStyleBackColor = true;
+            this.btn_test.Click += new System.EventHandler(this.btn_test_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 188);
+            this.Controls.Add(this.btn_test);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -93,5 +106,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_test;
     }
 }

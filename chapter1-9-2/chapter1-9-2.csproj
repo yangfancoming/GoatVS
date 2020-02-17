@@ -33,6 +33,14 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="AWSSDK.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604">
+          <HintPath>..\packages\AWSSDK.Core.3.3.104.25\lib\net45\AWSSDK.Core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="AWSSDK.S3, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604">
+          <HintPath>..\packages\AWSSDK.S3.3.3.110.23\lib\net45\AWSSDK.S3.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="Minio, Version=3.1.9.0, Culture=neutral, PublicKeyToken=348239ebd7debb4c">
           <HintPath>..\packages\Minio.3.1.9\lib\net46\Minio.dll</HintPath>
           <Private>True</Private>
@@ -65,6 +73,7 @@
         <Reference Include="WindowsBase" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="App.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -72,6 +81,8 @@
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
         <Compile Include="MinIo1.cs" />
+        <Compile Include="MinIoUtil.cs" />
+        <Compile Include="MyAmazonS3Client.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Form1.resx">
@@ -102,7 +113,12 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include=".gitignore" />
+      <Content Include="lib\AWSSDK.S3.dll" />
+      <Content Include="lib\Minio.dll" />
       <Content Include="README.md" />
+    </ItemGroup>
+    <ItemGroup>
+      <Analyzer Include="..\packages\AWSSDK.S3.3.3.110.23\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

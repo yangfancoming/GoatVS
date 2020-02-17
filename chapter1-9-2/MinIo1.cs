@@ -9,16 +9,16 @@ namespace chapter1_9_2 {
     public class MinIo1 {
 
         // Initialize the client with access credentials.
-        private static MinioClient minioClient = new MinioClient("192.168.211.128:9000","minioadmin","minioadmin" ).WithSSL();
+        private static MinioClient minioClient = new MinioClient("192.168.211.128:9000","minioadmin","minioadmin" );
 
         public static void test1() {
-//            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             // Create an async task for listing buckets.
             Task<ListAllMyBucketsResult> getListBucketsTask = minioClient.ListBucketsAsync();
             // Iterate over the list of buckets.
             foreach (Bucket bucket in getListBucketsTask.Result.Buckets) {
                 Console.WriteLine(bucket.Name + " " + bucket.CreationDateDateTime);
             }
+
         }
 
 
@@ -27,12 +27,12 @@ namespace chapter1_9_2 {
         }
 
         // File uploader task.
-        private async static Task Run(MinioClient minio) {
-            var bucketName = "mymusic";
-            var location   = "us-east-1";
-            var objectName = "golden-oldies.zip";
-            var filePath = "D:\\123\\12.txt";
-            var contentType = "application/zip";
+        private static async Task Run(MinioClient minio) {
+            var bucketName = "mymusic"; // 桶的名称
+            var location   = "us-east-1"; //服务器区域
+            var objectName = "golden-oldies.zip"; // 上传后文件名
+            var filePath = "D:\\123\\12.txt"; // 本地 待上传文件
+            var contentType = "application/zip"; // 上传后的文件格式
 
             // Make a bucket on the server, if not already present.
             bool found = await minio.BucketExistsAsync(bucketName);
