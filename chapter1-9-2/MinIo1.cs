@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Minio;
 using Minio.DataModel;
 
+
 namespace chapter1_9_2 {
 
     public class MinIo1 {
@@ -11,6 +12,7 @@ namespace chapter1_9_2 {
         private static MinioClient minioClient = new MinioClient("192.168.211.128:9000","minioadmin","minioadmin" ).WithSSL();
 
         public static void test1() {
+//            ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             // Create an async task for listing buckets.
             Task<ListAllMyBucketsResult> getListBucketsTask = minioClient.ListBucketsAsync();
             // Iterate over the list of buckets.
