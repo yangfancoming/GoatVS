@@ -83,5 +83,21 @@ namespace chapter1_9_3 {
             }
             return true;
         }
+
+
+        // MyFtpUtil.deleteDirectory("/123/log/"); // 删除 123 目录下的log 目录
+        // MyFtpUtil.deleteDirectory("/123/"); // 如果123目录下还有子目录  则删除123目录下的所有文件，其他子目录不受影响
+        public static bool deleteDirectory(string dir){
+            try{
+                _ftpClient.Connect();
+                _ftpClient.DeleteDirectory(dir);
+                _ftpClient.Disconnect();
+            }
+            catch (Exception e) {
+                Debug.Print(e.Message);
+                return false;
+            }
+            return true;
+        }
     }
 }

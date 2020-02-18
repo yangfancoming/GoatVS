@@ -17,6 +17,11 @@ namespace chapter1_9_2 {
                Debug.Print("bucket '" + bucket.BucketName + "' created at " + bucket.CreationDate);
             }
         }
+        // 使用 AmazonS3Client 创建 桶
+        public static async void test1() {
+            AmazonS3Client amazonS3Client = MyAmazonS3Client.getInstance();
+            amazonS3Client.PutBucket("1231111111111111");
+        }
 
         // 使用 AmazonS3Client 同步文件夹
         public static async void test2() {
