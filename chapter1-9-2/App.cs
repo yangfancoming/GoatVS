@@ -18,14 +18,19 @@ namespace chapter1_9_2 {
             }
         }
 
+        public static async void temp() {
+            //            var replace = "68:EC:C5:87:01:D6".Replace(":", "");
+            string temp = "68:EC:C5:87:01:D6/xml1.xml";
+            var fileName = Path.GetFileName(temp);
+        }
+
         // 使用 AmazonS3Client 创建 桶
         public static async void test1() {
             AmazonS3Client amazonS3Client = MyAmazonS3Client.getInstance();
             amazonS3Client.PutBucket("1231111111111111");
-            var replace = "68:EC:C5:87:01:D6".Replace(":", "");
         }
-        // 使用 AmazonS3Client 创建 目录
 
+        // 使用 AmazonS3Client 创建 目录
         public static async void test3() {
             AmazonS3Client amazonS3Client = MyAmazonS3Client.getInstance();
             PutObjectRequest requestUpdate = new PutObjectRequest();

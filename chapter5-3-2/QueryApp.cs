@@ -15,7 +15,10 @@ namespace chapter5_3_2 {
         }
 
         public static void find1() {
-
+            var client = new MongoClient("mongodb://192.168.211.128:27017");
+            IMongoDatabase database = client.GetDatabase("foo"); // 数据库名称
+            IMongoCollection<BsonDocument> temp = database.GetCollection<BsonDocument>("bar"); // 集合名称
+            var temp1 = temp.Find(new BsonDocument()).ToList();
         }
     }
 }
