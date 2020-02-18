@@ -17,10 +17,25 @@ namespace chapter1_9_2 {
                Debug.Print("bucket '" + bucket.BucketName + "' created at " + bucket.CreationDate);
             }
         }
+
         // 使用 AmazonS3Client 创建 桶
         public static async void test1() {
             AmazonS3Client amazonS3Client = MyAmazonS3Client.getInstance();
             amazonS3Client.PutBucket("1231111111111111");
+            var replace = "68:EC:C5:87:01:D6".Replace(":", "");
+        }
+        // 使用 AmazonS3Client 创建 目录
+
+        public static async void test3() {
+            AmazonS3Client amazonS3Client = MyAmazonS3Client.getInstance();
+            PutObjectRequest requestUpdate = new PutObjectRequest();
+            var fileStream = new FileStream(@"C:\Users\Administrator\Desktop\333\student.xml", FileMode.Open, FileAccess.Read);
+            requestUpdate.InputStream = fileStream;
+            requestUpdate.BucketName = "test";
+            requestUpdate.Key = "pic/123.xml"; // 这里相当于上传服务器后的 newName，其中 pic 会是 "test" bucket下的文件夹
+            requestUpdate.CannedACL = S3CannedACL.PublicRead;
+            PutObjectResponse putObjectResponse = amazonS3Client.PutObject(requestUpdate);
+            Debug.Print(putObjectResponse.ToString());
         }
 
         // 使用 AmazonS3Client 同步文件夹
