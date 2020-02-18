@@ -12,8 +12,8 @@ namespace chapter1_9_2 {
         // 使用 AmazonS3Client 遍历 桶
         public static async void test() {
             AmazonS3Client amazonS3Client = MyAmazonS3Client.getInstance();
-            var listBucketResponse = await amazonS3Client.ListBucketsAsync();
-            foreach (var bucket in listBucketResponse.Buckets){
+            var listBuckets = await amazonS3Client.ListBucketsAsync();
+            foreach (var bucket in listBuckets.Buckets){
                Debug.Print("bucket '" + bucket.BucketName + "' created at " + bucket.CreationDate);
             }
         }
@@ -27,18 +27,18 @@ namespace chapter1_9_2 {
         }
 
         public static async Task SychoniAsync(AmazonS3Client amazonS3Client, string localPath, string bucketName, bool isDel = false) {
-            var listBucketResponse = await amazonS3Client.ListBucketsAsync();
-            if (listBucketResponse.Buckets.Count <= 0) return;
+            var listBuckets = await amazonS3Client.ListBucketsAsync();
+            if (listBuckets.Buckets.Count <= 0) return;
 
-            var listObjectsResponse = await amazonS3Client.ListObjectsAsync(bucketName);
+            var listFiles = await amazonS3Client.ListObjectsAsync(bucketName);
             DirectoryInfo TheFolder = new DirectoryInfo(localPath);
             foreach (FileInfo FileLocal in TheFolder.GetFiles()){
-                if (MinIoUtil.ExistsBucket(FileLocal.Name, listObjectsResponse, amazonS3Client) == false){
+                if (MinIoUtil.ExistsBucket(FileLocal.Name, listFiles) == false){
                     await MinIoUtil.upLoad(bucketName, amazonS3Client, localPath, FileLocal.Name);
                 }
             }
 
-            foreach (S3Object obj in listObjectsResponse.S3Objects){
+            foreach (S3Object obj in listFiles.S3Objects){
                 string pathTemps = localPath + obj.Key;
                 FileInfo fi = new FileInfo(pathTemps);
                 // 存在则同步

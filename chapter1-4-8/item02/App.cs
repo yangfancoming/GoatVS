@@ -28,5 +28,12 @@ namespace chapter1_4_8.item02 {
             return false;
         }
 
+
+        // 不检测某个字段
+        public static bool judgeAnyNullEx<T>(T t) {
+            var  properties  = t.GetType().GetProperties();
+            return properties.Any(item => (item.GetValue(t, null) == null  || item.GetValue(t, null) == "" ) && item.Name != "deviceCode" );
+        }
+
     }
 }

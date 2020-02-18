@@ -27,8 +27,7 @@ namespace chapter1_9_2 {
             await amazonS3Client.DeleteObjectAsync(requestDelete);
         }
 
-
-        public static bool ExistsBucket(string fileKey, ListObjectsResponse listObjectsResponse, AmazonS3Client amazonS3Client){
+        public static bool ExistsBucket(string fileKey, ListObjectsResponse listObjectsResponse){
             foreach (S3Object obj in listObjectsResponse.S3Objects){
                 if (obj.Key == fileKey){
                     return true;
