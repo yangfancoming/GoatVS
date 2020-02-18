@@ -72,8 +72,9 @@ namespace chapter5_3_5 {
             Invoke((new Action(() =>{txtReceiveMessage.Clear();})));
         }
 
-        private void BtnSubscribe_Click(object sender, EventArgs e)
-        {
+        // 订阅按钮
+        private void BtnSubscribe_Click(object sender, EventArgs e){
+
             var topic = txtSubTopic.Text.Trim();
 
             if (string.IsNullOrEmpty(topic)){
@@ -94,24 +95,20 @@ namespace chapter5_3_5 {
 
         }
 
+        // 发布按钮
         private void button1_Click(object sender, EventArgs e) {
             string topic = txtPubTopic.Text.Trim();
-
-            if (string.IsNullOrEmpty(topic))
-            {
+            if (string.IsNullOrEmpty(topic)){
                 MessageBox.Show("发布主题不能为空！");
                 return;
             }
-
             string inputString = txtSendMessage.Text.Trim();
-            var appMsg = new MqttApplicationMessage
-            {
+            var appMsg = new MqttApplicationMessage{
                 Topic = topic,
                 Payload = Encoding.UTF8.GetBytes(inputString),
                 QualityOfServiceLevel = MqttQualityOfServiceLevel.ExactlyOnce,//只有一次
                 Retain = false
             };
-
             Task.Run(async () => { await mqttClient.PublishAsync(appMsg); });
         }
     }
