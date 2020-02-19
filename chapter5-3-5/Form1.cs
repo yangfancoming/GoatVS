@@ -102,6 +102,7 @@ namespace chapter5_3_5 {
                 MessageBox.Show("发布主题不能为空！");
                 return;
             }
+
             string inputString = txtSendMessage.Text.Trim();
             var appMsg = new MqttApplicationMessage{
                 Topic = topic,

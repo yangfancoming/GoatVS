@@ -1,5 +1,4 @@
 
-
 # 引入步骤
 
     添加 lib目录中的 dll
@@ -32,12 +31,8 @@
       Domain 目录下的 SysUser 的namespace 是 Domain 然后局部配置文件 sys_user.xml 这样配置
       <typeAlias alias="sys_user" type="Domain.SysUser,Domain" />
       是不行的！！！
-     
-     
-     
-     
-     
-#
+
+
     
 #   创建SqlMapper的方式有以下几种
     
@@ -53,3 +48,8 @@
     c. 第三种方式——指定SqlMap.config的路径(使用EmbededResource查找config资源时，要求SqlMap.config生成操作属性为嵌入的资源)
     XmlDocument sqlMapConfig = Resources.GetEmbeddedResourceAsXmlDocument("Config.SqlMap.config, Persistence");
     ISqlMapper _sqlMapper = new DomSqlMapBuilder().Configure(sqlMapConfig); //---第三种
+    
+    
+#  批量删除报错：Insert statements cannot be executed as a update query.
+    问题： 可定是 代码中调用的
+     var deleteList = "collect_db.selectList".deleteList(array);
