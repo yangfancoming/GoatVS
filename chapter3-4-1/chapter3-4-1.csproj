@@ -87,6 +87,7 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include=".gitignore" />
       <Content Include="lib\Quartz.dll" />
       <Content Include="quartz_jobs.xml" />
       <Content Include="README.md" />

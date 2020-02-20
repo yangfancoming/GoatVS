@@ -22,6 +22,7 @@
     - chapter2-5-1  office
 
     - chapter3-4-1  定时任务---Quartz.Net
+    - chapter3-5-2  File 操作
     - chapter3-5-5  FileSystemWatcher 用法 (文件狗)
     - chapter3-6-1  解析xml 
     - chapter3-6-4  xml 与 json互转 
