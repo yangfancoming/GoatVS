@@ -3,7 +3,7 @@ using System.IO;
 namespace chapter3_5_2 {
 
 
-    public class FileUtil {
+    public static class FileUtil {
 
         // @"C:\Users\Administrator\Desktop\123\xml2.xml"
         public static void deleteFile1(string fileToBeDeleted) {
