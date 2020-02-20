@@ -69,6 +69,26 @@ namespace chapter3_4_1 {
 //            await scheduler.Start();
         }
 
+        public static ITrigger getTrigger2(string key = "",string cron = "*/5 * * * * ?") {
+            ITrigger trigger = (ICronTrigger)TriggerBuilder
+                .Create()
+                .WithIdentity(key, key)
+                .StartNow()
+                .WithCronSchedule(cron, x => x.WithMisfireHandlingInstructionDoNothing())
+                .Build();
+            return trigger;
+        }
+
+        public static ITrigger getTrigger3(string key = "",string cron = "*/5 * * * * ?") {
+            CronScheduleBuilder scheduleBuilder = CronScheduleBuilder.CronSchedule(cron);
+            ITrigger trigger = TriggerBuilder.Create().StartNow()
+                .WithIdentity(key, key)
+                .ForJob(key)
+                .WithSchedule(scheduleBuilder.WithMisfireHandlingInstructionDoNothing())
+                .Build();
+            return trigger;
+        }
+
 
     }
 }

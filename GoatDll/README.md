@@ -46,6 +46,8 @@
     
     - chapter6-2-3  IBatis +  mdb 
     
+    - chapter6-5-2  mina 串口
+    
     - chapter7-1-2  log4net
 # 控件 目录
 
