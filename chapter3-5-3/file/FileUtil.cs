@@ -16,5 +16,17 @@ namespace chapter3_5_2 {
            if (File.Exists(fileToBeDeleted)) File.Delete(fileToBeDeleted);
         }
 
+
+       public static void MoveFile1(string source,string target){
+           if (File.Exists(source) && !File.Exists(target)) {
+               File.Move(source, target);
+           }
+       }
+
+       public static void MoveFile2(string source,string target){
+           var file = new FileInfo(source);
+           if (file.Exists)  file.MoveTo(target);
+       }
+
     }
 }

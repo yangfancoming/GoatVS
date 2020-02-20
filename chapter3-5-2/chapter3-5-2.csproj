@@ -38,10 +38,6 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="file\FileApp.cs" />
-        <Compile Include="file\FileUtil.cs" />
-        <Compile Include="folder\FolderApp.cs" />
-        <Compile Include="folder\FolderUtil.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
