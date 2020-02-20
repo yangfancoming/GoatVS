@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace chapter3_5_2 {
 
 
@@ -13,14 +15,17 @@ namespace chapter3_5_2 {
             FolderUtil.deleteFolder2(folderPath);
         }
 
-        private static readonly string source =  @"C:\Users\Administrator\Desktop\123\444";
+        private static readonly string source =  @"C:\Users\Administrator\Desktop\123\444\";
         private static readonly string target =  @"E:\Code\C#_code\RiderLearning\GoatVS\chapter3-5-3\bin\Debug\ec0f0f1afc004dd98f074f1d409de5c5\";
 
         public static void test3() {
-            FolderUtil.CopyDirectory(source,target,false);
+            var mark = FolderUtil.CopyDirectory(source,target,true);
+            Debug.Print(mark.ToString());
         }
 
-
+        public static void test4() {
+            FolderUtil.DeleteDir(target);
+        }
 
 
     }
