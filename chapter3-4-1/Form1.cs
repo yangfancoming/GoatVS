@@ -18,8 +18,8 @@ namespace chapter3_4_1 {
         }
 
         // 任务1
-        private void button1_Click(object sender, EventArgs e) {
-            Util.Start();
+        private async void button1_Click(object sender, EventArgs e) {
+            await Util.Start();
         }
 
         private void button4_Click(object sender, EventArgs e) {
@@ -27,16 +27,16 @@ namespace chapter3_4_1 {
         }
 
         // 任务1
-        private void button2_Click(object sender, EventArgs e) {
-            Util.Start();
+        private async void button2_Click(object sender, EventArgs e) {
+            await Util.Start();
         }
         private void button5_Click(object sender, EventArgs e) {
             Util.Stop().GetAwaiter().GetResult();
         }
 
         // 任务3
-        private void button3_Click(object sender, EventArgs e) {
-            Util.Start();
+        private async void button3_Click(object sender, EventArgs e) {
+            await Util.Start();
         }
 
         private void button6_Click(object sender, EventArgs e) {

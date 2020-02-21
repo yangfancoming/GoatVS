@@ -37,7 +37,7 @@ namespace chapter3_5_2 {
                    }
                ret = true;
            }
-           catch (Exception ex)  {
+           catch (Exception)  {
                ret = false;
            }
            return ret;
@@ -63,7 +63,7 @@ namespace chapter3_5_2 {
                Directory.Delete(file);
                return true;
            }
-           catch (Exception ex){ // 异常处理
+           catch (Exception){ // 异常处理
                return false;
            }
        }

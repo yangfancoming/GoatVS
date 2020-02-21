@@ -18,7 +18,6 @@ namespace chapter3_5_2 {
 //       string fileToMove = @"c:\temp\New Text Document.txt";
 //       string fileNewDestination = @"c:\temp\test.txt";
         private static readonly string source =  @"C:\Users\Administrator\Desktop\123\json1.json";
-        private static readonly string target =  @"C:\Users\Administrator\Desktop\444\fu11ck.json";
         public static void test3() {
             FileUtil.MoveFile1(source,filePath);
         }

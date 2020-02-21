@@ -2,7 +2,6 @@ using System;
 using System.IO.Ports;
 using Mina.Core.Future;
 using Mina.Core.Service;
-using Mina.Core.Session;
 using Mina.Filter.Codec;
 using Mina.Filter.Logging;
 using Mina.Transport.Serial;
