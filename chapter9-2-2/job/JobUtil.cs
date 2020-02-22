@@ -19,7 +19,6 @@ namespace chapter9_2_2.job {
 
         private static readonly Dictionary<string,IScheduler> schedulerDic = new Dictionary<string, IScheduler>();
 
-
         public static async void configFileAndStart(IParse<string, string> mParse, string key) {
             await configFile(mParse, key);
             await startJob(key);
@@ -59,8 +58,6 @@ namespace chapter9_2_2.job {
             ISimpleTrigger trigger = getTrigger();
             await scheduler.ScheduleJob(job, trigger);
         }
-
-
 
         // Quartz.ObjectAlreadyExistsException: Unable to store Trigger: 'group1.trigger1', because one already exists with this identification.
         public static ISimpleTrigger getTrigger(int repeat = 3) {
