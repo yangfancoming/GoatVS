@@ -17,6 +17,7 @@
     - chapter1-9-3  ftp  使用 FluentFTP 实现
     - chapter1-9-5  WebApiClient 
     - chapter1-9-7  HTTPClient 
+    - chapter1-9-9  Socket长连接、短连接 
 
     - chapter2-1-1  设计模式
     - chapter2-5-1  office
