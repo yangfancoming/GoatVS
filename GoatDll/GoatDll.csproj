@@ -51,6 +51,7 @@
         <Compile Include="util\EncryptAndDecrypt.cs" />
         <Compile Include="util\FileUtil.cs" />
         <Compile Include="util\JudgeUtil.cs" />
+        <Compile Include="util\Md5Util.cs" />
         <Compile Include="util\PinYin.cs" />
         <Compile Include="util\PlantsVsZombiesTools.cs" />
         <Compile Include="util\regular.cs" />

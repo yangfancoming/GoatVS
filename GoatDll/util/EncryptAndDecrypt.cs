@@ -6,7 +6,7 @@ using System.Text;
 // treeView树节点用
 
 
-namespace 综合计算工具
+namespace GoatTools
 {
     public class EncryptAndDecrypt
     {
@@ -76,6 +76,49 @@ namespace 综合计算工具
             {
                 return decryptString;
             }
+        }
+
+
+
+        public static string AesDecrypt_ECB(string str, string key){
+            if (string.IsNullOrEmpty(str)){
+                return null;
+            }
+            int keyLength = key.Length;
+            if (keyLength != 16 && keyLength != 24 && keyLength != 32){
+                return null;
+            }
+            byte[] toDecryptArray = Convert.FromBase64String(str);
+            RijndaelManaged rm = new RijndaelManaged{
+                Key = Encoding.UTF8.GetBytes(key),
+                Mode = CipherMode.ECB,
+                Padding = PaddingMode.PKCS7
+            };
+            ICryptoTransform cTransform = rm.CreateDecryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(toDecryptArray, 0, toDecryptArray.Length);
+            return Encoding.UTF8.GetString(resultArray);
+        }
+
+
+        public static string AesEncrypt_ECB(string str, string key){
+            if (string.IsNullOrEmpty(str)){
+                return null;
+            }
+            int keyLength = key.Length;
+            if (keyLength != 16 && keyLength != 24 && keyLength != 32){
+                return null;
+            }
+            byte[] toEncryptArray = Encoding.UTF8.GetBytes(str);
+            RijndaelManaged rijndaelManaged = new RijndaelManaged
+            {
+                Key = Encoding.UTF8.GetBytes(key),
+                Mode = CipherMode.ECB,
+                Padding = PaddingMode.PKCS7
+            };
+
+            ICryptoTransform cTransform = rijndaelManaged.CreateEncryptor();
+            byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+            return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
     }
 

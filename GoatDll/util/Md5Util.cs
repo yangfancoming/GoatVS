@@ -1,9 +1,7 @@
-using System;
 using System.Security.Cryptography;
 using System.Text;
-using GoatTools;
 
-namespace chapter2_0_3 {
+namespace GoatTools {
 
 
     public class Md5Util {
