@@ -49,9 +49,6 @@ namespace GoatTools
             return sb.ToString();
         }
 
-
-
-
         public static string strArr2string(string[] strArr) {//将String[]数组转换为String字符串 01 53 00 00 00 01 44 06 =>0x01,0x53,0x00,0x00,0x00,0x01,0x44,0x06
             String strNew = String.Empty;
             for (int i = 0; i < strArr.Length; i++){
