@@ -31,7 +31,7 @@ namespace GoatTools
             return BitConverter.ToInt16(TempArry, 0);
         }
 
-        //   P1= "02000300040005000600070008000a00" P2= 4   返回：  0200 0300 0400 0500 0600 0700 0800 0a00
+        //  高版本的.net 使用  P1= "02000300040005000600070008000a00" P2= 4   返回：  0200 0300 0400 0500 0600 0700 0800 0a00
         public static byte[] StringToByteArray(string hex) {// 十六进制string 转换成 byte[]  该函数不能输入单个字符  eg：“A”
             hex = hex.Replace(" ", "");
             return Enumerable.Range(0, hex.Length)
@@ -40,6 +40,36 @@ namespace GoatTools
                              .ToArray();
         }
 
+        /// <summary>
+        /// 字节数组转16进制字符串
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
+        public static string ByteArr2hexStrV2(byte[] bytes){
+            string returnStr = "";
+            if (bytes != null){
+                for (int i = 0; i < bytes.Length; i++){
+                    returnStr += bytes[i].ToString("X2");
+                }
+            }
+            return returnStr;
+        }
+
+        /// <summary>
+        /// 字符串转16进制字节数组  针对低版本的.net 使用
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns></returns>
+        public static byte[] StringToByteArrayV2(string hexString)
+        {
+            hexString = hexString.Replace(" ", "");
+            if ((hexString.Length % 2) != 0)
+                hexString += " ";
+            byte[] returnBytes = new byte[hexString.Length / 2];
+            for (int i = 0; i < returnBytes.Length; i++)
+                returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+            return returnBytes;
+        }
 
         public static string ByteArr2hexStr(byte[] arrByte){//实现byte[]转换成十六进制string功能即可
             StringBuilder sb = new StringBuilder();

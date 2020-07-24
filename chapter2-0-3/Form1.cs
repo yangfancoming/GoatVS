@@ -38,6 +38,8 @@ namespace chapter2_0_3 {
             Debug.Print("Text:{0}, signature:{1}", text, signature);
 
 
+
+
         }
 
         private static RSAParameters ParsePublicKey(string publicKey){

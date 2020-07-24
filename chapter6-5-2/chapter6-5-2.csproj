@@ -60,6 +60,12 @@
     <ItemGroup>
       <None Include="packages.config" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\GoatDll\GoatDll.csproj">
+        <Project>{779c2ff2-7195-48e6-a5aa-73bc8771327d}</Project>
+        <Name>GoatDll</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
