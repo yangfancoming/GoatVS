@@ -38,8 +38,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cb_type = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tb_json = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_yanqian = new System.Windows.Forms.Button();
+            this.btn_jiaqian = new System.Windows.Forms.Button();
+            this.tb_private = new System.Windows.Forms.TextBox();
+            this.tb_public = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_md5
@@ -179,13 +190,119 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.tb_json);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.btn_yanqian);
+            this.tabPage2.Controls.Add(this.btn_jiaqian);
+            this.tabPage2.Controls.Add(this.tb_private);
+            this.tabPage2.Controls.Add(this.tb_public);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(565, 417);
+            this.tabPage2.Size = new System.Drawing.Size(565, 413);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "加签验签";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(56, 262);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 17);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "报文：";
+            // 
+            // tb_json
+            // 
+            this.tb_json.Location = new System.Drawing.Point(110, 261);
+            this.tb_json.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_json.Multiline = true;
+            this.tb_json.Name = "tb_json";
+            this.tb_json.Size = new System.Drawing.Size(399, 80);
+            this.tb_json.TabIndex = 39;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(56, 164);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "私钥：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(56, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 17);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "公钥：";
+            // 
+            // btn_yanqian
+            // 
+            this.btn_yanqian.Location = new System.Drawing.Point(351, 358);
+            this.btn_yanqian.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_yanqian.Name = "btn_yanqian";
+            this.btn_yanqian.Size = new System.Drawing.Size(103, 48);
+            this.btn_yanqian.TabIndex = 36;
+            this.btn_yanqian.Text = "验签↑";
+            this.btn_yanqian.UseVisualStyleBackColor = true;
+            this.btn_yanqian.Click += new System.EventHandler(this.btn_yanqian_Click);
+            // 
+            // btn_jiaqian
+            // 
+            this.btn_jiaqian.Location = new System.Drawing.Point(164, 358);
+            this.btn_jiaqian.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_jiaqian.Name = "btn_jiaqian";
+            this.btn_jiaqian.Size = new System.Drawing.Size(103, 48);
+            this.btn_jiaqian.TabIndex = 35;
+            this.btn_jiaqian.Text = "加签↓";
+            this.btn_jiaqian.UseVisualStyleBackColor = true;
+            this.btn_jiaqian.Click += new System.EventHandler(this.btn_jiaqian_Click);
+            // 
+            // tb_private
+            // 
+            this.tb_private.Location = new System.Drawing.Point(110, 161);
+            this.tb_private.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_private.Multiline = true;
+            this.tb_private.Name = "tb_private";
+            this.tb_private.Size = new System.Drawing.Size(399, 80);
+            this.tb_private.TabIndex = 34;
+            // 
+            // tb_public
+            // 
+            this.tb_public.Location = new System.Drawing.Point(110, 62);
+            this.tb_public.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_public.Multiline = true;
+            this.tb_public.Name = "tb_public";
+            this.tb_public.Size = new System.Drawing.Size(399, 80);
+            this.tb_public.TabIndex = 33;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(56, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 17);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "方式：";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(110, 18);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(129, 25);
+            this.comboBox1.TabIndex = 29;
             // 
             // Form1
             // 
@@ -201,6 +318,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
         }
 
@@ -220,5 +339,15 @@
         private System.Windows.Forms.Button btn_jiemi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btn_yanqian;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tb_private;
+        private System.Windows.Forms.TextBox tb_public;
+        private System.Windows.Forms.TextBox tb_json;
+        private System.Windows.Forms.Button btn_jiaqian;
     }
 }
