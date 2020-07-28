@@ -98,7 +98,7 @@ namespace chapter2_0_3 {
 
         // 解密
         private void btn_jiemi_Click(object sender, EventArgs e) {
-            string key = Md5Util.encrypt(tb_miyao.Text.Trim());
+            string key = Md5Util.encrypt(tb_miyao.Text.Trim());// 968E1C0D53182DF8BF3A550D2F4C60D1
             var aesDecryptEcb = EncryptAndDecrypt.AesDecrypt_ECB(tb_4.Text,key);
             tb_3.Text = aesDecryptEcb;
         }

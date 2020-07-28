@@ -41,7 +41,7 @@ namespace GoatTools
         }
 
         /// <summary>
-        /// 字节数组转16进制字符串
+        /// 字节数组转16进制字符串  大写使用 X2  小写使用 x2
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
@@ -49,7 +49,7 @@ namespace GoatTools
             string returnStr = "";
             if (bytes != null){
                 for (int i = 0; i < bytes.Length; i++){
-                    returnStr += bytes[i].ToString("X2");
+                    returnStr += bytes[i].ToString("x2");
                 }
             }
             return returnStr;
@@ -71,7 +71,7 @@ namespace GoatTools
             return returnBytes;
         }
 
-        public static string ByteArr2hexStr(byte[] arrByte){//实现byte[]转换成十六进制string功能即可
+        public static string ByteArr2hexStr(byte[] arrByte){//实现byte[]转换成十六进制string功能即可  转换后是小写字母！
             StringBuilder sb = new StringBuilder();
             foreach (byte b in arrByte) {
                 sb.Append(b > 15 ? Convert.ToString(b, 16) : '0' + Convert.ToString(b, 16));

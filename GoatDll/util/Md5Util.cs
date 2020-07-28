@@ -19,7 +19,8 @@ namespace GoatTools {
             byte[] encryptdata = md5.ComputeHash(palindata);
             //将加密后的字节数组转换成字符串
 //            string returnData = Convert.ToBase64String(encryptdata);
-            string returnData = DataTypeTransmit.ByteArr2hexStr(encryptdata);
+//            string returnData = DataTypeTransmit.ByteArr2hexStr(encryptdata);// 968e1c0d53182df8bf3a550d2f4c60d1
+            string returnData = DataTypeTransmit.ByteArr2hexStrV2(encryptdata);// 968E1C0D53182DF8BF3A550D2F4C60D1
             return returnData;
         }
 
