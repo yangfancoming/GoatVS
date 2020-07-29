@@ -30,16 +30,18 @@ namespace chapter2_0_3 {
         }
         private void btn_md5_Click(object sender, EventArgs e) {
             // 加签
-            string privateKey = tb_3.Text;
+            string privateKey = tb_private.Text;
             string text = "123";
             var bytes = Encoding.UTF8.GetBytes(text);
             var signatureBytes = Sign(bytes, privateKey);
             var signature =   Convert.ToBase64String(signatureBytes);
             Debug.Print("Text:{0}, signature:{1}", text, signature);
 
-
-
-
+            // 验签
+            string PublicKey = tb_public.Text;
+            var fromBase64String = Convert.FromBase64String(signature);
+            var isVerified = Verify(bytes, fromBase64String,PublicKey);
+            Debug.Print("Text:{0}, signature:{1}, is verified:{2}", text, signature, isVerified);
         }
 
         private static RSAParameters ParsePublicKey(string publicKey){
