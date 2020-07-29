@@ -117,7 +117,6 @@ namespace chapter2_0_3 {
             byte[] bytes = Encoding.Default.GetBytes(result.timestamp + result.body);// 文本
             var isVerified = Verify(bytes, sign,PublicKey);
             Debug.Print("Text:{0}, signature:{1}, is verified:{2}", result.timestamp + result.body, sign, isVerified);
-
         }
 
 
