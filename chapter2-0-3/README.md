@@ -2,18 +2,18 @@
 
 # 一、密钥格式：
     1、pem格式
-        -----BEGIN PRIVATE KEY-----
-        MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLMEZhjinTZy9A+7d3jwsOCdsnYbEuJametlfBM9NzsoQKZW0PGB90o1BNnhJ7V9kGeQSPDpDgxM/eAwoPDTE8oARZEU/GD1vvxVdNVPUH+TXrLAWHhJ46w/z7OPIq7mxMy3bpFT6yiSCQyyAGfD1jTqbSnpvqsG1lI9uXGFhFRzjlqF6ulylEqmqmRarnaxJFyjPUlZGPdhJSIZP6u9YB8EI/8rLoEYcaRJhVvQhYMBbASdioqxEfwwYEWVgBzegksprP3YSGe6ITuJ9azxSINBvkgtzoNIVr5U8FEVFm4y2JBzwmlzDnFpdhu5nM6jIhsNjsP/7Hz8E4EXdnLvT3AgMBAAECggEAHR6hauGCMJ9CzJadAJ9lka9QMUIH/n6UqQa+/0WndGoho8cqdOD4G7/bGhH7DeEIH4mMAZ3rg4rJbko2fYWmCmfz4Op1RRuLgXNI233tsZhaxnO0SHDfZa4BLFHyoDa3Y62hmAwAzPtRW9mTPqgZc8BNuHzEY+o7SNCirU7DkOKQmqZLky9lhNFwW8dKYrgKeCGgiciae11K1V8vSPJKts4ljHPPBpeQOp1AaDCOj1Z6kjVoct9YEturtUmKNl/ilI/z+lfXZf+BXDbchEPRpdnpziZk1K7ZIRnC3q+C7sn3vrEqEfreFIiJ44hp6DqFKbhqxUmkd65s/1op8/sayQKBgQDe2A2VJt/WBGfuMQMbtPs2wWhKIT2o8I67LHSSv0JaqcVQrwMjzD0/tzXERBD6s1xIKFDGUKCfFwaDCm+UydWxPWROh+RiQLZZR7y/ct2VHfWe4FsuCzMKhEaOVhyxPdUen/eN42Cw0ClAN7dMgkFMKZlFr4uAxPY/IYdeAaxKowKBgQCf5dsMkblwyOVZ6ZGvQVQb0TsoY/0IAevDBEEOAD0pZRwEzg70d4MeZoWTkhfFk0HRriLO3HXcjJjDtbi0Q7/PTsV3POeRtHR4Dwceo4HiHefvc1G7F2pEGx3/PfgpXnTLqc4csxw107MPWoTOoiBGNt9PUSkxAVuiIcH+sbAFnQKBgCcggkoE+FpIjcMJwgT0YwN7NAeIDJ6EFluQ86rsgAcRNf7zq7Z2Xu64CW27kcujAHn+8ifP8lPcpB0QEQVr5uRm5hzPyW7i8+F7Mg3faj6LcxwBQqE0ADNBhG3resA4HhpxdfLo0IpbElMfNUTuve5Ug3/z0ae7bY0qIu2Dl6/HAoGANFB95JTg+TehYlN66L4VCKziEAr2xGHsgvenWS9W025TRncsiWt4qL+eQHPx9yCAzluM4+VZYnlVmeKgtcncvbTmAmcY1KEX4hf4mlugqRxjwAIY4X99sx60J8hcoxxWVjQOTXGEb0/+K63P+dMtgAt/8HF7ap8pHdixoeT81DkCgYEAk7iUqeZChXonALtgFPEYPV87r/vb9fMgo/NTe+7nL4xXxmPo4Ax+1+Yx109JRzibfqQoXyGbYOeWco6pnhTC7uucYUNrFmc5q0e7WL8Sl7f9QW1URROzRfawTgTIDmtfz4TtDR65X9uZ3hE9qaJArwtYw24ZvtNdbulmMB6iRrE=
-        -----END PRIVATE KEY-----
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLMEZhjinTZy9A+7d3jwsOCdsnYbEuJametlfBM9NzsoQKZW0PGB90o1BNnhJ7V9kGeQSPDpDgxM/eAwoPDTE8oARZEU/GD1vvxVdNVPUH+TXrLAWHhJ46w/z7OPIq7mxMy3bpFT6yiSCQyyAGfD1jTqbSnpvqsG1lI9uXGFhFRzjlqF6ulylEqmqmRarnaxJFyjPUlZGPdhJSIZP6u9YB8EI/8rLoEYcaRJhVvQhYMBbASdioqxEfwwYEWVgBzegksprP3YSGe6ITuJ9azxSINBvkgtzoNIVr5U8FEVFm4y2JBzwmlzDnFpdhu5nM6jIhsNjsP/7Hz8E4EXdnLvT3AgMBAAECggEAHR6hauGCMJ9CzJadAJ9lka9QMUIH/n6UqQa+/0WndGoho8cqdOD4G7/bGhH7DeEIH4mMAZ3rg4rJbko2fYWmCmfz4Op1RRuLgXNI233tsZhaxnO0SHDfZa4BLFHyoDa3Y62hmAwAzPtRW9mTPqgZc8BNuHzEY+o7SNCirU7DkOKQmqZLky9lhNFwW8dKYrgKeCGgiciae11K1V8vSPJKts4ljHPPBpeQOp1AaDCOj1Z6kjVoct9YEturtUmKNl/ilI/z+lfXZf+BXDbchEPRpdnpziZk1K7ZIRnC3q+C7sn3vrEqEfreFIiJ44hp6DqFKbhqxUmkd65s/1op8/sayQKBgQDe2A2VJt/WBGfuMQMbtPs2wWhKIT2o8I67LHSSv0JaqcVQrwMjzD0/tzXERBD6s1xIKFDGUKCfFwaDCm+UydWxPWROh+RiQLZZR7y/ct2VHfWe4FsuCzMKhEaOVhyxPdUen/eN42Cw0ClAN7dMgkFMKZlFr4uAxPY/IYdeAaxKowKBgQCf5dsMkblwyOVZ6ZGvQVQb0TsoY/0IAevDBEEOAD0pZRwEzg70d4MeZoWTkhfFk0HRriLO3HXcjJjDtbi0Q7/PTsV3POeRtHR4Dwceo4HiHefvc1G7F2pEGx3/PfgpXnTLqc4csxw107MPWoTOoiBGNt9PUSkxAVuiIcH+sbAFnQKBgCcggkoE+FpIjcMJwgT0YwN7NAeIDJ6EFluQ86rsgAcRNf7zq7Z2Xu64CW27kcujAHn+8ifP8lPcpB0QEQVr5uRm5hzPyW7i8+F7Mg3faj6LcxwBQqE0ADNBhG3resA4HhpxdfLo0IpbElMfNUTuve5Ug3/z0ae7bY0qIu2Dl6/HAoGANFB95JTg+TehYlN66L4VCKziEAr2xGHsgvenWS9W025TRncsiWt4qL+eQHPx9yCAzluM4+VZYnlVmeKgtcncvbTmAmcY1KEX4hf4mlugqRxjwAIY4X99sx60J8hcoxxWVjQOTXGEb0/+K63P+dMtgAt/8HF7ap8pHdixoeT81DkCgYEAk7iUqeZChXonALtgFPEYPV87r/vb9fMgo/NTe+7nL4xXxmPo4Ax+1+Yx109JRzibfqQoXyGbYOeWco6pnhTC7uucYUNrFmc5q0e7WL8Sl7f9QW1URROzRfawTgTIDmtfz4TtDR65X9uZ3hE9qaJArwtYw24ZvtNdbulmMB6iRrE=
+-----END PRIVATE KEY-----
         
         
         
-        -----BEGIN PUBLIC KEY-----
-        MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAizBGYY4p02cvQPu3d48LDgnbJ2GxLiWpnrZXwTPTc7KECmVtDxgfdKNQTZ4Se1fZBnkEjw6Q4MTP3gMKDw0xPKAEWRFPxg9b78VXTVT1B/k16ywFh4SeOsP8+zjyKu5sTMt26RU+sokgkMsgBnw9Y06m0p6b6rBtZSPblxhYRUc45aherpcpRKpqpkWq52sSRcoz1JWRj3YSUiGT+rvWAfBCP/Ky6BGHGkSYVb0IWDAWwEnYqKsRH8MGBFlYAc3oJLKaz92EhnuiE7ifWs8UiDQb5ILc6DSFa+VPBRFRZuMtiQc8Jpcw5xaXYbuZzOoyIbDY7D/+x8/BOBF3Zy709wIDAQAB
-        -----END PUBLIC KEY-----
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAizBGYY4p02cvQPu3d48LDgnbJ2GxLiWpnrZXwTPTc7KECmVtDxgfdKNQTZ4Se1fZBnkEjw6Q4MTP3gMKDw0xPKAEWRFPxg9b78VXTVT1B/k16ywFh4SeOsP8+zjyKu5sTMt26RU+sokgkMsgBnw9Y06m0p6b6rBtZSPblxhYRUc45aherpcpRKpqpkWq52sSRcoz1JWRj3YSUiGT+rvWAfBCP/Ky6BGHGkSYVb0IWDAWwEnYqKsRH8MGBFlYAc3oJLKaz92EhnuiE7ifWs8UiDQb5ILc6DSFa+VPBRFRZuMtiQc8Jpcw5xaXYbuZzOoyIbDY7D/+x8/BOBF3Zy709wIDAQAB
+-----END PUBLIC KEY-----
         
         报文：
-        {"appid":"SQYYPTHD","format":"json","biztype":"00020","sign":"JrKbYHQCEgRYD/CE5gGmxa0F83XzV1XGgad74Q+aEjbEEbVgPXN17YQOUHD9I/gQ3UxWvBL57rCS3t3T+/21352aceqBiTnxQAcx80EuUAQVD7KxH9tl3OTiSKMumPJcZTig1+4U97BCGalvOk6Ru+hM63kjqYK0Y98fhR1GzmVPDZtOMtFA3lEUt3ArzvtlXM6g8ziVf/nETFRWNfbiWZpVtyDSoEXhLlW7DMRjJM0x+KwUMMeiqcgG3kg+QGMt61x6Ir72DRURp+d2saACMG/NvmKpoq7OUkMLH2u8sA+QtSCeTBrZZ+HRJIWrU/TopV7h2iGwSOOu03XyxkbeZQ==","timestamp":"2020-07-08 17:54:48","version":"1.0","body":"VxypgJMgi3xFJsYpN33XqXjCSrcG5Lr10j4zSNO0vukt+z+6NyWYcx8X6eWviWCv","transactionid":"7e21d2fb5ce148ec9b4ab5ee49208788"}
+{"appid":"SQYYPTHD","format":"json","biztype":"00020","sign":"JrKbYHQCEgRYD/CE5gGmxa0F83XzV1XGgad74Q+aEjbEEbVgPXN17YQOUHD9I/gQ3UxWvBL57rCS3t3T+/21352aceqBiTnxQAcx80EuUAQVD7KxH9tl3OTiSKMumPJcZTig1+4U97BCGalvOk6Ru+hM63kjqYK0Y98fhR1GzmVPDZtOMtFA3lEUt3ArzvtlXM6g8ziVf/nETFRWNfbiWZpVtyDSoEXhLlW7DMRjJM0x+KwUMMeiqcgG3kg+QGMt61x6Ir72DRURp+d2saACMG/NvmKpoq7OUkMLH2u8sA+QtSCeTBrZZ+HRJIWrU/TopV7h2iGwSOOu03XyxkbeZQ==","timestamp":"2020-07-08 17:54:48","version":"1.0","body":"VxypgJMgi3xFJsYpN33XqXjCSrcG5Lr10j4zSNO0vukt+z+6NyWYcx8X6eWviWCv","transactionid":"7e21d2fb5ce148ec9b4ab5ee49208788"}
 
     2、xml格式（c#默认）
         私钥：
@@ -33,7 +33,15 @@
         
         
         
-        
+# 报错：无法将类型为“System.Windows.Forms.SplitContainer”的对象强制转换为类型“System.ComponentModel.ISupportInitialize”。
+    问题：将winform程序从.net framework 4.0 切换到.net 3.5时，运行时出现如下错误：
+    无法将类型为“System.Windows.Forms.SplitContainer”的对象强制转换为类型“System.ComponentModel.ISupportInitialize”。    
+    
+    
+    解决方法：
+    注释掉如下两行代码（此代码为设计器自动生成代码）
+    //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+    //((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
         
         
         

@@ -48,6 +48,8 @@
             this.tb_public = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_result = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -190,6 +192,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.tb_result);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.tb_json);
             this.tabPage2.Controls.Add(this.label3);
@@ -246,7 +250,7 @@
             // 
             // btn_yanqian
             // 
-            this.btn_yanqian.Location = new System.Drawing.Point(351, 358);
+            this.btn_yanqian.Location = new System.Drawing.Point(384, 5);
             this.btn_yanqian.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_yanqian.Name = "btn_yanqian";
             this.btn_yanqian.Size = new System.Drawing.Size(103, 48);
@@ -257,7 +261,7 @@
             // 
             // btn_jiaqian
             // 
-            this.btn_jiaqian.Location = new System.Drawing.Point(164, 358);
+            this.btn_jiaqian.Location = new System.Drawing.Point(260, 5);
             this.btn_jiaqian.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_jiaqian.Name = "btn_jiaqian";
             this.btn_jiaqian.Size = new System.Drawing.Size(103, 48);
@@ -304,6 +308,24 @@
             this.comboBox1.Size = new System.Drawing.Size(129, 25);
             this.comboBox1.TabIndex = 29;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(56, 350);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 17);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "结果：";
+            // 
+            // tb_result
+            // 
+            this.tb_result.Location = new System.Drawing.Point(110, 349);
+            this.tb_result.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tb_result.Multiline = true;
+            this.tb_result.Name = "tb_result";
+            this.tb_result.Size = new System.Drawing.Size(399, 48);
+            this.tb_result.TabIndex = 41;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -349,5 +371,7 @@
         private System.Windows.Forms.TextBox tb_public;
         private System.Windows.Forms.TextBox tb_json;
         private System.Windows.Forms.Button btn_jiaqian;
+        private System.Windows.Forms.TextBox tb_result;
+        private System.Windows.Forms.Label label7;
     }
 }

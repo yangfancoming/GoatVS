@@ -35,7 +35,7 @@ namespace chapter1_9_8 {
             }
         }
 
-        public static async Task StopListen() {
+        public static void StopListen() {
             if (!listener.IsListening) return;
             listener.Stop();
             Debug.Print("关闭监听");
