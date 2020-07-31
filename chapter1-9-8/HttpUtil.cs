@@ -41,6 +41,7 @@ namespace chapter1_9_8 {
             Debug.Print("关闭监听");
         }
 
+
         public static async Task ProcessRequestAsync(HttpListenerContext context) {
             StreamReader sr = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding);
             var data = sr.ReadToEnd();
