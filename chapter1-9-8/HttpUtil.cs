@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using chapter2_0_3;
+using Newtonsoft.Json;
 
 namespace chapter1_9_8 {
     public class HttpUtil {
@@ -43,11 +46,17 @@ namespace chapter1_9_8 {
 
 
         public static async Task ProcessRequestAsync(HttpListenerContext context) {
-            StreamReader sr = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding);
-            var data = sr.ReadToEnd();
-            Debug.Print(data);
+//            StreamReader sr = new StreamReader(context.Request.InputStream, context.Request.ContentEncoding);
+            StreamReader sr = new StreamReader(context.Request.InputStream,  Encoding.GetEncoding("UTF-8"));// 解决接收中文乱码问题
+            string json = sr.ReadToEnd();
+            Debug.Print(json);
+
+            Model model = JsonConvert.DeserializeObject<Model>(json);
+            Debug.Print(model.appid);
+
             string Output = "<html><body><h1>Hello world</h1><div>Time is: " + DateTime.Now + "</div></body></html>";
             byte[] bOutput = System.Text.Encoding.UTF8.GetBytes(Output);
+            context.Response.ContentType = "text/html"; //
             context.Response.ContentType = "application/json"; // "text/html"
             context.Response.ContentLength64 = bOutput.Length;
             Stream OutputStream = context.Response.OutputStream;
