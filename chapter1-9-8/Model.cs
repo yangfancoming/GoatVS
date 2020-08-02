@@ -3,7 +3,6 @@ namespace chapter2_0_3 {
 //        public public sign;
 //        public public timestamp;
 //        public public body;
-//
         public string appid;
         public string format;
         public string biztype;
