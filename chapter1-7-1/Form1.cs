@@ -14,10 +14,8 @@ namespace chapter1_7_1 {
             IEnumerable<int> findBobs1 = Yield3.enumerableFuc1();
             Debug.Print(findBobs1.ToString());
 
-
             IEnumerable<int> findBobs2 = Yield3.enumerableFuc2();
             Debug.Print(findBobs2.ToString());
-
 
             string[] temp = {"hha", "gag", "Bob"};
 
@@ -26,7 +24,6 @@ namespace chapter1_7_1 {
 
             IEnumerable<string> findBobs22 = Yield2.FindBobs2(temp);
             Debug.Print(findBobs22.ToString());
-
 
             foreach (string item in Yield1.SimpleList())
                 Debug.Print(item);
