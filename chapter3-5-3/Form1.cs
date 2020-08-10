@@ -17,7 +17,6 @@ namespace chapter3_5_3 {
             // 创建临时文件夹
             var directoryInfo = Directory.CreateDirectory($"{directory}\\{uuid}");
             Debug.Print(directoryInfo.FullName);  // E:\Code\C#_code\RiderLearning\GoatVS\chapter3-5-3\bin\Debug\0b4e3851b4d743378925368cebd09cff
-
             // 拷贝已存在文件
 
         }
